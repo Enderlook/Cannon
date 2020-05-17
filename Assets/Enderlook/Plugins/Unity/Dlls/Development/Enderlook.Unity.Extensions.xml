@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:Enderlook.Unity.Extensions.Collision2DExtensions">
+            <summary>
+            Extension methods for <see cref="T:UnityEngine.Collision2D"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.Collision2DExtensions.GetCollisionImpulse(UnityEngine.Collision2D)">
+            <summary>
+            Calculates the collision impulse of a <see cref="T:UnityEngine.Collision2D"/>.
+            </summary>
+            <param name="source"><see cref="T:UnityEngine.Collision2D"/> used to calculate the impulse.</param>
+            <returns>Collision impulse of <paramref name="source"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.GetColorTag(UnityEngine.Color,System.String)">
+            <summary>
+            Warps <paramref name="text"/> in HTML color tag with <paramref name="color"/>.<br/>
+            Do the same as <see cref="M:Enderlook.Unity.Extensions.ColorExtensions.ColorizeWith(System.String,UnityEngine.Color)"/>.
+            </summary>
+            <param name="color">Color to tint <paramref name="text"/>.</param>
+            <param name="text">Text to by tinted by <paramref name="color"/>.</param>
+            <returns>Text with HTML color tag.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.ColorizeWith(System.String,UnityEngine.Color)">
+            <summary>
+            Warps <paramref name="text"/> in HTML color tag with <paramref name="color"/>..<br/>
+            Do the same as <see cref="M:Enderlook.Unity.Extensions.ColorExtensions.GetColorTag(UnityEngine.Color,System.String)"/>.
+            </summary>
+            <param name="text">Text to by tinted by <paramref name="color"/>.</param>
+            <param name="color">Color to tint <paramref name="text"/>.</param>
+            <returns>Text with HTML color tag.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.ToColoredString(UnityEngine.Color)">
+            <summary>
+            Return the <paramref name="color"/> string version but colored with HTML color tag.
+            </summary>
+            <param name="color">Color to get string colored version.</param>
+            <returns>String HTML colored version of <paramref name="color"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.GetHue(UnityEngine.Color)">
+            <summary>
+            Returns the hue of <paramref name="color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to get hue.</param>
+            <returns>Hue of <paramref name="color"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.GetSaturation(UnityEngine.Color)">
+            <summary>
+            Returns the saturation of <paramref name="color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to get saturation.</param>
+            <returns>Saturation of <paramref name="color"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.GetValue(UnityEngine.Color)">
+            <summary>
+            Returns the value of <paramref name="color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to get value.</param>
+            <returns>Value of <paramref name="color"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.SetHue(UnityEngine.Color@,System.Single)">
+            <summary>
+            Set hue of <paramref name="color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to set hue.</param>
+            <param name="hue">New hue.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.SetSaturation(UnityEngine.Color@,System.Single)">
+            <summary>
+            Set saturation of <paramref name="color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to set hue.</param>
+            <param name="saturation">New hue.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ColorExtensions.SetValue(UnityEngine.Color@,System.Single)">
+            <summary>
+            Set value of <paramref name="color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to set value.</param>
+            <param name="value">New value.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.ToLayer(UnityEngine.LayerMask)">
+            <summary>
+            Convert a <see cref="T:UnityEngine.LayerMask"/> into a layer number.<br/>
+            This should only be used if the <paramref name="layerMask"/> has a single layer.
+            </summary>
+            <param name="layerMask"><see cref="T:UnityEngine.LayerMask"/> to convert.</param>
+            <returns>Layer number.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.ToLayerMask(System.Int32)">
+            <summary>
+            Convert a given layer to a layer mask.<br/>
+            <c>1 &lt;&lt; <paramref name="layer"/></c>.
+            </summary>
+            <param name="layer">Layer to produce a layer mask.</param>
+            <returns>Layer mast of layer</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.ToLayerMask(UnityEngine.LayerMask)">
+            <summary>
+            Convert a given layer to a layer mask.<br/>
+            <c>1 &lt;&lt; <paramref name="layer"/></c>.
+            </summary>
+            <param name="layer">Layer to produce a layer mask.</param>
+            <returns>Layer mast of layer</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.InvertLayerMask(System.Int32)">
+            <summary>
+            Invert a layer to match exactly the opposite.
+            </summary>
+            <param name="layer">Layer mask to invert.</param>
+            <returns>Inverted layermask.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.InvertLayerMask(UnityEngine.LayerMask)">
+            <summary>
+            Invert a layer to match exactly the opposite.
+            </summary>
+            <param name="layer">Layer mask to invert.</param>
+            <returns>Inverted layermask.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.LayerMatchTest(UnityEngine.LayerMask,UnityEngine.LayerMask)">
+            <summary>
+            Check if the <paramref name="layerToCheck"/> have <paramref name="layerTrigger"/>.
+            </summary>
+            <param name="layerToCheck">Layers to check if have <paramref name="layerTrigger"/>.</param>
+            <param name="layerTrigger">Layers checked in <paramref name="layerToCheck"/>.</param>
+            <returns>Whenever <paramref name="layerToCheck"/> has <paramref name="layerTrigger"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.LayerMaskExtensions.LayerMatchTest(UnityEngine.GameObject,UnityEngine.LayerMask)">
+            <summary>
+            Check if the <c><paramref name="source"/>.layer</c> is one the layers from <paramref name="layerTrigger"/>.
+            </summary>
+            <param name="source">GameObject to check its layers.</param>
+            <param name="layerTrigger">Layer that must be checked.</param>
+            <returns>Whenever <c><paramref name="source"/>.layer</c> is one the layers from <paramref name="layerTrigger"/>.</returns>
+        </member>
+        <member name="T:Enderlook.Unity.Extensions.ScrollRectExtensions">
+            <summary>
+            Helper methods to scroll <see cref="T:UnityEngine.UI.ScrollRect"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ScrollRectExtensions.ScrollBottom(UnityEngine.UI.ScrollRect)">
+            <summary>
+            Scrolls <paramref name="source"/> to bottom.
+            </summary>
+            <param name="source"><see cref="T:UnityEngine.UI.ScrollRect"/> to scroll to bottom.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ScrollRectExtensions.ScrollTop(UnityEngine.UI.ScrollRect)">
+            <summary>
+            Scrolls <paramref name="source"/> to top.
+            </summary>
+            <param name="source"><see cref="T:UnityEngine.UI.ScrollRect"/> to scroll to top.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ScrollRectExtensions.ScrollLeft(UnityEngine.UI.ScrollRect)">
+            <summary>
+            Scrolls <paramref name="source"/> to left.
+            </summary>
+            <param name="source"><see cref="T:UnityEngine.UI.ScrollRect"/> to scroll to left.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.ScrollRectExtensions.ScrollRight(UnityEngine.UI.ScrollRect)">
+            <summary>
+            Scrolls <paramref name="source"/> to right.
+            </summary>
+            <param name="source"><see cref="T:UnityEngine.UI.ScrollRect"/> to scroll to right.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.StringExtensions.ToDisplayUnity(System.String)">
+            <summary>
+            Emulate <see cref="P:UnityEditor.SerializedProperty.displayName"/> calling <see cref="!:StringExtensions.SplitByCamelCase(string)"/>, <see cref="!:StringExtensions.SplitBySnakeCase(string)"/>, <see cref="!:StringExtensions.ToCapitalWords(string)"/>.
+            </summary>
+            <param name="source">String to convert.</param>
+            <returns>Converted string.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.VectorExtensions.Abs(UnityEngine.Vector2)">
+            <summary>
+            Returns absolute <seealso cref="T:UnityEngine.Vector2"/> of <paramref name="source"/>.
+            </summary>
+            <param name="source"><seealso cref="T:UnityEngine.Vector2"/> to become absolute.</param>
+            <returns>Absolute <seealso cref="T:UnityEngine.Vector2"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.VectorExtensions.Abs(UnityEngine.Vector3)">
+            <summary>
+            Returns absolute <seealso cref="T:UnityEngine.Vector3"/> of <paramref name="source"/>.
+            </summary>
+            <param name="source"><seealso cref="T:UnityEngine.Vector3"/> to become absolute.</param>
+            <returns>Absolute <seealso cref="T:UnityEngine.Vector3"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.VectorExtensions.Abs(UnityEngine.Vector4)">
+            <summary>
+            Returns absolute <seealso cref="T:UnityEngine.Vector4"/> of <paramref name="source"/>.
+            </summary>
+            <param name="source"><seealso cref="T:UnityEngine.Vector4"/> to become absolute.</param>
+            <returns>Absolute <seealso cref="T:UnityEngine.Vector4"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.VectorExtensions.AngleByTan(UnityEngine.Vector2,UnityEngine.Vector2)">
+            <summary>
+            Returns the angle of the vector in degrees. Through Tan method generated by the origin and the target.
+            </summary>
+            <param name="origin">The point in 2D space where the vector start.</param>
+            <param name="target">The point in 2D space where the vector ends.</param>
+            <returns><seealso cref="T:System.Single"/> angle in degrees.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.VectorExtensions.AngleBySin(UnityEngine.Vector2,UnityEngine.Vector2)">
+            <summary>
+            Returns the angle of the vector in degrees. Through Sin method generated by the origin and the target.
+            </summary>
+            <param name="origin">The point in 2D space where the vector start.</param>
+            <param name="target">The point in 2D space where the vector ends.</param>
+            <returns><seealso cref="T:System.Single"/> angle in degrees.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.VectorExtensions.AngleByCos(UnityEngine.Vector2,UnityEngine.Vector2)">
+            <summary>
+            Returns the angle of the vector in degrees. Through Cos method generated by the origin and the target.
+            </summary>
+            <param name="origin">The point in 2D space where the vector start.</param>
+            <param name="target">The point in 2D space where the vector ends.</param>
+            <returns><seealso cref="T:System.Single"/> angle in degrees.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.VectorExtensions.AngleByTanRadian(UnityEngine.Vector2,UnityEngine.Vector2)">
+            <summary>
+            Returns the angle of the vector in radians. Through Tan method generated by the origin and the target.
+            </summary>
+            <param name="origin">The point in 2D space where the vector start.</param>
+            <param name="target">The point in 2D space where the vector ends.</param>
+            <returns><seealso cref="T:System.Single"/> angle in radians.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.VectorExtensions.AngleBySinRadian(UnityEngine.Vector2,UnityEngine.Vector2)">
+            <summary>
+            Returns the angle of the vector in radians. Through Sin method generated by the origin and the target.
+            </summary>
+            <param name="origin">The point in 2D space where the vector start.</param>
+            <param name="target">The point in 2D space where the vector ends.</param>
+            <returns><seealso cref="T:System.Single"/> angle in radians.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.VectorExtensions.AngleByCosRadian(UnityEngine.Vector2,UnityEngine.Vector2)">
+            <summary>
+            Returns the angle of the vector in radians. Through Cos method generated by the origin and the target.
+            </summary>
+            <param name="origin">The point in 2D space where the vector start.</param>
+            <param name="target">The point in 2D space where the vector ends.</param>
+            <returns><seealso cref="T:System.Single"/> angle in radians.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.VectorExtensions.ProjectileMotion(UnityEngine.Vector2,UnityEngine.Vector2)">
+            <summary>
+            Generates a projectile motion between origin and target.
+            </summary>
+            <param name="origin">The point in 2D space where the projectile motion start.</param>
+            <param name="target">The point in 2D space where the projectile motion ends.</param>
+            <returns><seealso cref="T:UnityEngine.Vector2"/> with the initial momentum.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Extensions.VectorExtensions.ProjectileMotion(UnityEngine.Vector2,UnityEngine.Vector2,System.Single)">
+            <summary>
+            Generates a projectile motion between origin and target.
+            </summary>
+            <param name="origin">The point in 2D space where the projectile motion start.</param>
+            <param name="target">The point in 2D space where the projectile motion ends.</param>
+            <param name="t">The time of flight of a projectile motion.</param>
+            <returns><seealso cref="T:UnityEngine.Vector2"/> with the initial momentum.</returns>
+        </member>
+    </members>
+</doc>

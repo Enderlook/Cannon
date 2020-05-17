@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Utils.Prototypes</name>
+    </assembly>
+    <members>
+        <member name="M:Enderlook.Unity.Utils.IPrototypable`1.CreatePrototype">
+            <summary>
+            Uses <see cref="!:this"/> instance as "template" to create new instances of the same class.<br/>
+            It's not full deep clone, but rather a clone of only the necessary values to make a new instance.<br/>
+            All other values are left as default.<br/>
+            This method is useful to use an <see cref="T:UnityEngine.ScriptableObject"/> instance as a template to make new instances of it.
+            </summary>
+            <returns>New instance based of <see cref="!:this"/> template instance.</returns>
+        </member>
+    </members>
+</doc>

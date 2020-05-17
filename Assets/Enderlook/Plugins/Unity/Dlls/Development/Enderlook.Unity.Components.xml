@@ -1,0 +1,686 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Components</name>
+    </assembly>
+    <members>
+        <member name="T:Enderlook.Unity.Components.AudioSourceUtils">
+            <summary>
+            Helper methods for <see cref="T:UnityEngine.AudioSource"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+             <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Vector3,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="position">Position where <see cref="T:UnityEngine.AudioSource"/> will be instanced.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Vector3,System.Single,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="position">Position where <see cref="T:UnityEngine.AudioSource"/> will be instanced.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Vector3,System.Single,System.Single,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="position">Position where <see cref="T:UnityEngine.AudioSource"/> will be instanced.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="pitch">Pitch of <see cref="T:UnityEngine.AudioSource"/>. Between -3 and 3.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1, or when <paramref name="pitch"/> isn't between -3 and 3.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Vector3,System.Single,System.Single,UnityEngine.Audio.AudioMixerGroup,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="position">Position where <see cref="T:UnityEngine.AudioSource"/> will be instanced.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="pitch">Pitch of <see cref="T:UnityEngine.AudioSource"/>. Between -3 and 3.</param>
+            <param name="audioMixerGroup">Mixer group used by <see cref="T:UnityEngine.AudioSource"/>.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> or <paramref name="audioMixerGroup"/> are <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1, or when <paramref name="pitch"/> isn't between -3 and 3.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,System.Single,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,System.Single,System.Single,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="pitch">Pitch of <see cref="T:UnityEngine.AudioSource"/>. Between -3 and 3.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1, or when <paramref name="pitch"/> isn't between -3 and 3.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,System.Single,System.Single,UnityEngine.Audio.AudioMixerGroup,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="pitch">Pitch of <see cref="T:UnityEngine.AudioSource"/>. Between -3 and 3.</param>
+            <param name="audioMixerGroup">Mixer group used by <see cref="T:UnityEngine.AudioSource"/>.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1, or when <paramref name="pitch"/> isn't between -3 and 3.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Audio.AudioMixerGroup,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="audioMixerGroup">Mixer group used by <see cref="T:UnityEngine.AudioSource"/>.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Vector3,System.Single,UnityEngine.Audio.AudioMixerGroup,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="position">Position where <see cref="T:UnityEngine.AudioSource"/> will be instanced.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="audioMixerGroup">Mixer group used by <see cref="T:UnityEngine.AudioSource"/>.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,UnityEngine.Vector3,UnityEngine.Audio.AudioMixerGroup,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="position">Position where <see cref="T:UnityEngine.AudioSource"/> will be instanced.</param>
+            <param name="audioMixerGroup">Mixer group used by <see cref="T:UnityEngine.AudioSource"/>.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Components.AudioSourceUtils.PlayAndDestroy(UnityEngine.AudioClip,System.Single,UnityEngine.Audio.AudioMixerGroup,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Creates and <see cref="T:UnityEngine.AudioSource"/> to play <paramref name="clip"/> and destroy it when ends playing.
+            </summary>
+            <param name="clip">Clip to play.</param>
+            <param name="volume">Volume of <see cref="T:UnityEngine.AudioSource"/>. Between 0 and 1.</param>
+            <param name="audioMixerGroup">Mixer group used by <see cref="T:UnityEngine.AudioSource"/>.</param>
+            <param name="destroyMode">How destroy time will be calculated.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="clip"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown when <paramref name="volume"/> isn't between 0 and 1.</exception>
+        </member>
+        <member name="T:Enderlook.Unity.Components.BaseColliderContainer">
+            <inheritdoc cref="T:Enderlook.Unity.Components.IColliderContainer"/>
+        </member>
+        <member name="F:Enderlook.Unity.Components.BaseColliderContainer.gameObjects">
+            <summary>
+            Stores all <see cref="T:UnityEngine.GameObject"/> that are currently inside the colliders of this instanace
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.BaseColliderContainer.Count">
+            <inheritdoc cref="P:Enderlook.Unity.Components.IColliderContainer.Count"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainer.Add(UnityEngine.GameObject)">
+            <summary>
+            Add <paramref name="gameObject"/> as inside the colliders of this instance.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to add.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainer.Remove(UnityEngine.GameObject)">
+            <summary>
+            Remove <paramref name="gameObject"/> as inside the colliders of this instance.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to remove.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainer.Contains(UnityEngine.GameObject)">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainer.Contains(UnityEngine.GameObject)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainer.Contains(UnityEngine.Transform)">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainer.Contains(UnityEngine.Transform)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainer.Enderlook#Unity#Components#IColliderContainer#TrimExcess">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainer.TrimExcess"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainer.GetEnumerator">
+            <inheritdoc cref="M:System.Collections.Generic.IEnumerable`1.GetEnumerator"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainer.GetGameObjects">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainer.GetGameObjects"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainer.System#Collections#Generic#IEnumerable{UnityEngine#Transform}#GetEnumerator">
+            <inheritdoc cref="M:System.Collections.Generic.IEnumerable`1.GetEnumerator"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainer.GetTransforms">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainer.GetTransforms"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainer.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Don't use it. It'll always throw <see cref="T:System.NotSupportedException"/>.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.ColliderContainer">
+            <inheritdoc cref="T:Enderlook.Unity.Components.IColliderContainer"/>
+        </member>
+        <member name="T:Enderlook.Unity.Components.ColliderContainer2D">
+            <inheritdoc cref="T:Enderlook.Unity.Components.IColliderContainer"/>
+        </member>
+        <member name="T:Enderlook.Unity.Components.IColliderContainer">
+            <summary>
+            Stores <see cref="T:UnityEngine.GameObject"/>s and <see cref="T:UnityEngine.Transform"/>s that are inside the colliders where this object is attached to.<br/>
+            It only work with colliders that are in trigger mode.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.IColliderContainer.Count">
+            <summary>
+            Amount of <see cref="T:UnityEngine.GameObject"/>s currently contained by this instance.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainer.Contains(UnityEngine.GameObject)">
+            <summary>
+            Check if <paramref name="gameObject"/> is currently contained by this instance.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to check if it's contained.</param>
+            <returns>Whenver <paramref name="gameObject"/> is cotained or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainer.Contains(UnityEngine.Transform)">
+            <summary>
+            Check if <paramref name="transform"/> is currently contained by this instance.
+            </summary>
+            <param name="transform"><see cref="T:UnityEngine.GameObject"/> to check if it's contained.</param>
+            <returns>Whenver <paramref name="transform"/> is cotained or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainer.TrimExcess">
+            <summary>
+            Remove <see langword="null"/> <see cref="T:UnityEngine.GameObject"/>s and <see cref="T:UnityEngine.Transform"/>, and trim excess consumed space.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainer.GetGameObjects">
+            <summary>
+            Get all <see cref="T:UnityEngine.GameObject"/> currently contained by this instance.
+            </summary>
+            <returns>All <see cref="T:UnityEngine.GameObject"/> currently contained by this instance.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainer.GetTransforms">
+            <summary>
+            Get all <see cref="T:UnityEngine.Transform"/> currently contained by this instance.
+            </summary>
+            <returns>All <see cref="T:UnityEngine.Transform"/> currently contained by this instance.</returns>
+        </member>
+        <member name="T:Enderlook.Unity.Components.IColliderContainerExtensions">
+            <summary>
+            Extension methods for <see cref="T:Enderlook.Unity.Components.IColliderContainer"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerExtensions.ForEach(Enderlook.Unity.Components.IColliderContainer,System.Action{UnityEngine.GameObject})">
+            <summary>
+            Executes <paramref name="action"/> on each <see cref="T:UnityEngine.GameObject"/> contained by <paramref name="source"/>.
+            </summary>
+            <param name="source">Where <see cref="T:UnityEngine.GameObject"/> come from.</param>
+            <param name="action"><see cref="T:System.Action"/> to execute in each <see cref="T:UnityEngine.GameObject"/> from <paramref name="source"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerExtensions.ForEach(Enderlook.Unity.Components.IColliderContainer,System.Action{UnityEngine.Transform})">
+            <summary>
+            Executes <paramref name="action"/> on each <see cref="T:UnityEngine.Transform"/> contained by <paramref name="source"/>.
+            </summary>
+            <param name="source">Where <see cref="T:UnityEngine.Transform"/> come from.</param>
+            <param name="action"><see cref="T:System.Action"/> to execute in each <see cref="T:UnityEngine.Transform"/> from <paramref name="source"/>.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Components.BaseColliderContainerObserver">
+            <inheritdoc cref="T:Enderlook.Unity.Components.IColliderContainerObserver"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.Update">
+            <summary>
+            Raises the event <see cref="E:Enderlook.Unity.Components.BaseColliderContainerObserver.StayGameObject"/> and <see cref="E:Enderlook.Unity.Components.BaseColliderContainerObserver.StayTransform"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.Add(UnityEngine.GameObject)">
+            <inheritdoc cref="M:Enderlook.Unity.Components.BaseColliderContainer.Add(UnityEngine.GameObject)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.Remove(UnityEngine.GameObject)">
+            <inheritdoc cref="M:Enderlook.Unity.Components.BaseColliderContainer.Remove(UnityEngine.GameObject)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.SubscribeOnEnterEvent(System.Action{UnityEngine.GameObject})">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.SubscribeOnEnterEvent(System.Action{UnityEngine.GameObject})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.UnsubscribeOnEnterEvent(System.Action{UnityEngine.GameObject})">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnEnterEvent(System.Action{UnityEngine.GameObject})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.SubscribeOnEnterEvent(System.Action{UnityEngine.Transform})">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.SubscribeOnEnterEvent(System.Action{UnityEngine.Transform})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.UnsubscribeOnEnterEvent(System.Action{UnityEngine.Transform})">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnEnterEvent(System.Action{UnityEngine.Transform})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.SubscribeOnExitEvent(System.Action{UnityEngine.GameObject})">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.SubscribeOnExitEvent(System.Action{UnityEngine.GameObject})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.UnsubscribeOnExitEvent(System.Action{UnityEngine.GameObject})">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnExitEvent(System.Action{UnityEngine.GameObject})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.SubscribeOnExitEvent(System.Action{UnityEngine.Transform})">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.SubscribeOnExitEvent(System.Action{UnityEngine.Transform})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.UnsubscribeOnExitEvent(System.Action{UnityEngine.Transform})">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnExitEvent(System.Action{UnityEngine.Transform})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.SubscribeOnStayEvent(System.Action{UnityEngine.GameObject})">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.SubscribeOnStayEvent(System.Action{UnityEngine.GameObject})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.UnsubscribeOnStayEvent(System.Action{UnityEngine.GameObject})">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnStayEvent(System.Action{UnityEngine.GameObject})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.SubscribeOnStayEvent(System.Action{UnityEngine.Transform})">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.SubscribeOnStayEvent(System.Action{UnityEngine.Transform})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Components.BaseColliderContainerObserver.UnsubscribeOnStayEvent(System.Action{UnityEngine.Transform})">
+            <inheritdoc cref="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnStayEvent(System.Action{UnityEngine.Transform})"/>
+        </member>
+        <member name="T:Enderlook.Unity.Components.ColliderContainerObserver">
+            <inheritdoc cref="T:Enderlook.Unity.Components.IColliderContainerObserver"/>
+        </member>
+        <member name="T:Enderlook.Unity.Components.ColliderContainerObserver2D">
+            <inheritdoc cref="T:Enderlook.Unity.Components.IColliderContainerObserver"/>
+        </member>
+        <member name="T:Enderlook.Unity.Components.IColliderContainerObserver">
+            <summary>
+            Stores <see cref="T:UnityEngine.GameObject"/>s and <see cref="T:UnityEngine.Transform"/>s that are inside the colliders where this object is attached to.<br/>
+            It can raise event when a <see cref="T:UnityEngine.GameObject"/> or <see cref="T:UnityEngine.Transform"/> get in range, get out of range or is in range per frame.
+            It only work with colliders that are in trigger mode.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerObserver.SubscribeOnEnterEvent(System.Action{UnityEngine.GameObject})">
+            <summary>
+            Subscribes an action to be executed each time a new <see cref="T:UnityEngine.GameObject"/> enters in range.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnEnterEvent(System.Action{UnityEngine.GameObject})">
+            <summary>
+            Unsubscribes an action to be executed each time a new <see cref="T:UnityEngine.GameObject"/> enters in range.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerObserver.SubscribeOnEnterEvent(System.Action{UnityEngine.Transform})">
+            <summary>
+            Subscribes an action to be executed each time a new <see cref="T:UnityEngine.Transform"/> enters in range.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnEnterEvent(System.Action{UnityEngine.Transform})">
+            <summary>
+            Unsubscribes an action to be executed each time a new <see cref="T:UnityEngine.Transform"/> enters in range.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerObserver.SubscribeOnExitEvent(System.Action{UnityEngine.GameObject})">
+            <summary>
+            Subscribes an action to be executed each time a new <see cref="T:UnityEngine.GameObject"/> exit from range.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnExitEvent(System.Action{UnityEngine.GameObject})">
+            <summary>
+            Unsubscribes an action to be executed each time a new <see cref="T:UnityEngine.GameObject"/> exit from range.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerObserver.SubscribeOnExitEvent(System.Action{UnityEngine.Transform})">
+            <summary>
+            Subscribes an action to be executed each time a new <see cref="T:UnityEngine.Transform"/> exit from range.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnExitEvent(System.Action{UnityEngine.Transform})">
+            <summary>
+            Unsubscribes an action to be executed each time a new <see cref="T:UnityEngine.Transform"/> exit from range.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerObserver.SubscribeOnStayEvent(System.Action{UnityEngine.GameObject})">
+            <summary>
+            Subscribes an action to be executed each time a new <see cref="T:UnityEngine.GameObject"/> is within range.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnStayEvent(System.Action{UnityEngine.GameObject})">
+            <summary>
+            Unsubscribes an action to be executed each time a new <see cref="T:UnityEngine.GameObject"/> is within range.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerObserver.SubscribeOnStayEvent(System.Action{UnityEngine.Transform})">
+            <summary>
+            Subscribes an action to be executed each time a new <see cref="T:UnityEngine.Transform"/> is within range.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.IColliderContainerObserver.UnsubscribeOnStayEvent(System.Action{UnityEngine.Transform})">
+            <summary>
+            Unsubscribes an action to be executed each time a new <see cref="T:UnityEngine.Transform"/> is within range.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Components.DestroyNotifier">
+            <summary>
+            Raises an event when the <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyNotifier.RegisterCallback(System.Action)">
+            <summary>
+            Registers a callback to be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+            <param name="onDestroy">Callback that will be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyNotifier.UnregisterCallback(System.Action)">
+            <summary>
+            Unregisters a callback to be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+            <param name="onDestroy">Callback that will not be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyNotifier.ExecuteOnDestroy(UnityEngine.GameObject,System.Action)">
+            <summary>
+            Executes a <paramref name="onDestroy"/> when <paramref name="gameObject"/> is destroyed.<br/>
+            This method will register <paramref name="onDestroy"/> on a <see cref="T:Enderlook.Unity.Components.DestroyNotifier"/> attached to <paramref name="gameObject"/>.<br/>
+            If no component can be found, a new one is added.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to check for destroy.</param>
+            <param name="onDestroy">Callback executed when <paramref name="gameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyNotifier.RegisterCallback(System.Action{UnityEngine.GameObject})">
+            <summary>
+            Registers a callback to be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+            <param name="onDestroy">Callback that will be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyNotifier.UnregisterCallback(System.Action{UnityEngine.GameObject})">
+            <summary>
+            Unregisters a callback to be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+            <param name="onDestroy">Callback that will not be executed when the <see cref="T:UnityEngine.GameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyNotifier.ExecuteOnDestroy(UnityEngine.GameObject,System.Action{UnityEngine.GameObject})">
+            <summary>
+            Executes a <paramref name="onDestroy"/>. when <paramref name="gameObject"/> is destroyed.<br/>
+            This method will register <paramref name="onDestroy"/> on a <see cref="T:Enderlook.Unity.Components.DestroyNotifier"/> attached to <paramref name="gameObject"/>.<br/>
+            If no component can be found, a new one is added.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to check for destroy.</param>
+            <param name="onDestroy">Callback executed when <paramref name="gameObject"/> is destroyed.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Components.Destroy.DestroyOnExitAnimationState">
+            <summary>
+            Desotroy the <see cref="T:UnityEngine.GameObject"/> when the animation state ends.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds">
+            <summary>
+            Desotry the <see cref="T:UnityEngine.GameObject"/> when the <see cref="T:UnityEngine.AudioSource"/> stop playing.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode">
+            <summary>
+            Determines how will <see cref="T:UnityEngine.AudioSource"/> be checked for destroyment.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode.CheckOnStartForClipLength">
+            <summary>
+            During Start, the current <see cref="T:UnityEngine.AudioClip"/> length will be used to determine when the <see cref="T:UnityEngine.GameObject"/> will be destroyed.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode.CheckOnUpdateIfIsNotPlaying">
+            <summary>
+            During Update, <see cref="T:UnityEngine.AudioSource"/> will be check to determine if it's playing or the <see cref="T:UnityEngine.GameObject"/> should be destroyed.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode.CheckOnUpdateIfStartedAndThenStopedPlaying">
+            <summary>
+            During Update, <see cref="T:UnityEngine.AudioSource"/> will be check to determine it was not playing, then playing, and finaly stopped playing to destroy the <see cref="T:UnityEngine.GameObject"/>
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.AddComponent(UnityEngine.GameObject,Enderlook.Unity.Components.Destroy.DestroyWhenAudioSourceEnds.Mode)">
+            <summary>
+            Set <paramref name="gameObject"/> to be destroyed when <see cref="T:UnityEngine.AudioSource"/> stop playing.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to check.</param>
+            <param name="mode">How checking will occur.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Components.Destroy.DestroyWhenParticleSystemIsNotAlive">
+            <summary>
+            Desotry <see cref="T:UnityEngine.GameObject"/> when <see cref="T:UnityEngine.ParticleSystem"/> is not alive.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.DestroyWhenAnimationEnds">
+            <summary>
+            Destroy the <see cref="T:UnityEngine.GameObject"/> when the current animation ends.<br/>
+            This component must be added after the animation starts but in the same frame.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.DestroyWhenAnimationEnds.Mode">
+            <summary>
+            Determines how will <see cref="T:UnityEngine.Animator"/> be checked for destroyment.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.DestroyWhenAnimationEnds.Mode.CheckOnStart">
+            <summary>
+            During Start, the current animation state length will be used to determine when the <see cref="T:UnityEngine.GameObject"/> will be destroyed.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.DestroyWhenAnimationEnds.Mode.CheckOnUpdate">
+            <summary>
+            During Update, the current animation state normalized time will be used to determine when the <see cref="T:UnityEngine.GameObject"/> will be destroyed.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyWhenAnimationEnds.AddComponent(UnityEngine.GameObject,Enderlook.Unity.Components.DestroyWhenAnimationEnds.Mode,System.Int32)">
+            <summary>
+            Set <paramref name="gameObject"/> to be destroyed when animation ends.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to check.</param>
+            <param name="mode">How checking will occur.</param>
+            <param name="layer">Which layer of the <see cref="T:UnityEngine.Animator"/> should check.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.DestroyWhenAnimationEnds.AddComponent(UnityEngine.GameObject,System.Int32)">
+            <summary>
+            Set <paramref name="gameobject"/> to be destroyed when animation ends.
+            </summary>
+            <param name="gameobject"><see cref="T:UnityEngine.GameObject"/> to check.</param>
+            <param name="layer">Which layer of the <see cref="T:UnityEngine.Animator"/> should check.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Components.DontDestroyOnLoad">
+            <summary>
+            Configure the <see cref="T:UnityEngine.GameObject"/> where this <see cref="T:UnityEngine.Component"/> is attached to, to not destroy when Unity loads a new scene.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.GameObjectCounter">
+            <summary>
+            Creates a counter to maintain track of alives <see cref="T:UnityEngine.GameObject"/>s.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.GameObjectCounter.Alives">
+            <summary>
+            Current amount of alive <see cref="T:UnityEngine.GameObject"/>s.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.GameObjectCounter.Destroyed">
+            <summary>
+            How many registered <see cref="T:UnityEngine.GameObject"/>s has been destroyed.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.RegisterDestroy(System.Action{Enderlook.Unity.Components.GameObjectCounter,UnityEngine.GameObject})">
+            <summary>
+            Register a <paramref name="callback"/> that will be executed when a registered <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+            <param name="callback">Callback to execute when a <see cref="T:UnityEngine.GameObject"/> is destroyed</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.UnregisterDestroy(System.Action{Enderlook.Unity.Components.GameObjectCounter,UnityEngine.GameObject})">
+            <summary>
+            Unregister a <paramref name="callback"/> that will be executed when a registered <see cref="T:UnityEngine.GameObject"/> is destroyed.
+            </summary>
+            <param name="callback">Callback executed when a <see cref="T:UnityEngine.GameObject"/> is destroyed</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.RegisterGameObject(UnityEngine.GameObject)">
+            <summary>
+            Regist an <paramref name="gameObject"/> to the counter.<br/>
+            The <paramref name="gameObject"/> will be automatically unregisted when is destroyed.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to register.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.RegisterGameObject(UnityEngine.GameObject,System.Action{UnityEngine.GameObject})">
+            <summary>
+            Regist an <paramref name="gameObject"/> to the counter.<br/>
+            The <paramref name="gameObject"/> will be automatically unregisted when is destroyed.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to register.</param>
+            <param name="onDestroy">Callback executed when <paramref name="gameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.RegisterGameObject(UnityEngine.GameObject,System.Action)">
+            <summary>
+            Regist an <paramref name="gameObject"/> to the counter.<br/>
+            The <paramref name="gameObject"/> will be automatically unregisted when is destroyed.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> to register.</param>
+            <param name="onDestroy">Callback executed when <paramref name="gameObject"/> is destroyed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.GetAliveGameObjects">
+            <summary>
+            Get all alive registered <see cref="T:UnityEngine.GameObject"/>s.
+            </summary>
+            <returns>All alive registered <see cref="T:UnityEngine.GameObject"/>s.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Get all alive registered <see cref="T:UnityEngine.GameObject"/>s.
+            </summary>
+            <returns>All alive registered <see cref="T:UnityEngine.GameObject"/>s.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.GameObjectCounter.GetEnumerator">
+            <summary>
+            Get all alive registered <see cref="T:UnityEngine.GameObject"/>s.
+            </summary>
+            <returns>All alive registered <see cref="T:UnityEngine.GameObject"/>s.</returns>
+        </member>
+        <member name="T:Enderlook.Unity.Components.TransformFollower">
+            <summary>
+            Make the <see cref="T:UnityEngine.GameObject"/> where this <see cref="T:UnityEngine.Component"/> is attached to, to follow another <see cref="T:UnityEngine.GameObject"/> in position, rotation and or scale.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.IsLocalPosition">
+            <summary>
+            Whenever it will follow position locally or globally.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowPosX">
+            <summary>
+            Whenever it will follow the X axis position.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowPosY">
+            <summary>
+            Whenever it will follow the Y axis position.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowPosZ">
+            <summary>
+            Whenever it will follow the Z axis position.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.IsLocalRotation">
+            <summary>
+            Whenever it will follow rotation locally or globally.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowRotX">
+            <summary>
+            Whenever it will follow the X axis rotation.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowRotY">
+            <summary>
+            Whenever it will follow the Y axis rotation.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowRotZ">
+            <summary>
+            Whenever it will follow the Z axis rotation.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowScaleX">
+            <summary>
+            Whenever it will follow the X axis scale.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowScaleY">
+            <summary>
+            Whenever it will follow the Y axis scale.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.FollowScaleZ">
+            <summary>
+            Whenever it will follow the Z axis scale.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.TransformFollower.TransformToFollow">
+            <summary>
+            Transform that will be followed.<br/>
+            Changing this value may lead to minor math inaccuracies.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.TransformFollower.AddTransformFollower(UnityEngine.GameObject,UnityEngine.Transform,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Add a <see cref="T:Enderlook.Unity.Components.TransformFollower"/> component to <paramref name="gameObject"/>.
+            </summary>
+            <param name="gameObject"><see cref="T:UnityEngine.GameObject"/> where <see cref="T:Enderlook.Unity.Components.TransformFollower"/> is added.</param>
+            <param name="transformToFollow">Transform that will be followed.</param>
+            <param name="isLocalPosition">Whenever it will follow position locally or globally.</param>
+            <param name="followPosX">Whenever it will follow the X axis position.</param>
+            <param name="followPosY">Whenever it will follow the Y axis position.</param>
+            <param name="followPosZ">Whenever it will follow the Z axis position.</param>
+            <param name="isLocalRotation">Whenever it will follow rotation locally or globally.</param>
+            <param name="followRotX">Whenever it will follow the X axis rotation.</param>
+            <param name="followRotY">Whenever it will follow the Y axis rotation.</param>
+            <param name="followRotZ">Whenever it will follow the Z axis rotation.</param>
+            <param name="followScaleX">Whenever it will follow the X axis scale.</param>
+            <param name="followScaleY">Whenever it will follow the Y axis scale.</param>
+            <param name="followScaleZ">Whenever it will follow the Z axis scale.</param>
+            <returns>Added component.</returns>
+        </member>
+    </members>
+</doc>

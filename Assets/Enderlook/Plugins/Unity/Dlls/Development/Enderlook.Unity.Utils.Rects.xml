@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Utils.Rects</name>
+    </assembly>
+    <members>
+        <member name="M:Enderlook.Unity.Utils.Rects.HorizontalRectBuilder.GetRect(System.Single)">
+            <summary>
+            Produce a <see cref="T:UnityEngine.Rect"/> next to the last <see cref="T:UnityEngine.Rect"/> made with this object.<br/>
+            </summary>
+            <param name="width">Width of the <see cref="T:UnityEngine.Rect"/> to make.</param>
+            <returns>New <see cref="T:UnityEngine.Rect"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Rects.HorizontalRectBuilder.GetRect">
+            <summary>
+            Produce a <see cref="T:UnityEngine.Rect"/> next to the last <see cref="T:UnityEngine.Rect"/> made with this object.<br/>
+            </summary>
+            <returns>New <see cref="T:UnityEngine.Rect"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Rects.HorizontalRectBuilder.AddSpace(System.Single)">
+            <summary>
+            Increase <see cref="P:Enderlook.Unity.Utils.Rects.RectBuilder.CurrentX"/> in order to produce an horizontal space.
+            </summary>
+            <param name="value">Space size.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Rects.HorizontalRectBuilder.GetRemainingRect(System.Int32)">
+            <summary>
+            Produce a <see cref="T:UnityEngine.Rect"/> next to the last <see cref="T:UnityEngine.Rect"/> made with this object, using <paramref name="amount"/> as width.
+            </summary>
+            <param name="amount">Amount of <see cref="T:UnityEngine.Rect"/> to make. The width will be equally splitted among them.</param>
+            <returns>New <see cref="T:UnityEngine.Rect"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Rects.HorizontalRectBuilder.GetRemainingRect">
+            <summary>
+            Produce a <see cref="T:UnityEngine.Rect"/> next to the last <see cref="T:UnityEngine.Rect"/> made with this object, using all the <see cref="P:Enderlook.Unity.Utils.Rects.HorizontalRectBuilder.RemainingWidth"/> as width.
+            </summary>
+            <returns>New <see cref="T:UnityEngine.Rect"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Rects.RectBuilder.GetRectWithLastConfiguration">
+            <summary>
+            Produces a <see cref="T:UnityEngine.Rect"/> using the last size configuration.
+            </summary>
+            <returns>A <see cref="T:UnityEngine.Rect"/> with the last size configuration.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Rects.VerticalRectBuilder.GetRect(System.Single)">
+            <summary>
+            Produce a <see cref="T:UnityEngine.Rect"/> next to the last <see cref="T:UnityEngine.Rect"/> made with this object.
+            </summary>
+            <param name="height">height of the <see cref="T:UnityEngine.Rect"/> to make.</param>
+            <returns>New <see cref="T:UnityEngine.Rect"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Rects.VerticalRectBuilder.GetRect">
+            <summary>
+            Produce a <see cref="T:UnityEngine.Rect"/> next to the last <see cref="T:UnityEngine.Rect"/> made with this object.
+            </summary>
+            <returns>New <see cref="T:UnityEngine.Rect"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Rects.VerticalRectBuilder.AddSpace(System.Single)">
+            <summary>
+            Increase <see cref="P:Enderlook.Unity.Utils.Rects.RectBuilder.CurrentY"/> in order to produce a vertical space.
+            </summary>
+            <param name="value">Space size.</param>
+        </member>
+    </members>
+</doc>

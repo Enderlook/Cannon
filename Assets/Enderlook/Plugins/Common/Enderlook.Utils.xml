@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Utils</name>
+    </assembly>
+    <members>
+        <member name="T:Enderlook.Utils.StringUtils">
+            <summary>
+            Helper class to manipulate <see cref="T:System.String"/>s.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Utils.StringUtils.GetCommonPreffix(System.String[])">
+            <summary>
+            Get the common substring preffix in all <paramref name="strings"/>.
+            </summary>
+            <param name="strings"><see cref="T:System.String"/>s to search for common preffix.</param>
+            <returns>Common preffix of all <paramref name="strings"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="strings"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="strings"/> is empty.</exception>
+        </member>
+        <member name="M:Enderlook.Utils.StringUtils.GetCommonPreffix(System.String,System.String[])">
+            <summary>
+            Get the common substring preffix in all <paramref name="strings"/>.
+            </summary>
+            <param name="str">First <see cref="T:System.String"/>s to search for common preffix.</param>
+            <param name="strings">Rest of <see cref="T:System.String"/>s to search for common preffix.</param>
+            <returns>Common preffix of all <paramref name="strings"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="strings"/> or <paramref name="str"/> are <see langword="null"/>.</exception>
+        </member>
+        <member name="M:Enderlook.Utils.StringUtils.GetCommonPreffix(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Get the common substring preffix in all <paramref name="strings"/>.
+            </summary>
+            <param name="strings"><see cref="T:System.String"/>s to search for common preffix.</param>
+            <returns>Common preffix of all <paramref name="strings"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="strings"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="strings"/> is empty.</exception>
+        </member>
+        <member name="M:Enderlook.Utils.StringUtils.GetCommonSuffix(System.String[])">
+            <summary>
+            Get the common substring suffix in all <paramref name="strings"/>.
+            </summary>
+            <param name="strings"><see cref="T:System.String"/>s to search for common suffix.</param>
+            <returns>Common suffix of all <paramref name="strings"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="strings"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="strings"/> is empty.</exception>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Utils.StringUtils.GetCommonSuffix(System.String,System.String[])" -->
+        <member name="M:Enderlook.Utils.StringUtils.GetCommonSuffix(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Get the common substring suffix in all <paramref name="strings"/>.
+            </summary>
+            <param name="strings"><see cref="T:System.String"/>s to search for common suffix.</param>
+            <returns>Common suffix of all <paramref name="strings"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="strings"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="strings"/> is empty.</exception>
+        </member>
+    </members>
+</doc>

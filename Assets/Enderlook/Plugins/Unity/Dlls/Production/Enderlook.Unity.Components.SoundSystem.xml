@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Components.SoundSystem</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.SoundSystem.IPlaylist.Play(UnityEngine.AudioSource,Enderlook.Unity.Components.SoundSystem.PlayMode,System.Single)" -->
+        <member name="M:Enderlook.Unity.Components.SoundSystem.IPlaylist.Play(UnityEngine.AudioSource,System.String,System.Single)">
+            <summary>
+            Play a sound from <see cref="!:playlist"/> given its name.
+            </summary>
+            <param name="audioSource"><see cref="T:UnityEngine.AudioSource"/> to play the sound.</param>
+            <param name="name">Name of the sound to look for in <see cref="!:playlist"/>.</param>
+            <param name="volumeMultiplier">Multiplier of the volume, from 0 to 1.</param>
+            <returns>Whenever the sound was found (and played) or not.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.SoundSystem.IPlaylist.PlayAtPoint(UnityEngine.Vector3,Enderlook.Unity.Components.SoundSystem.PlayMode,System.Single)" -->
+        <member name="M:Enderlook.Unity.Components.SoundSystem.IPlaylist.PlayAtPoint(UnityEngine.Vector3,System.String,System.Single)">
+            <summary>
+            Play a sound from <see cref="!:playlist"/> given its name on the specified <paramref name="position"/>.
+            </summary>
+            <param name="position">Position to play the sound.</param>
+            <param name="name">Name of the sound to look for in <see cref="!:playlist"/>.</param>
+            <param name="volumeMultiplier">Multiplier of the volume, from 0 to 1.</param>
+            <returns>Whenever the sound was found (and played) or not.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.SoundSystem.IPlaylist.PlayOneShoot(UnityEngine.AudioSource,Enderlook.Unity.Components.SoundSystem.PlayMode,System.Single)" -->
+        <member name="M:Enderlook.Unity.Components.SoundSystem.IPlaylist.PlayOneShoot(UnityEngine.AudioSource,System.String,System.Single)">
+            <summary>
+            Play the sound on the specified <paramref name="audioSource"/>.
+            </summary>
+            <param name="audioSource"><see cref="T:UnityEngine.AudioSource"/> where the sound will be played.</param>
+            <param name="name">Name of the sound to look for in <see cref="!:playlist"/>.</param>
+            <param name="volumeMultiplier">Volume of the sound, from 0 to 1.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.SoundSystem.IPlaylist.PlayOneShootIfNotPlaying(UnityEngine.AudioSource,Enderlook.Unity.Components.SoundSystem.PlayMode,System.Single)" -->
+        <member name="M:Enderlook.Unity.Components.SoundSystem.IPlaylist.PlayOneShootIfNotPlaying(UnityEngine.AudioSource,System.String,System.Single)">
+            <summary>
+            Play the sound on the specified <paramref name="audioSource"/> if it is not already playing a sound.
+            </summary>
+            <param name="audioSource"><see cref="T:UnityEngine.AudioSource"/> where the sound will be played.</param>
+            <param name="name">Name of the sound to look for in <see cref="!:playlist"/>.</param>
+            <param name="volumeMultiplier">Volume of the sound, from 0 to 1.</param>
+            <returns>Whenever it could play or there was already a sound being played or the sound could not be found.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.ISound.PlayOneShoot(UnityEngine.AudioSource,System.Single)">
+            <summary>
+            Play the sound on the specified <paramref name="audioSource"/>.
+            </summary>
+            <param name="audioSource"><see cref="T:UnityEngine.AudioSource"/> where the sound will be played.</param>
+            <param name="volumeMultiplier">Volume of the sound, from 0 to 1.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.ISound.PlayOneShootIfNotPlaying(UnityEngine.AudioSource,System.Single)">
+            <summary>
+            Play the sound on the specified <paramref name="audioSource"/> if it is not already playing a sound.
+            </summary>
+            <param name="audioSource"><see cref="T:UnityEngine.AudioSource"/> where the sound will be played.</param>
+            <param name="volumeMultiplier">Volume of the sound, from 0 to 1.</param>
+            <returns>Whenever it could play or there was already a sound being played.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.ISound.Play(UnityEngine.AudioSource,System.Single)">
+            <summary>
+            Play the sound on the specified <paramref name="audioSource"/>.
+            </summary>
+            <param name="audioSource"><see cref="T:UnityEngine.AudioSource"/> where the sound will be played.</param>
+            <param name="volumeMultiplier">Volume of the sound, from 0 to 1.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.ISound.PlayAtPoint(UnityEngine.Vector3,System.Single)">
+            <summary>
+            Play the sound on the specified <paramref name="position"/>.
+            </summary>
+            <param name="position">Position to play the sound.</param>
+            <param name="volumeMultiplier">Volume of the sound, from 0 to 1.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.Playlist.GetRandomSound">
+            <summary>
+            Get random sound from <see cref="F:Enderlook.Unity.Components.SoundSystem.Playlist.playlist"/>.<br/>
+            Don't forget to use <see cref="P:Enderlook.Unity.Components.SoundSystem.Playlist.Volume"/> for this <see cref="T:Enderlook.Unity.Components.SoundSystem.Playlist"/> master volume.
+            </summary>
+            <returns>Sound to play.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.Playlist.GetNextSound">
+            <summary>
+            Get the next sound from <see cref="F:Enderlook.Unity.Components.SoundSystem.Playlist.playlist"/>.<br/>
+            It loops to beginning when reach the end of the <see cref="F:Enderlook.Unity.Components.SoundSystem.Playlist.playlist"/>.<br/>
+            Don't forget to use <see cref="P:Enderlook.Unity.Components.SoundSystem.Playlist.Volume"/> for this <see cref="T:Enderlook.Unity.Components.SoundSystem.Playlist"/> master volume.
+            </summary>
+            <returns>Sound to play and its playlist <see cref="F:Enderlook.Unity.Components.SoundSystem.Playlist.volume"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.Playlist.GetPingPongSound">
+            <summary>
+            Get the next sound from <see cref="F:Enderlook.Unity.Components.SoundSystem.Playlist.playlist"/>.<br/>
+            It plays in reverse order when reach the end of the <see cref="F:Enderlook.Unity.Components.SoundSystem.Playlist.playlist"/>.
+            Don't forget to use <see cref="P:Enderlook.Unity.Components.SoundSystem.Playlist.Volume"/> for this <see cref="T:Enderlook.Unity.Components.SoundSystem.Playlist"/> master volume.
+            </summary>
+            <returns>Sound to play and its playlist <see cref="F:Enderlook.Unity.Components.SoundSystem.Playlist.volume"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.Playlist.GetSound(Enderlook.Unity.Components.SoundSystem.PlayMode)">
+            <summary>
+            Get a sound from <see cref="F:Enderlook.Unity.Components.SoundSystem.Playlist.playlist"/>.<br/>
+            Don't forget to use <see cref="P:Enderlook.Unity.Components.SoundSystem.Playlist.Volume"/> for this <see cref="T:Enderlook.Unity.Components.SoundSystem.Playlist"/> master volume.
+            </summary>
+            <param name="mode">Playing mode.</param>
+            <returns>Sound to play.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.Playlist.GetSound(System.String)">
+            <summary>
+            Get a sound from <see cref="F:Enderlook.Unity.Components.SoundSystem.Playlist.playlist"/> by name.<br/>
+            Don't forget to use <see cref="P:Enderlook.Unity.Components.SoundSystem.Playlist.Volume"/> for this <see cref="T:Enderlook.Unity.Components.SoundSystem.Playlist"/> master volume.
+            </summary>
+            <param name="name">Name of the sound.</param>
+            <returns>Sound to play.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.Playlist.GetSound(System.String,Enderlook.Unity.Components.SoundSystem.Sound@)">
+            <summary>
+            Get a sound from <see cref="F:Enderlook.Unity.Components.SoundSystem.Playlist.playlist"/> by name.<br/>
+            Don't forget to use <see cref="P:Enderlook.Unity.Components.SoundSystem.Playlist.Volume"/> for this <see cref="T:Enderlook.Unity.Components.SoundSystem.Playlist"/> master volume.
+            </summary>
+            <param name="name">Name of the sound.</param>
+            <param name="sound">Sound to play.</param>
+            <returns>Whenever the sound by the given <paramref name="name"/> was found or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.Playlist.ResetIndex">
+            <summary>
+            Reset the <see cref="F:Enderlook.Unity.Components.SoundSystem.Playlist.playlistIndex"/> to 0.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.SoundSystem.PlaylistManager.Type">
+            <summary>
+            Determines how it will be treated.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.SoundSystem.PlaylistManager.Type.Music">
+            <summary>
+            It will use <see cref="!:Settings.IsMusicActive"/> to check if should play.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.SoundSystem.PlaylistManager.Type.Sound">
+            <summary>
+            It will use <see cref="!:Settings.IsSoundActive"/> to check if should play.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.PlaylistManager.PlaySound(UnityEngine.AudioClip,System.Single,System.Single,System.Boolean)">
+            <summary>
+            Stop current play and play an <paramref name="audioClip"/>.
+            </summary>
+            <param name="audioClip"><see cref="T:UnityEngine.AudioClip"/> to play.</param>
+            <param name="volume">Volume of sound, from 0 to 1.</param>
+            <param name="pitch">Pitch of sound.</param>
+            <param name="useMasterVolumeMultplier">If <see langword="true"/> <paramref name="volume"/> will be multiplied by <see cref="F:Enderlook.Unity.Components.SoundSystem.PlaylistManager.masterVolume"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.PlaylistManager.PlaySound(UnityEngine.AudioClip,System.Boolean)">
+            <summary>
+            Stop current play and play an <paramref name="audioClip"/>.
+            </summary>
+            <param name="audioClip"><see cref="T:UnityEngine.AudioClip"/> to play.</param>
+            <param name="useMasterVolumeMultplier">If <see langword="true"/> it will use <see cref="F:Enderlook.Unity.Components.SoundSystem.PlaylistManager.masterVolume"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.PlaylistManager.PlaySound(Enderlook.Unity.Components.SoundSystem.Sound,System.Boolean)">
+            <summary>
+            Stop current play and play a <paramref name="sound"/>.
+            </summary>
+            <param name="sound">Sound to play.</param>
+            <param name="useMasterVolumeMultplier">If <see langword="true"/> <paramref name="volume"/> will be multiplied by <see cref="F:Enderlook.Unity.Components.SoundSystem.PlaylistManager.masterVolume"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.PlaylistManager.PlaySound(Enderlook.Unity.Components.SoundSystem.Sound,System.Single,System.Boolean)">
+            <summary>
+            Play a <paramref name="audioClip"/>.
+            </summary>
+            <param name="sound">Sound to play.</param>
+            <param name="volumeMultiplier">Additional volume multiplier.</param>
+            <param name="useMasterVolumeMultplier">If <see langword="true"/> <paramref name="volume"/> will be multiplied by <see cref="F:Enderlook.Unity.Components.SoundSystem.PlaylistManager.masterVolume"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.PlaylistManager.SetPlaylist(System.Int32)">
+            <summary>
+            Set a playlist. It doesn't reset current playing sound.
+            </summary>
+            <param name="index">Index of the playlist.</param>
+            <returns><see langword="true"/> on success. <see langword="false"/> if the <paramref name="index"/> was outside the range of the <see cref="F:Enderlook.Unity.Components.SoundSystem.PlaylistManager.playlists"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.PlaylistManager.SetPlaylist(System.String)">
+            <summary>
+            Set a playlist. It doesn't reset current playing sound.
+            </summary>
+            <param name="name">Name of the playlist.</param>
+            <returns><see langword="true"/> on success. <see langword="false"/> if the <paramref name="name"/> was not found in <see cref="F:Enderlook.Unity.Components.SoundSystem.PlaylistManager.playlists"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.PlaylistManager.Play">
+            <summary>
+            Play or resume the sound.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.PlaylistManager.Pause">
+            <summary>
+            Pauses the played sound.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.PlaylistManager.Stop">
+            <summary>
+            Stop the played sound.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.PlaylistManager.ResetPlaylist(System.Boolean)">
+            <summary>
+            Reset the playlist to the first sound.
+            <paramref name="stopCurrentSound"/>If <see langword="true"/>, execute <see cref="M:Enderlook.Unity.Components.SoundSystem.PlaylistManager.StopCurrentSound"/> will be called.<paramref name="stopCurrentSound"/>
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.PlaylistManager.StopCurrentSound">
+            <summary>
+            Stop current sound.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.SoundSystem.PlayMode">
+            <summary>
+            Playmodes.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.SoundSystem.PlayMode.Next">
+            <summary>
+            Display form first to last and them go back to beginning.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.SoundSystem.PlayMode.PingPong">
+            <summary>
+            Display form first to last and from last to first.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.SoundSystem.PlayMode.Random">
+            <summary>
+            Display randomly.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.SoundWithAudioSource.Play(System.Single)">
+            <summary>
+            Play the <see cref="F:Enderlook.Unity.Components.SoundSystem.SoundWithAudioSource.sound"/>.
+            </summary>
+            <param name="volumeMultiplier">Volume of the sound, from 0 to 1.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.SoundWithAudioSource.PlayOneShoot(System.Single)">
+            <summary>
+            Play the sound on the specified <paramref name="audioSource"/>.
+            </summary>
+            <param name="volumeMultiplier">Volume of the sound, from 0 to 1.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.SoundWithAudioSource.PlayOneShootIfNotPlaying(System.Single)">
+            <summary>
+            Play the sound on the specified <paramref name="audioSource"/> if it is not already playing a sound..
+            </summary>
+            <param name="volumeMultiplier">Volume of the sound, from 0 to 1.</param>
+            <returns>Whenever it could play or there was already a sound being played.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.SoundSystem.SoundWithAudioSource.PlayAtPoint(UnityEngine.Vector3,System.Single)">
+            <summary>
+            Play the sound on the specified <paramref name="position"/>.
+            </summary>
+            <param name="position">Position to play the sound.</param>
+            <param name="volumeMultiplier">Volume of the sound, from 0 to 1.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Components.ScriptableSound</name>
+    </assembly>
+    <members>
+        <member name="F:Enderlook.Unity.Components.ScriptableSound.PlayListMode.FullList">
+            <summary>
+            The full list will be played on <see cref="!:Play"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.ScriptableSound.PlayListMode.IndividualSounds">
+            <summary>
+            Only a few sounds will be played on <see cref="!:Play"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.ScriptableSound.PlayModeOrder.Random">
+            <summary>
+            Play randomly.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.ScriptableSound.PlayModeOrder.Sequence">
+            <summary>
+            Play in order.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.ScriptableSound.PlayModeOrder.PingPong">
+            <summary>
+            Play from beginning to end and then change order.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.ScriptableSound.SimpleSoundPlayer.IsPlaying">
+            <summary>
+            Whenever <see cref="F:Enderlook.Unity.Components.ScriptableSound.SimpleSoundPlayer.sound"/> is playing or not.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.SimpleSoundPlayer.Play">
+            <summary>
+            Play <see cref="F:Enderlook.Unity.Components.ScriptableSound.SimpleSoundPlayer.sound"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.SimpleSoundPlayer.Play(System.Action)">
+            <summary>
+            Play <see cref="F:Enderlook.Unity.Components.ScriptableSound.SimpleSoundPlayer.sound"/>.
+            </summary>
+            <param name="endCallback"><see cref="T:System.Action"/> called after <see cref="F:Enderlook.Unity.Components.ScriptableSound.SimpleSoundPlayer.sound"/> ends.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.SimpleSoundPlayer.Stop">
+            <summary>
+            Stop <see cref="F:Enderlook.Unity.Components.ScriptableSound.SimpleSoundPlayer.sound"/> from playing.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.SimpleSoundPlayer.CreateOneTimePlayer(Enderlook.Unity.Components.ScriptableSound.Sound,System.Boolean,System.Boolean)">
+            <summary>
+            Create a new <see cref="T:UnityEngine.GameObject"/> with this component on it.
+            </summary>
+            <param name="sound"><see cref="T:Enderlook.Unity.Components.ScriptableSound.Sound"/> included in the component.</param>
+            <param name="playOnAwake">Whenever it should start playing on awake.</param>
+            <param name="destroyOnFinish">Whenever it should be destroyed after end playing.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.SimpleSoundPlayer.CreateOneTimePlayer(Enderlook.Unity.Components.ScriptableSound.SoundPlay,System.Boolean,System.Boolean)">
+            <summary>
+            Create a new <see cref="T:UnityEngine.GameObject"/> with this component on it.
+            </summary>
+            <param name="soundPlay"><see cref="T:Enderlook.Unity.Components.ScriptableSound.SoundPlay"/> where <see cref="T:Enderlook.Unity.Components.ScriptableSound.Sound"/> will be taken.</param>
+            <param name="playOnAwake">Whenever it should start playing on awake.</param>
+            <param name="destroyOnFinish">Whenever it should be destroyed after end playing.</param>
+        </member>
+        <member name="P:Enderlook.Unity.Components.ScriptableSound.Sound.IsPlaying">
+            <summary>
+            Whenever this class is playing music.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.ScriptableSound.Sound.soundConfiguration">
+            <summary>
+            Configuration.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.Sound.SetConfiguration(Enderlook.Unity.Components.ScriptableSound.SoundConfiguration)">
+            <summary>
+            Configure the sound.
+            </summary>
+            <param name="soundConfiguration">Configuration.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.Sound.Play">
+            <summary>
+            Play sound(s).
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.Sound.Stop">
+            <summary>
+            Stop sound.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.ScriptableSound.Sound.ShouldChangeSound">
+            <summary>
+            Check if it's playing and the current clip has reached end.
+            </summary>
+            <remarks>
+            Use <see cref="P:UnityEngine.AudioSource.time"/> instead of <see cref="P:UnityEngine.AudioSource.isPlaying"/> because the second one produce wrong results if <see cref="T:UnityEngine.AudioSource"/> is paused.
+            </remarks>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.Sound.UpdateBehaviour(System.Single)">
+            <summary>
+            Updates behavior.
+            </summary>
+            <param name="deltaTime">Time since last update in seconds. <seealso cref="P:UnityEngine.Time.deltaTime"/></param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.Sound.CreatePrototype">
+            <summary>
+            Instantiate a prototype of this instance using this as a template.
+            </summary>
+            <returns>New instance based on this one as template.</returns>
+        </member>
+        <member name="F:Enderlook.Unity.Components.ScriptableSound.SoundList.isReverse">
+            <summary>
+            Only used by <see cref="F:Enderlook.Unity.Components.ScriptableSound.PlayModeOrder.PingPong"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.ScriptableSound.SoundList.amountPlay">
+            <summary>
+            Only used by <see cref="F:Enderlook.Unity.Components.ScriptableSound.PlayModeOrder.Random"/>.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.ScriptableSound.SoundPlay.IsPlaying">
+            <summary>
+            Whenever <see cref="F:Enderlook.Unity.Components.ScriptableSound.SoundPlay.sound"/> is playing or not.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.SoundPlay.Init">
+            <summary>
+            Initializes this <see cref="T:Enderlook.Unity.Components.ScriptableSound.SoundPlay"/>.<br/>
+            If this method isn't called before using any other member of this instance it won't produce error but has an wrong behavior.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.SoundPlay.UpdateBehaviour(System.Single)">
+            <summary>
+            Updates behavior.
+            </summary>
+            <param name="deltaTime">Time since last update in seconds. <seealso cref="P:UnityEngine.Time.deltaTime"/></param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.SoundPlay.Play(System.Action)">
+            <summary>
+            Play <see cref="F:Enderlook.Unity.Components.ScriptableSound.SoundPlay.sound"/>.
+            </summary>
+            <param name="endCallback"><see cref="T:System.Action"/> called after <see cref="F:Enderlook.Unity.Components.ScriptableSound.SoundPlay.sound"/> ends.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.SoundPlay.Stop">
+            <summary>
+            Stop <see cref="F:Enderlook.Unity.Components.ScriptableSound.SoundPlay.sound"/> from playing.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.ScriptableSound.SoundPlayer.IsPlaying">
+            <summary>
+            Whenever the last sound used is playing or not.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.SoundPlayer.Play(System.Int32,System.Action)">
+            <summary>
+            Play <see cref="F:Enderlook.Unity.Components.ScriptableSound.SoundPlayer.sounds"/> at <see cref="F:Enderlook.Unity.Components.ScriptableSound.SoundPlayer.index"/>.
+            </summary>
+            <param name="endCallback"><see cref="T:System.Action"/> called after <see cref="!:sound"/> ends.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.ScriptableSound.SoundPlayer.Stop">
+            <summary>
+            Stop <see cref="F:Enderlook.Unity.Components.ScriptableSound.SoundPlayer.sounds"/> at <see cref="F:Enderlook.Unity.Components.ScriptableSound.SoundPlayer.index"/> from playing.
+            </summary>
+        </member>
+    </members>
+</doc>

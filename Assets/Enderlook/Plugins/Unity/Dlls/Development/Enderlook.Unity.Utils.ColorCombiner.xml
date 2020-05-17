@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Utils.ColorCombiner</name>
+    </assembly>
+    <members>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.HasChanged">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.Count">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.System#Collections#Generic#ICollection{UnityEngine#Color}#Count">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.UniqueColorsCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.DefaultColor">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.Add(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.System#Collections#Generic#ICollection{UnityEngine#Color}#Add(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.System#Collections#Generic#ICollection{UnityEngine#Color}#IsReadOnly">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.Remove(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.System#Collections#Generic#ICollection{UnityEngine#Color}#Remove(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.GetColor">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.Contains(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.System#Collections#Generic#ICollection{UnityEngine#Color}#Contains(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.GetColorAmount(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.GetColorAndAmounts">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.GetColors">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.GetUniqueColors">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.Clear">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.System#Collections#Generic#ICollection{UnityEngine#Color}#Clear">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAverager.CopyTo(UnityEngine.Color[],System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="F:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.comparer">
+            <summary>
+            The list is sorted from highest to lowest, except anything lower than 0 that are always send to the beginning of the list regardless they value.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.HasChanged">
+            <summary>
+            Whenever colors has been modified. Used to cache <see cref="F:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.lastColor"/>.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.Count">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.System#Collections#Generic#ICollection{UnityEngine#Color}#Count">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.UniqueColorsCount">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.DefaultColor">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.Add(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.UpdateBehaviour(System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.Add(UnityEngine.Color,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.Remove(UnityEngine.Color,System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.GetColorsAndExpirationTime">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.System#Collections#Generic#ICollection{UnityEngine#Color}#Add(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.System#Collections#Generic#ICollection{UnityEngine#Color}#IsReadOnly">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.Remove(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.System#Collections#Generic#ICollection{UnityEngine#Color}#Remove(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.GetColor">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.Contains(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.System#Collections#Generic#ICollection{UnityEngine#Color}#Contains(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.GetColorAmount(UnityEngine.Color)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.GetColorAndAmounts">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.GetColors">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.GetUniqueColors">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.Clear">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.System#Collections#Generic#ICollection{UnityEngine#Color}#Clear">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.ColorAveragerWithTimer.CopyTo(UnityEngine.Color[],System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.GetColor">
+            <summary>
+            Generate an average <see cref="T:UnityEngine.Color"/> based on all the colors stored.
+            </summary>
+            <returns>Average <see cref="T:UnityEngine.Color"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.Add(UnityEngine.Color)">
+            <summary>
+            Add a <see cref="T:UnityEngine.Color"/> to average.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to add.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.Remove(UnityEngine.Color)">
+            <summary>
+            Remove a <see cref="T:UnityEngine.Color"/> from average.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to remove.</param>
+            <returns><see langword="true"/> if the <paramref name="color"/> was found and removed. <see langword="false"/> if the element was not found.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.Contains(UnityEngine.Color)">
+            <summary>
+            Check if contains the given <see cref="T:UnityEngine.Color"/>.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to check if contains.</param>
+            <returns>Whenever it contains or not <paramref name="color"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.Clear">
+            <summary>
+            Remove all colors.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.GetColorAmount(UnityEngine.Color)">
+            <summary>
+            Get the amount of times the color <paramref name="color"/> is contained.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to check the amount of time it's contained.</param>
+            <returns>Amount of times <paramref name="color"/> is contained.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.GetColorAndAmounts">
+            <summary>
+            Get all the colors and their amounts contained.
+            </summary>
+            <returns>Colors and their amounts contained.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.GetColors">
+            <summary>
+            Get all the colors. It can return repeated values if they are contained several times.
+            </summary>
+            <returns>Colors contained.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.GetUniqueColors">
+            <summary>
+            Get all the colors. It won't return repeated values even if the contained has them several times.
+            </summary>
+            <returns>Unique colors contained.</returns>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.HasChanged">
+            <summary>
+            Whenever or not colors where added or removed from the container since last time <see cref="M:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.GetColor"/> was call.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.Count">
+            <summary>
+            Amount of colors stored.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.UniqueColorsCount">
+            <summary>
+            Amount of unique colors stored.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.DefaultColor">
+            <summary>
+            Default <see cref="T:UnityEngine.Color"/> get from <see cref="M:Enderlook.Unity.Utils.ColorCombiner.IColorAverager.GetColor"/> when there aren't any color stored.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Utils.ColorCombiner.IColorAveragerTimer">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.IColorAveragerTimer.Add(UnityEngine.Color,System.Single)">
+            <summary>
+            Add a <see cref="T:UnityEngine.Color"/> to average.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to add.</param>
+            <param name="duration">How much time will last this <paramref name="color"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.IColorAveragerTimer.Remove(UnityEngine.Color,System.Single)">
+            <summary>
+            Remove a <see cref="T:UnityEngine.Color"/> from average.
+            </summary>
+            <param name="color"><see cref="T:UnityEngine.Color"/> to remove.</param>
+            <param name="expirationTime">Time when <paramref name="color"/> would expire. Use any negative to never expire.</param>
+            <returns><see langword="true"/> if the <paramref name="color"/> was found and removed. <see langword="false"/> if the element was not found.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.ColorCombiner.IColorAveragerTimer.GetColorsAndExpirationTime">
+            <summary>
+            Get all the colors and their expiration time contained.
+            </summary>
+            <returns>Colors and their expiration time contained.</returns>
+        </member>
+    </members>
+</doc>

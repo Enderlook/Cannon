@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Serializables.Ranges</name>
+    </assembly>
+    <members>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.IBasicRangeInt`1.ValueInt">
+            <summary>
+            Return a random integer value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            The result is always an integer. Decimal numbers are used as chance to increment by one.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.IBasicRange`1.Value">
+            <summary>
+            Return a random value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.IRangeStepInt`1.ValueIntWithoutStep">
+            <summary>
+            Return a random integer value between <see cref="!:IRangeStep&lt;T&gt;.Min"/> and <see cref="!:IRangeStep&lt;T&gt;.Max"/> without using interval <see cref="P:Enderlook.Unity.Serializables.Ranges.IRangeStep`1.Step"/>.
+            The result is always an integer. Decimal numbers are used as chance to increment by one.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.IRangeStepInt`1.ValueInt">
+            <summary>
+            Return a random integer value between <see cref="!:IRangeStep&lt;T&gt;.Min"/> and <see cref="!:IRangeStep&lt;T&gt;.Max"/> using interval <see cref="P:Enderlook.Unity.Serializables.Ranges.IRangeStep`1.Step"/>.
+            The result is always an integer. Decimal numbers are used as chance to increment by one.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.IRangeStep`1.ValueWithoutStep">
+            <summary>
+            Return a random value between <see cref="P:Enderlook.Unity.Serializables.Ranges.IRange`1.Min"/> and <see cref="P:Enderlook.Unity.Serializables.Ranges.IRange`1.Max"/> without using interval <see cref="P:Enderlook.Unity.Serializables.Ranges.IRangeStep`1.Step"/>.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.IRangeStep`1.Value">
+            <summary>
+            Return a random value between <see cref="P:Enderlook.Unity.Serializables.Ranges.IRange`1.Min"/> and <see cref="P:Enderlook.Unity.Serializables.Ranges.IRange`1.Max"/> using interval <see cref="P:Enderlook.Unity.Serializables.Ranges.IRangeStep`1.Step"/>.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.IRangeStep`1.Step">
+            <summary>
+            Step values used when producing random numbers.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.IRange`1.Max">
+            <summary>
+            Return the highest bound of the range.<br/>
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.IRange`1.Min">
+            <summary>
+            Return the lowest bound of the range.<br/>
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.RangeFloat.Value">
+            <inheritdoc cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Value"/>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.RangeFloat.ValueInt">
+            <summary>
+            Return a random integer value between <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Min"/> and <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Max"/>.
+            The result is always an integer. Decimal numbers are used as chance to increment by one.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloat.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloat)~System.Single">
+            <summary>
+            Return a random value between <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Min"/> and <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Max"/>.
+            </summary>
+            <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloat"/> instance used to determine the random float.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloat.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloat)~System.Int32">
+            <summary>
+            Return a random value between <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Min"/> and <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Max"/>.
+            The result is always an integer. Decimal numbers are used as chance to increment by one.
+            </summary>
+            <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloat"/> instance used to determine the random int.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloat.FloatToIntByChance(System.Single)">
+            <summary>
+            The result is always an integer. Decimal numbers are used as chance to increment by one.
+            </summary>
+            <param name="number">Number to round by chance.</param>
+            <returns>Rounded number by chance.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloatStep.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloatStep)~System.Single">
+            <summary>
+            Return a random value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            </summary>
+            <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloat"/> instance used to determine the random float.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloatStep.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloatStep)~System.Int32">
+            <summary>
+            Return a random integer value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            The result is always an integer. Decimal numbers are used as chance to increment by one.
+            </summary>
+            <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloat"/> instance used to determine the random int.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloatStepSwitchable.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloatStepSwitchable)~System.Single">
+            <summary>
+            Return the stored value.
+            </summary>
+            <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable"/> instance used to determine the random float.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloatStepSwitchable.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloatStepSwitchable)~System.Int32">
+            <summary>
+            Return the stored value.
+            The result is always an integer. Decimal numbers are used as chance to increment by one.
+            </summary>
+            <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable"/> instance used to determine the random int.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable)~System.Single">
+            <summary>
+            Return the stored value.
+            </summary>
+            <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable"/> instance used to determine the random float.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable)~System.Int32">
+            <summary>
+            Return the stored value.
+            The result is always an integer. Decimal numbers are used as chance to increment by one.
+            </summary>
+            <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeFloatSwitchable"/> instance used to determine the random int.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeInt.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeInt)~System.Int32">
+            <summary>
+            Return a random value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            </summary>
+            <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeInt"/> instance used to determine the random int.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeIntStep.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeIntStep)~System.Int32">
+            <summary>
+            Return a random value between <see cref="!:Min"/> and <see cref="!:Max"/>.
+            </summary>
+            <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeIntStep"/> instance used to determine the random float.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeIntStepSwitchable.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeIntStepSwitchable)~System.Int32">
+            <summary>
+            Return the stored value.
+            </summary>
+            <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeIntStepSwitchable"/> instance used to determine the random int.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.RangeIntSwitchable.op_Explicit(Enderlook.Unity.Serializables.Ranges.RangeIntSwitchable)~System.Int32">
+            <summary>
+            Return the stored value.
+            </summary>
+            <param name="source"><see cref="T:Enderlook.Unity.Serializables.Ranges.RangeIntSwitchable"/> instance used to determine the random int.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.TransformRange.op_Explicit(Enderlook.Unity.Serializables.Ranges.TransformRange)~UnityEngine.Vector3">
+            <summary>
+            Return a <seealso cref="T:UnityEngine.Vector3"/> position. If <see cref="F:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.isRandom"/> is <see langword="true"/> it will return the position of the <see cref="!:StartVector"/>. On <see langword="false"/>, it will return a random <seealso cref="T:UnityEngine.Vector3"/> between the <see cref="!:StartVector"/> and the <see cref="!:EndVector"/>.
+            </summary>
+            <param name="x"><see cref="T:Enderlook.Unity.Serializables.Ranges.TransformRange"/> instance used to determine the random <seealso cref="T:UnityEngine.Vector3"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.TransformRange.op_Explicit(Enderlook.Unity.Serializables.Ranges.TransformRange)~UnityEngine.Vector2">
+            <summary>
+            Return a <seealso cref="T:UnityEngine.Vector2"/> position. If <see cref="F:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.isRandom"/> is <see langword="true"/> it will return the position of the <see cref="!:StartVector"/>. On <see langword="false"/>, it will return a random <seealso cref="T:UnityEngine.Vector2"/> between the <see cref="!:StartVector"/> and the <see cref="!:EndVector"/>.
+            </summary>
+            <param name="x"><see cref="T:Enderlook.Unity.Serializables.Ranges.TransformRange"/> instance used to determine the random <seealso cref="T:UnityEngine.Vector3"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.Vector2RangeTwo.op_Explicit(Enderlook.Unity.Serializables.Ranges.Vector2RangeTwo)~UnityEngine.Vector3">
+            <summary>
+            Return a <seealso cref="T:UnityEngine.Vector3"/> position. If <see cref="F:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.isRandom"/> is <see langword="true"/> it will return the position of the <see cref="!:StartVector"/>. On <see langword="false"/>, it will return a random <seealso cref="T:UnityEngine.Vector3"/> between the <see cref="!:StartVector"/> and the <see cref="!:EndVector"/>.
+            </summary>
+            <param name="x"><see cref="T:Enderlook.Unity.Serializables.Ranges.Vector2RangeTwo"/> instance used to determine the random <seealso cref="T:UnityEngine.Vector3"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.Vector2RangeTwo.op_Explicit(Enderlook.Unity.Serializables.Ranges.Vector2RangeTwo)~UnityEngine.Vector2">
+            <summary>
+            Return a <seealso cref="T:UnityEngine.Vector2"/> position. If <see cref="F:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.isRandom"/> is <see langword="true"/> it will return the position of the <see cref="!:StartVector"/>. On <see langword="false"/>, it will return a random <seealso cref="T:UnityEngine.Vector2"/> between the <see cref="!:StartVector"/> and the <see cref="!:EndVector"/>.
+            </summary>
+            <param name="x"><see cref="T:Enderlook.Unity.Serializables.Ranges.Vector2RangeTwo"/> instance used to determine the random <seealso cref="T:UnityEngine.Vector3"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Ranges.Vector2RangeTwo.op_Multiply(Enderlook.Unity.Serializables.Ranges.Vector2RangeTwo,System.Single)">
+            <summary>
+            Multiplicatives a given range of two <seealso cref="T:UnityEngine.Vector2"/> (<seealso cref="T:Enderlook.Unity.Serializables.Ranges.Vector2RangeTwo"/>) with a <see langword="float"/>.<br/>
+            The float multiplies each <seealso cref="T:UnityEngine.Vector2"/>.
+            </summary>
+            <param name="left"><see cref="T:Enderlook.Unity.Serializables.Ranges.Vector2RangeTwo"/> to multiply.</param>
+            <param name="right"><see langword="float"/> to multiply.</param>
+            <returns>The multiplication of the <seealso cref="T:UnityEngine.Vector2"/> inside <paramref name="left"/> with the number <paramref name="right"/>.</returns>
+        </member>
+        <member name="F:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.isRandom">
+            <summary>
+            Whenever it should return only the initial vector or a random vector made by two vectors.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.StartVector3">
+            <summary>
+            Return the start parameter in <see cref="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.Vector3"/>
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.EndVector3">
+            <summary>
+            Return the end parameter in <see cref="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.Vector3"/>
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.Vector3">
+            <summary>
+            Whenever it should return only the initial vector or a random vector made by two vectors.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.StartVector2">
+            <summary>
+            Return the start parameter in <see cref="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.Vector2"/>
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.EndVector2">
+            <summary>
+            Return the end parameter in <see cref="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.Vector2"/>
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.Vector2">
+            <summary>
+            Return a <seealso cref="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.Vector2"/> position. If <see cref="!:IsRandom"/> is <see langword="true"/>, it will return a random <seealso cref="T:UnityEngine.Vector2"/> between the <see cref="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.StartVector2"/> and the <see cref="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.EndVector2"/>. On <see langword="false"/> it will return the position of the <see cref="P:Enderlook.Unity.Serializables.Ranges.VectorRangeTwo.StartVector2"/>.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.Range`1.Max">
+            <summary>
+            Return the highest bound of the range.<br/>
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.Range`1.Min">
+            <summary>
+            Return the lowest bound of the range.<br/>
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Ranges.Range`1.Value">
+            <summary>
+            A random value between <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Min"/> and <see cref="P:Enderlook.Unity.Serializables.Ranges.Range`1.Max"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

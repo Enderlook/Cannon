@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Components.Navigation</name>
+    </assembly>
+    <members>
+        <member name="F:Enderlook.Unity.Components.Navigation.Connection.start">
+            <summary>
+            Starting node.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Navigation.Connection.end">
+            <summary>
+            Ending node.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.Navigation.Connection.Distance">
+            <summary>
+            Distance between <see cref="F:Enderlook.Unity.Components.Navigation.Connection.start"/> and <see cref="F:Enderlook.Unity.Components.Navigation.Connection.end"/>.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.Navigation.Connection.IsActive">
+            <summary>
+            Whenever it's active or not.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Connection.SetActive(System.Boolean)">
+            <summary>
+            Set if this <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> is active or not.
+            </summary>
+            <param name="active">Whenever it's active or not.</param>
+        </member>
+        <member name="P:Enderlook.Unity.Components.Navigation.Connection.IsExtreme">
+            <summary>
+            Whenever this <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> must be jumped.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Connection.CreateConnection(Enderlook.Unity.Components.Navigation.Node,Enderlook.Unity.Components.Navigation.Node,System.Boolean)">
+            <summary>
+            Create a new <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/>.
+            </summary>
+            <param name="start">From <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.</param>
+            <param name="end">To <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.</param>
+            <param name="isActive">Whenever it's active or not.</param>
+            <returns>New <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Connection.DisconnectFromNode">
+            <summary>
+            Remove this <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from <see cref="F:Enderlook.Unity.Components.Navigation.Connection.start"/>
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Connection.AreOpposite(Enderlook.Unity.Components.Navigation.Connection)">
+            <summary>
+            Check if <paramref name="connection"/> is the opposite connection of this one.
+            </summary>
+            <param name="connection">Connection to check.</param>
+            <returns>Whenever they are opposite connections or not.</returns>
+        </member>
+        <member name="P:Enderlook.Unity.Components.Navigation.Graph.Grid">
+            <summary>
+            All nodes of this graph.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.IGraphEditing.RemoveDuplicatedPositionsFromGrid">
+            <summary>
+            Remove all duplicated <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>s in <see cref="T:UnityEngine.Grid"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.IGraphEditing.AddNode(UnityEngine.Vector2,System.Boolean,Enderlook.Unity.Components.Navigation.PositionReference)">
+            <summary>
+            Add <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
+            </summary>
+            <param name="position">It's position.</param>
+            <param name="isActive">Whenever it's enabled or not.</param>
+            <param name="mode">Whenever <paramref name="position"/> is applied globally or locally in respect to <see cref="!:reference"/>.</param>
+            <returns>New <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.IGraphEditing.RemoveNodeAndConnections(Enderlook.Unity.Components.Navigation.Node)">
+            <summary>
+            Remove <paramref name="node"/> from <see cref="T:UnityEngine.Grid"/> and all its <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/>s from and to it.
+            </summary>
+            <param name="node"><see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to remove.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.IGraphEditing.RemoveConnectionsToNothing">
+            <summary>
+            Remove <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/>s to missing <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.IGraphEditing.AddMissingNodesFromConnections">
+            <summary>
+            Add missing <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>s from <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/>s.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.IGraphEditing.RemoveNodesWithoutToOrFromConnection">
+            <summary>
+            Remove <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>s which doesn't have <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> to any other <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> or no <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> is connected to them.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.IGraphEditing.ToggleAllNodes(Enderlook.Unity.Components.Navigation.ToggleMode)">
+            <summary>
+            Toggle all <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>s according to <paramref name="mode"/>.
+            </summary>
+            <param name="mode"></param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.IGraphEditing.ToggleAllConnections(Enderlook.Unity.Components.Navigation.ToggleMode)">
+            <summary>
+            Toggle all <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/>s according to <paramref name="mode"/>.
+            </summary>
+            <param name="mode"></param>
+        </member>
+        <member name="P:Enderlook.Unity.Components.Navigation.IGraphReader.Reference">
+            <summary>
+            Reference point of all <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>s positions.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.IGraphReader.GetWorldPosition(Enderlook.Unity.Components.Navigation.Node)">
+            <summary>
+            Get the world position of <paramref name="node"/>.
+            </summary>
+            <param name="node"><see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to get world position.</param>
+            <returns>World position of <paramref name="node"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.IGraphReader.GetLocalPosition(UnityEngine.Vector2)">
+            <summary>
+            Get the local position of <paramref name="node"/> in respect to <see cref="!:reference"/>.
+            </summary>
+            <param name="position"><see cref="T:UnityEngine.Vector2"/> to get world position.</param>
+            <returns>Local position of <paramref name="node"/>.</returns>
+        </member>
+        <member name="P:Enderlook.Unity.Components.Navigation.Node.Connections">
+            <summary>
+            All <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/>s from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to other <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>s.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Components.Navigation.Node.IsActive">
+            <summary>
+            Whenever this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> is enabled or not.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.SetActive(System.Boolean)">
+            <summary>
+            Set if this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> is active or not.
+            </summary>
+            <param name="actived">Whenever it's active or not.</param>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Navigation.Node.isExtreme">
+            <summary>
+            Whenever this node is the end of an island or not.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.Navigation.Node.AddConnectionTo(Enderlook.Unity.Components.Navigation.Node,System.Boolean)" -->
+        <!-- Badly formed XML comment ignored for member "M:Enderlook.Unity.Components.Navigation.Node.AddConnectionFrom(Enderlook.Unity.Components.Navigation.Node,System.Boolean)" -->
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.AddConnection(Enderlook.Unity.Components.Navigation.Connection)">
+            <summary>
+            Add a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> to this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.<br/>
+            <paramref name="connection"/> <see cref="F:Enderlook.Unity.Components.Navigation.Connection.start"/> must be this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>, but <see cref="F:Enderlook.Unity.Components.Navigation.Connection.end"/> must not be this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
+            </summary>
+            <param name="connection"><see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> to add.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.TryGetConnectionTo(Enderlook.Unity.Components.Navigation.Node,Enderlook.Unity.Components.Navigation.Connection@,System.Boolean)">
+            <summary>
+            Try get the <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to <paramref name="end"/> <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
+            </summary>
+            <param name="end">Target <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>. <see cref="F:Enderlook.Unity.Components.Navigation.Connection.end"/> == <paramref name="end"/>.</param>
+            <param name="connection"><see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to <paramref name="end"/> <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.</param>
+            <param name="safe">On <see langword="true"/>, this method won't throw exception if <paramref name="end"/> and this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> are the same.<br/>
+            Though it throw raise exception for <see cref="T:System.ArgumentNullException"/> in <paramref name="end"/>.</param>
+            <returns>Whenever if the <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> was found or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.GetConnectionTo(Enderlook.Unity.Components.Navigation.Node)">
+            <summary>
+            Get the <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to <paramref name="end"/> <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
+            </summary>
+            <param name="end">Target <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>. <see cref="F:Enderlook.Unity.Components.Navigation.Connection.end"/> == <paramref name="end"/>.</param>
+            <returns><see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to <paramref name="end"/> <see cref="T:Enderlook.Unity.Components.Navigation.Node"/></returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.TryRemoveConnectionTo(Enderlook.Unity.Components.Navigation.Node,System.Boolean)">
+            <summary>
+            Try to remove a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to <paramref name="end"/>.
+            </summary>
+            <param name="end"><see cref="F:Enderlook.Unity.Components.Navigation.Connection.end"/> = <paramref name="end"/>.</param>
+            <param name="safe">On <see langword="true"/>, this method won't throw exception if <paramref name="end"/> and this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> are the same.<br/>
+            Though it throw raise exception for <see cref="T:System.ArgumentNullException"/> in <paramref name="end"/>.</param>
+            <returns>Whenever there was a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> which was removed or nothing could be found.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.RemoveConnectionTo(Enderlook.Unity.Components.Navigation.Node)">
+            <summary>
+            Remove a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> to <paramref name="start"/>.
+            </summary>
+            <param name="end"><see cref="F:Enderlook.Unity.Components.Navigation.Connection.end"/> = <paramref name="end"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.TryRemoveConnectionFrom(Enderlook.Unity.Components.Navigation.Node,System.Boolean)">
+            <summary>
+            Try to remove a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from <paramref name="start"/> to this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> .
+            </summary>
+            <param name="start"><see cref="F:Enderlook.Unity.Components.Navigation.Connection.start"/> = <paramref name="start"/>.</param>
+            <param name="safe">On <see langword="true"/>, this method won't throw exception if <paramref name="start"/> and this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> are the same.<br/>
+            Though it throw raise exception for <see cref="T:System.ArgumentNullException"/> in <paramref name="start"/>.</param>
+            <returns>Whenever there was a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> which was removed or nothing could be found.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.RemoveConnectionFrom(Enderlook.Unity.Components.Navigation.Node)">
+            <summary>
+            Remove a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from <paramref name="start"/> to this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
+            </summary>
+            <param name="start"><see cref="F:Enderlook.Unity.Components.Navigation.Connection.start"/> = <paramref name="start"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.TryRemoveConnection(Enderlook.Unity.Components.Navigation.Connection)">
+            <summary>
+            Try to remove <paramref name="connection"/> from <see cref="P:Enderlook.Unity.Components.Navigation.Node.Connections"/>.
+            </summary>
+            <param name="connection"><see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> to remove.</param>
+            <returns>Whenever there was a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> which was removed or nothing could be found.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.RemoveConnection(Enderlook.Unity.Components.Navigation.Connection)">
+            <summary>
+            Remove a <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> from this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
+            </summary>
+            <param name="connection"><see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> to remove.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.DisconnectNode(Enderlook.Unity.Components.Navigation.Node)">
+            <summary>
+            Remove <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/> <paramref name="other"/> from this, and this from <paramref name="other"/>.<br/>
+            Equivalent to:<br/>
+            <code><paramref name="other"/>.<see cref="!:TryRemoveConnectionTo(Node)"/>(this)
+            this.<see cref="!:TryRemoveConnectionTo(Node)"/>(<paramref name="other"/>)</code>
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.CreateNode(UnityEngine.Vector2,System.Boolean)">
+            <summary>
+            Create a new <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
+            </summary>
+            <param name="position">Its position.</param>
+            <param name="isActive">Whenever it's active or not.</param>
+            <returns>New <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Components.Navigation.Node.CreateNode(UnityEngine.Vector2,System.Collections.Generic.IEnumerable{Enderlook.Unity.Components.Navigation.Node},System.Boolean,System.Nullable{System.Boolean})">
+            <summary>
+            Create a new <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.
+            </summary>
+            <param name="position">Its position.</param>
+            <param name="connectionsTo">The new <see cref="T:Enderlook.Unity.Components.Navigation.Node"/> will connect to all this <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>s.</param>
+            <param name="isActive">Whenever it's active or not.</param>
+            <param name="areConnectionsActive">Whenever this <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/>s are enabled or not.<br/>
+            Use <see langword="null"/> to use <paramref name="isActive"/> instead.</param>
+            <returns>New <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>.</returns>
+        </member>
+        <member name="T:Enderlook.Unity.Components.Navigation.PositionReference">
+            <summary>
+            How position of <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>s is calculated.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Navigation.PositionReference.LOCAL">
+            <summary>
+            Position is calculated by local coordinates from <see cref="!:reference"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Navigation.PositionReference.WORLD">
+            <summary>
+            Position is calculated without <see cref="!:reference"/>.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Components.Navigation.ToggleMode">
+            <summary>
+            Mode at which <see cref="T:Enderlook.Unity.Components.Navigation.Node"/>s or <see cref="T:Enderlook.Unity.Components.Navigation.Connection"/>s are set active.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Navigation.ToggleMode.Enable">
+            <summary>
+            Enable element.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Navigation.ToggleMode.Disable">
+            <summary>
+            Disable element.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Components.Navigation.ToggleMode.Toggle">
+            <summary>
+            If enabled, disable it. If disabled, enable it.
+            </summary>
+        </member>
+    </members>
+</doc>

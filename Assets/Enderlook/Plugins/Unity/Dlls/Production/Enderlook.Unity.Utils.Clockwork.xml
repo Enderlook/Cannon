@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Utils.Clockwork</name>
+    </assembly>
+    <members>
+        <member name="T:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1">
+            <inheritdoc cref="T:Enderlook.Unity.Utils.Clockworks.IClockwork"/>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.callback">
+            <summary>
+            Callback method to execute.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.#ctor(System.Single,`0,System.Boolean,System.Int32)">
+            <summary>
+            Create a timer that executes <paramref name="callback"/> each <paramref name="cooldown"/> seconds.<br/>
+            Time must be manually updated using <see cref="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.Recharge(System.Single)"/>, <see cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.TryExecute(System.Single)"/> or <see cref="!:TryExecute(out T, float)"/> methods.
+            </summary>
+            <param name="cooldown">Time in seconds to execute <paramref name="callback"/>.</param>
+            <param name="callback">Action to execute.</param>
+            <param name="autoExecute">Whenever <see cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.UpdateBehaviour(System.Single)"/> must call <see cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.Execute"/> when <see cref="P:Enderlook.Unity.Utils.Clockworks.BasicClockwork.CooldownTime"/> is 0.</param>
+            <param name="cycles">Number of times <see cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.Execute"/> can be call. Use -1 for unlimited. Use <see cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.ResetCycles"/> to recover their uses. Don't use 0 or the timer will be disabled by default.</param>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.TotalCycles">
+            <inheritdoc cref="P:Enderlook.Unity.Utils.Clockworks.IClockwork.TotalCycles"/>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.RemainingCycles">
+            <inheritdoc cref="P:Enderlook.Unity.Utils.Clockworks.IClockwork.RemainingCycles"/>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.IsEndlessLoop">
+            <inheritdoc cref="P:Enderlook.Unity.Utils.Clockworks.IClockwork.IsEndlessLoop"/>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.IsEnabled">
+            <inheritdoc cref="P:Enderlook.Unity.Utils.Clockworks.IClockwork.IsEnabled"/>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.Execute">
+            <inheritdoc cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork.Execute"/>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.MustExecute">
+            <summary>
+            This method is used inside <see cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.TryExecute(System.Single)"/>. On <see langword="true"/>, <see cref="F:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.callback"/> must be executed.<br/>
+            You do not need to execute <see cref="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.ResetTime"/> when you executes this method.
+            </summary>
+            <returns>Whenever <see cref="F:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.callback"/> must be executed or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.ResetCycles">
+            <inheritdoc cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork.ResetCycles"/>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.ResetCycles(System.Int32)">
+            <inheritdoc cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork.ResetCycles(System.Int32)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.TryExecute(System.Single)">
+            <inheritdoc cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork.TryExecute(System.Single)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.UpdateBehaviour(System.Single)">
+            <summary>
+            Calls <see cref="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.Recharge(System.Single)"/> if <see cref="P:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.IsEnabled"/>, and calls <see cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.Execute"/> if <see cref="F:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.autoExecute"/> is <see langword="true"/> and <see cref="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.Recharge(System.Single)"/> returned <see langword="true"/>.
+            </summary>
+            <param name="deltaTime">Time since last increase.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.SetReady">
+            <inheritdoc />
+        </member>
+        <member name="T:Enderlook.Unity.Utils.Clockworks.BasicClockwork">
+            <inheritdoc cref="T:Enderlook.Unity.Utils.Clockworks.IBasicClockwork"/>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.BasicClockwork.CooldownTime">
+            <inheritdoc />
+        </member>
+        <member name="F:Enderlook.Unity.Utils.Clockworks.BasicClockwork.cooldownTime">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.BasicClockwork.WarmupTime">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.BasicClockwork.WarmupPercent">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.BasicClockwork.TimeLength">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.BasicClockwork.CooldownPercent">
+            <inheritdoc />
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.BasicClockwork.IsReady">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.#ctor(System.Single)">
+            <summary>
+            Create a timer.<br/>
+            Time must be manually updated using <see cref="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.Recharge(System.Single)"/>.
+            </summary>
+            <param name="cooldown">Time in seconds to finish.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.ResetTime">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.ResetTime(System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.Recharge(System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.UpdateBehaviour(System.Single)">
+            <summary>
+            Calls <see cref="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.Recharge(System.Single)"/>.</summary>
+            <param name="deltaTime">Time since last increase.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Utils.Clockworks.Clockwork">
+            <inheritdoc cref="T:Enderlook.Unity.Utils.Clockworks.IClockwork"/>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.Clockwork.#ctor(System.Single,System.Action,System.Boolean,System.Int32)">
+            <summary>
+            Create a timer that executes <paramref name="callback"/> each <paramref name="cooldown"/> seconds.<br/>
+            Time must be manually updated using <see cref="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.Recharge(System.Single)"/> or <see cref="M:Enderlook.Unity.Utils.Clockworks.Clockwork.TryExecute(System.Single)"/> methods.
+            </summary>
+            <param name="cooldown">Time in seconds to execute <paramref name="callback"/>.</param>
+            <param name="callback">Action to execute.</param>
+            <param name="autoExecute">Whenever <see cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.UpdateBehaviour(System.Single)"/> must call <see cref="M:Enderlook.Unity.Utils.Clockworks.Clockwork.Execute"/> when <see cref="P:Enderlook.Unity.Utils.Clockworks.BasicClockwork.CooldownTime"/> is 0.</param>
+            <param name="cycles">Number of times <see cref="M:Enderlook.Unity.Utils.Clockworks.Clockwork.Execute"/> can be call. Use -1 for unlimited. Use <see cref="!:ResetCycles()"/> to recover their uses. Don't use 0 or the timer will be disabled by default.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.Clockwork.Execute">
+            <inheritdoc />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.Clockwork.TryExecute(System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="T:Enderlook.Unity.Utils.Clockworks.Clockwork`1">
+            <inheritdoc cref="T:Enderlook.Unity.Utils.Clockworks.IClockwork`1"/>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.Clockwork`1.#ctor(System.Single,System.Func{`0},System.Boolean,System.Int32)">
+            <summary>
+            Create a timer that executes <paramref name="callback"/> each <paramref name="cooldown"/> seconds.<br/>
+            Time must be manually updated using <see cref="M:Enderlook.Unity.Utils.Clockworks.BasicClockwork.Recharge(System.Single)"/> or <see cref="M:Enderlook.Unity.Utils.Clockworks.Clockwork`1.TryExecute(System.Single)"/> methods.
+            </summary>
+            <param name="cooldown">Time in seconds to execute <paramref name="callback"/>.</param>
+            <param name="callback">Action to execute.</param>
+            <param name="autoExecute">Whenever <see cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.UpdateBehaviour(System.Single)"/> must call <see cref="M:Enderlook.Unity.Utils.Clockworks.Clockwork`1.Execute"/> when <see cref="P:Enderlook.Unity.Utils.Clockworks.BasicClockwork.CooldownTime"/> is 0.</param>
+            <param name="cycles">Number of times <see cref="M:Enderlook.Unity.Utils.Clockworks.Clockwork`1.Execute"/> can be call. Use -1 for unlimited. Use <see cref="!:ResetCycles()"/> to recover their uses. Don't use 0 or the timer will be disabled by default.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.Clockwork`1.ExecuteWithReturn">
+            <inheritdoc cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.Execute" />
+            <returns>Value returned from the callback.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.Clockwork`1.Execute">
+            <inheritdoc cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.Execute" />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.Clockwork`1.TryExecute(System.Single)">
+            <inheritdoc cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.TryExecute(System.Single)" />
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.Clockwork`1.TryExecute(`0@,System.Single)">
+            <inheritdoc cref="M:Enderlook.Unity.Utils.Clockworks.BaseCallbackClockwork`1.TryExecute(System.Single)"/>
+            <param name="result">Value returned from the callback. Only read when this method returns <see langword="true"/>.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Utils.Clockworks.IBasicClockwork">
+            <summary>
+            This class represent a cooldown.<br/>
+            <see cref="M:Enderlook.Unity.Utils.Interfaces.IUpdate.UpdateBehaviour(System.Single)"/> must be executed on every frame with <see cref="P:UnityEngine.Time.deltaTime"/>.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.CooldownTime">
+            <summary>
+            Time in seconds to finish the countdown.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.WarmupTime">
+            <summary>
+            Time in seconds since the countdown started.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.TimeLength">
+            <summary>
+            Total cooldown time.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.CooldownPercent">
+            <summary>
+            Cooldown percent from 1 to 0. When 0, it's ready to execute.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.WarmupPercent">
+            <summary>
+            Warmup percent from 0 to 1. When 1, it's ready to execute.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.IsReady">
+            <summary>
+            Whenever it's ready or is still in cooldown.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.ResetTime">
+            <summary>
+            Reset <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.CooldownTime"/> time to <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.TimeLength"/> and <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.WarmupTime"/> to 0.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.ResetTime(System.Single)">
+            <summary>
+            Assign a new maximum value <paramref name="newTimeLength"/> to <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.TimeLength"/> and calls <see cref="M:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.ResetTime"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.Recharge(System.Single)">
+            <summary>
+            Reduce <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.CooldownTime"/> time as increases <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.WarmupTime"/> and checks if it's ready.
+            </summary>
+            <param name="deltaTime"><see cref="P:UnityEngine.Time.deltaTime"/></param>
+            <returns><see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.IsReady"/>.</returns>
+        </member>
+        <member name="T:Enderlook.Unity.Utils.Clockworks.IClockwork">
+            <summary>
+            This class represent a cooldown which executes a certain callback on end.<br/>
+            <see cref="M:Enderlook.Unity.Utils.Interfaces.IUpdate.UpdateBehaviour(System.Single)"/> must be executed on every frame with <see cref="P:UnityEngine.Time.deltaTime"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.IClockwork.Execute">
+            <summary>
+            Execute the callback and call <see cref="M:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.ResetTime"/>.<br/>
+            It ignores the <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.IsReady"/>. Use <seealso cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork.TryExecute(System.Single)"/> to use it.
+            </summary>
+            <seealso cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork.TryExecute(System.Single)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.IClockwork.TryExecute(System.Single)">
+            <summary>
+            Try to execute the callback. It will check for the <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.CooldownTime"/>, and if possible, execute.
+            </summary>
+            <param name="deltaTime">Time since the last frame. <see cref="P:UnityEngine.Time.deltaTime"/></param>
+            <returns><see langword="true"/> if it was executed, <see langword="false"/> if it's still on cooldown.</returns>
+            <seealso cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork.Execute"/>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.IClockwork.TotalCycles">
+            <summary>
+            Total number of times <see cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork.Execute"/> can be called. -1 is unlimited.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.IClockwork.RemainingCycles">
+            <summary>
+            Remaining number of times <see cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork.Execute"/> can be called.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.IClockwork.IsEndlessLoop">
+            <summary>
+            Whenever there is no number of time <see cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork.Execute"/> can be called.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Utils.Clockworks.IClockwork.IsEnabled">
+            <summary>
+            Whenever the timer is working or not. If <see cref="P:Enderlook.Unity.Utils.Clockworks.IClockwork.RemainingCycles"/> is 0 the timer stop working.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.IClockwork.ResetCycles">
+            <summary>
+            Reset <see cref="P:Enderlook.Unity.Utils.Clockworks.IClockwork.RemainingCycles"/> to <see cref="P:Enderlook.Unity.Utils.Clockworks.IClockwork.TotalCycles"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.IClockwork.ResetCycles(System.Int32)">
+            <summary>
+            Assign a new maximum value <paramref name="newCycles"/> to <see cref="P:Enderlook.Unity.Utils.Clockworks.IClockwork.TotalCycles"/> and <see cref="P:Enderlook.Unity.Utils.Clockworks.IClockwork.RemainingCycles"/>.
+            </summary>
+            <param name="newCycles">New maximum amount of cycles.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.IClockwork.SetReady">
+            <summary>
+            Set clockwork ready to be used by setting <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.CooldownTime"/> to 0 and <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.WarmupTime"/> to <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.TimeLength"/>.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Utils.Clockworks.IClockwork`1">
+            <summary>
+            This class represent a cooldown which executes a certain callback with return value on end.<br/>
+            <see cref="M:Enderlook.Unity.Utils.Interfaces.IUpdate.UpdateBehaviour(System.Single)"/> must be executed on every frame with <see cref="P:UnityEngine.Time.deltaTime"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.IClockwork`1.ExecuteWithReturn">
+            <summary>
+            Execute the callback and call <see cref="M:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.ResetTime"/>.<br/>
+            It ignores the <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.IsReady"/>. Use <seealso cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork.TryExecute(System.Single)"/> to use it.
+            </summary>
+            <returns>The result ofthe callback>.</returns>
+            <seealso cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork`1.TryExecute(`0@,System.Single)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Clockworks.IClockwork`1.TryExecute(`0@,System.Single)">
+            <summary>
+            Try to execute the callback. It will check for the <see cref="P:Enderlook.Unity.Utils.Clockworks.IBasicClockwork.CooldownTime"/>, and if possible, execute.
+            </summary>
+            <param name="result">The result of the callback.</param>
+            <param name="deltaTime">Time since the last frame. <see cref="P:UnityEngine.Time.deltaTime"/></param>
+            <returns><see langword="true"/> if it was executed, <see langword="false"/> if it's still on cooldown.</returns>
+            <seealso cref="M:Enderlook.Unity.Utils.Clockworks.IClockwork`1.ExecuteWithReturn"/>
+        </member>
+    </members>
+</doc>

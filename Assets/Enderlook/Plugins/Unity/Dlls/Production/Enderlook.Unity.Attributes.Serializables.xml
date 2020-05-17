@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Attributes.Serializables</name>
+    </assembly>
+    <members>
+        <member name="F:Enderlook.Unity.Attributes.RangeAttribute.min">
+            <summary>
+            Minimal value that can be taken.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.RangeAttribute.max">
+            <summary>
+            Maximum value that can be taken.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.RangeAttribute.step">
+            <summary>
+            Steps of the taken value. The value must be a multiple of <see cref="F:Enderlook.Unity.Attributes.RangeAttribute.step"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.RangeAttribute.showRandomButton">
+            <summary>
+            Whenever a randomize button should be shown below the field in the inspector.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Serializables.Physics</name>
+    </assembly>
+    <members>
+        <member name="T:Enderlook.Unity.Serializables.Physics.Raycaster">
+            <summary>
+            Used to perform raycast with predefined parameters.<br/>
+            It can be either serialized in Unity inspector or construct using new.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Serializables.Physics.RaycasterWithOffset">
+            <summary>
+            Used to perform raycast with predefined parameters.<br/>
+            It allows adding offset to the <see cref="P:Enderlook.Unity.Serializables.Physics.Raycaster.Source"/> on runtime without using <see cref="M:Enderlook.Unity.Serializables.Physics.Raycaster.SetReference(UnityEngine.Transform,UnityEngine.SpriteRenderer)"/> or <see cref="M:Enderlook.Unity.Serializables.Physics.Raycaster.SetReference(UnityEngine.Vector2,UnityEngine.SpriteRenderer)"/>.<br/>
+            It can be either serialized in Unity inspector or construct using new.
+            </summary>
+        </member>
+    </members>
+</doc>

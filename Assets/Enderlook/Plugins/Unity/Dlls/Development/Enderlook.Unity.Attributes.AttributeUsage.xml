@@ -1,0 +1,503 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Attributes.AttributeUsage</name>
+    </assembly>
+    <members>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageAccessibilityAttribute.#ctor(System.Reflection.BindingFlags)">
+            <summary>
+            Determines which <see cref="T:System.Reflection.BindingFlags"/> must have the decorated.
+            </summary>
+            <param name="bindingFlags">Necessary binding flags.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageAccessibilityAttribute.CheckAllowance(System.Reflection.MemberInfo,System.String)">
+            <summary>
+            Unity Editor only.
+            </summary>
+            <param name="memberInfo"></param>
+            <param name="attributeName"></param>
+            <remarks>Only use in Unity Editor.</remarks>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterNumber">
+            <summary>
+            Number of the parameter to check.<br/>
+            Example:<br/>
+                • 0 -> Return type.<br/>
+                • 1 -> First method parameter.<br/>
+                • 2 -> Second method parameter<br/>
+                • 3 -> Third method parameter...
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterType">
+            <summary>
+            Determine the type of parameter. Use <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.VoidOrNone"/> to specify that it should not exist.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.checkingFlags">
+            <summary>
+            Additional checking rules.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.#ctor(System.Int32,System.Type[])">
+            <summary>
+            Each time Unity compile script, they will be analyzed to check if the attribute is being used in proper methods.
+            </summary>
+            <param name="parameterNumber">Number of the parameter to check.<br/>
+            Example:<br/>
+                • 0 -> Return type.<br/>
+                • 1 -> First method parameter.<br/>
+                • 2 -> Second method parameter<br/>
+                • 3 -> Third method parameter...</param>
+            <param name="types">Data types allowed.<br/>
+            If empty, any data type is allowed.<br/>
+            To specify that a parameter should not exist, use <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.VoidOrNone"/> in <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterType"/>.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.CheckAllowance(System.Reflection.MethodInfo,System.String)">
+            <summary>
+            Unity Editor only.
+            </summary>
+            <param name="methodInfo"></param>
+            <param name="attributeName"></param>
+            <remarks>Only use in Unity Editor.</remarks>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.typeFlags">
+            <summary>
+            Additional checking rules.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.isBlackList">
+            <summary>
+            If <see langword="true"/>, <see cref="P:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.Types"/> will be forbidden types (blacklist).<br/>
+            If <see langword="false"/>, they will be the only allowed types (white list).<br/>
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.includeEnumerableTypes">
+            <summary>
+            If <see langword="true"/>, it will also check for array o list versions of types.<br/>
+            Useful because Unity <see cref="T:UnityEditor.PropertyDrawer"/> are draw on each element of an array or list <see cref="T:UnityEditor.SerializedProperty"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.#ctor(System.Type[])">
+            <summary>
+            Each time Unity compile script, they will be analyzed to check if the attribute is being used in proper DataTypes.
+            </summary>
+            <param name="types">Data types allowed. Set <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.isBlackList"/> to <see langword="true"/> in order to become it forbidden data types.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageRequireDataTypeAttribute.CheckAllowance(System.Type,System.String,System.String)">
+            <summary>
+            Unity Editor only.
+            </summary>
+            <param name="toCheckType"></param>
+            <param name="toCheckName"></param>
+            <param name="attributeName"></param>
+            <remarks>Only use in Unity Editor.</remarks>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.BaseExecuteWhenScriptsReloads.loop">
+            <summary>
+            In which loop of the execution will this script executed.<br/>
+            Accept any kind of number.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each field on each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.FieldInfo"/>).
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads.fieldFilter">
+            <summary>
+            Determines rules about in which field does match.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachFieldOfEachTypeWhenScriptsReloads.#ctor(Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization,System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each field on each <see cref="T:System.Type"/> compiled by Unity.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.FieldInfo"/>).
+            </summary>
+            <param name="fieldFlags">Whenever it must be Unity able to serialize it or if it does not matter.</param>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMemberOfEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each member on each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.MemberInfo"/>).
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMemberOfEachTypeWhenScriptsReloads.#ctor(System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each member on each <see cref="T:System.Type"/> compiled by Unity.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.MemberInfo"/>).
+            </summary>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMethodOfEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each method on each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.MethodInfo"/>).
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachMethodOfEachTypeWhenScriptsReloads.#ctor(System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each method on each <see cref="T:System.Type"/> compiled by Unity.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.MethodInfo"/>).
+            </summary>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachPropertyOfEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each property on each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.PropertyInfo"/>).
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachPropertyOfEachTypeWhenScriptsReloads.#ctor(System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each property on each <see cref="T:System.Type"/> compiled by Unity.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Reflection.PropertyInfo"/>).
+            </summary>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute for each <see cref="T:System.Type"/> compiled by Unity each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Type"/>).
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags">
+            <summary>
+            Rules that should be match by the type.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags.IsEnum">
+            <summary>
+            Only execute on types which <see cref="P:System.Type.IsEnum"/> is <see langword="true"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags.IsNonEnum">
+            <summary>
+            Only execute on types which <see cref="P:System.Type.IsEnum"/> is <see langword="false"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags.IsEitherEnumNonEnum">
+            <summary>
+            Execute on types regardless <see cref="P:System.Type.IsEnum"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.typeFilter">
+            <summary>
+            Determines rules about in which types does match.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.#ctor(Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads.TypeFlags,System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute for each <see cref="T:System.Type"/> compiled by Unity, that matches the <paramref name="typeFlags"/> criteria.<br/>
+            The method to decorate must have the signature DoSomething(<see cref="T:System.Type"/>).
+            </summary>
+            <param name="typeFlags">Determines rules about in which types does match.</param>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteWhenScriptsReloads">
+            <summary>
+            Executes the method decorated by this attribute each time Unity compiles code.<br/>
+            The method to decorate must have the signature DoSomething().
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteWhenScriptsReloads.#ctor(System.Int32)">
+            <summary>
+            Executes the method decorated by this attribute.<br/>
+            The method to decorate must have the signature DoSomething().
+            </summary>
+            <param name="loop">In which loop of the execution will this script execute.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.AssembliesHelper.GetAllAssembliesOfPlayerAndEditorAssemblies(System.Boolean)">
+            <summary>
+            Get all assemblies from <see cref="P:System.AppDomain.CurrentDomain"/> which are in the <see cref="M:UnityEditor.Compilation.CompilationPipeline.GetAssemblies(UnityEditor.Compilation.AssembliesType)"/> either <see cref="F:UnityEditor.Compilation.AssembliesType.Editor"/> and <see cref="F:UnityEditor.Compilation.AssembliesType.Player"/>.
+            </summary>
+            <param name="ingoreCache">Whenever it should recalculate the value regardless the cache.</param>
+            <returns>Assemblies which matches criteria.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachTypeLessEnums(System.Action{System.Type},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each <see cref="T:System.Type"/> in the assemblies compiled by Unity which <see cref="P:System.Type.IsEnum"/> is <see langword="false"/>.<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachTypeEnum(System.Action{System.Type},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each <see cref="T:System.Type"/> in the assemblies compiled by Unity which <see cref="P:System.Type.IsEnum"/> is <see langword="true"/>.<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachMemberOfTypes(System.Action{System.Reflection.MemberInfo},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each member of each <see cref="T:System.Type"/> in the assemblies compiled by Unity.<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachSerializableByUnityFieldOfTypes(System.Action{System.Reflection.FieldInfo},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each field of each <see cref="T:System.Type"/> in the assemblies compiled by Unity which can be serialized by Unity (<seealso cref="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.CanBeSerializedByUnity(System.Reflection.FieldInfo)"/>).<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachNonSerializableByUnityFieldOfTypes(System.Action{System.Reflection.FieldInfo},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each member of each <see cref="T:System.Type"/> in the assemblies compiled by Unity which can be serialized by Unity (<seealso cref="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.CanBeSerializedByUnity(System.Reflection.FieldInfo)"/>).<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachPropertyOfTypes(System.Action{System.Reflection.PropertyInfo},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each property of each <see cref="T:System.Type"/> in the assemblies compiled by Unity.<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeOnEachMethodOfTypes(System.Action{System.Reflection.MethodInfo},System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed on each method of each <see cref="T:System.Type"/> in the assemblies compiled by Unity.<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteOnEachTypeWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.SubscribeToExecuteOnce(System.Action,System.Int32)">
+            <summary>
+            Subscribes <paramref name="action"/> to be executed once wen Unity ompiles assemblies.<br/>
+            If possible, it's strongly advisable to use <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.Attributes.ExecuteWhenScriptsReloads"/> attribute instead of this method.
+            </summary>
+            <param name="action">Action to subscribe.</param>
+            <param name="order">Priority of this method to execute. After all other callbacks of lower order are executed on all targets this will be executed.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.PostCompilingAssembliesHelper.GetAllTypesThatShouldBeInspected">
+            <summary>
+            Get all types from assemblies which doesn't have <see cref="T:Enderlook.Unity.Attributes.AttributeUsage.DoNotInspectAttribute"/> either the type or the assembly.
+            </summary>
+            <returns>All types of Player and Editor assemblies, which matches criteria..</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.CanBeSerializedByUnity(System.Type)">
+            <summary>
+            Check if the given type can be serialized by Unity.
+            </summary>
+            <param name="type">Type to check.</param>
+            <returns>Whenever the field can be serialized by Unity of not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.CanBeSerializedByUnity(System.Reflection.FieldInfo)">
+            <summary>
+            Check if the given field can be serialized by Unity.
+            </summary>
+            <param name="fieldInfo">Field to check.</param>
+            <returns>Whenever the field can be serialized by Unity of not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.CanBeSerializedByUnity(System.Reflection.TypeInfo)">
+            <summary>
+            Check if the given type can be serialized by Unity.
+            </summary>
+            <param name="typeInfo">Typeinfo of type to check.</param>
+            <returns>Whenever the field can be serialized by Unity of not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.FieldsPropertiesAndMethodsWithReturnTypeOf(System.Type,System.Type)">
+            <summary>
+            Get all member names of <paramref name="class"/> which:
+            <list type="bullet">
+                <item><description>If <see cref="T:System.Reflection.MethodInfo"/>, its <see cref="P:System.Reflection.MethodInfo.ReturnType"/> must be <typeparamref name="T"/> and it must not require mandatory parameters (can have optionals or params).</description></item>
+                <item><description>If <see cref="T:System.Reflection.PropertyInfo"/>, its <see cref="P:System.Reflection.PropertyInfo.PropertyType"/> must be <typeparamref name="T"/> and it must have a setter.</description></item>
+                <item><description>If <see cref="T:System.Reflection.FieldInfo"/>, its <see cref="P:System.Reflection.FieldInfo.FieldType"/> must be <typeparamref name="T"/>.</description></item>
+            </list>
+            </summary>
+            <param name="class">Type where member are looked for.</param>
+            <param name="return">Return type for criteria.</param>
+            <returns>Member names which matches the criteria.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.PostCompiling.ReflectionHelper.FieldsPropertiesAndMethodsWithReturnTypeOf``1(System.Type)">
+            <summary>
+            Get all member names of <paramref name="class"/> which:
+            <list type="bullet">
+                <item><description>If <see cref="T:System.Reflection.MethodInfo"/>, its <see cref="P:System.Reflection.MethodInfo.ReturnType"/> must be <typeparamref name="T"/> and it must not require mandatory parameters (can have optionals or params).</description></item>
+                <item><description>If <see cref="T:System.Reflection.PropertyInfo"/>, its <see cref="P:System.Reflection.PropertyInfo.PropertyType"/> must be <typeparamref name="T"/> and it must have a setter.</description></item>
+                <item><description>If <see cref="T:System.Reflection.FieldInfo"/>, its <see cref="P:System.Reflection.FieldInfo.FieldType"/> must be <typeparamref name="T"/>.</description></item>
+            </list>
+            </summary>
+            <typeparam name="T">Return type for criteria.</typeparam>
+            <param name="class">Type where member are looked for.</param>
+            <returns>Member names which matches the criteria.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.DoNotCheckAttributeTesting.CheckIfShouldBeIgnored(System.Reflection.MemberInfo,System.Type)">
+            <summary>
+            Check if this <paramref name="memberInfo"/> should be ignored when checking if has <paramref name="typeThatMayBeIgnored"/>.
+            </summary>
+            <param name="memberInfo">Member to check.</param>
+            <param name="typeThatMayBeIgnored">Type of attribute that it's being checked.</param>
+            <returns>Whenever it should be ignored or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.DoNotCheckAttributeTesting.CheckIfShouldBeIgnored(System.Type,System.Type)">
+            <summary>
+            Check if this <paramref name="type"/> should be ignored when checking if has <paramref name="typeThatMayBeIgnored"/>.
+            </summary>
+            <param name="type">Type to check.</param>
+            <param name="typeThatMayBeIgnored">Type of attribute that it's being checked.</param>
+            <returns>Whenever it should be ignored or not.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.DoNotCheckAttributeTesting.GetAttributeTypesThatShouldBeIgnored(System.Reflection.MemberInfo)">
+            <summary>
+            Get attribute types that should be ignored.
+            </summary>
+            <param name="memberInfo">Member to check.</param>
+            <returns>Attribute types that should be ignored.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.DoNotCheckAttributeTesting.GetAttributeTypesThatShouldBeIgnored(System.Type)">
+            <summary>
+            Get attribute types that should be ignored.
+            </summary>
+            <param name="type">Type to check.</param>
+            <returns>Attribute types that should be ignored.</returns>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization">
+            <summary>
+            Rules that should be match by the field.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.NotSerializableByUnity">
+            <summary>
+            Non serializable fields by Unity are allowed.<br/>
+            <seealso cref="!:ReflectionHelper.CanBeSerializedByUnity(FieldInfo)"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.SerializableByUnity">
+            <summary>
+            Serializable fields by Unity are allowed.
+            <seealso cref="!:ReflectionHelper.CanBeSerializedByUnity(FieldInfo)"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.EitherSerializableOrNotByUnity">
+            <summary>
+            Either serializable or not serializable fields by Unity are allowed.<br/>
+            <seealso cref="F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.NotSerializableByUnity"/> and <seealso cref="F:Enderlook.Unity.Attributes.AttributeUsage.FieldSerialization.SerializableByUnity"/>.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode">
+            <summary>
+            The parameter mode.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.Common">
+            <summary>
+            Specifies an common parameter.<br/>
+            If <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterNumber"/> is 0, this will be ignored.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.In">
+            <summary>
+            Specifies an in parameter.<br/>
+            If <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterNumber"/> is 0, this will be ignored.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.Out">
+            <summary>
+            Specifies an out parameter.
+            If <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterNumber"/> is 0, this will be ignored.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.Ref">
+            <summary>
+            Specifies a reference parameter.
+            If <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageMethodAttribute.parameterNumber"/> is 0, this will be ignored.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.ParameterMode.VoidOrNone">
+            <summary>
+            Specifies that this parameter should not exist.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting">
+            <summary>
+            Determine relation of types to look for.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.ExactMatch">
+            <summary>
+            It must check for the same exact type.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckSubclassTypes">
+            <summary>
+            Whenever it should check if the type is a subclass of one of the listed types.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckSuperclassTypes">
+            <summary>
+            Whenever it should check if the type is superclass of one of the listed types.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckIsAssignableTypes">
+            <summary>
+            Whenever it should check for assignable from type to one of the listed types.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckSubclassOrAssignable">
+            <summary>
+            <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckSubclassTypes"/> or <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckIsAssignableTypes"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckCanBeAssignedTypes">
+            <summary>
+            Whenever it should check if type can be assigned to one of the listed types.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckSuperClassOrCanBeAssigned">
+            <summary>
+            <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckIsAssignableTypes"/> or <see cref="F:Enderlook.Unity.Attributes.AttributeUsage.TypeCasting.CheckCanBeAssignedTypes"/>.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageHelper">
+            <summary>
+            Only works in Unity Editor.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageHelper.GetHashsetTypes(System.Type[],System.Boolean)">
+            <summary>
+            Produces a <see cref="T:System.Collections.Generic.HashSet`1"/> with <paramref name="types"/>.
+            </summary>
+            <param name="types">Array of <see cref="T:System.Type"/> to use.</param>
+            <param name="includeEnumerableTypes">If <see langword="true"/>, it will also check for array o list versions of types.<br/>
+            Useful because Unity <see cref="!:PropertyDrawer"/> are draw on each element of an array or list <see cref="!:SerializedProperty"/></param>
+            <returns><see cref="T:System.Collections.Generic.HashSet`1"/> with all types to check.</returns>
+            <remarks>Only use in Unity Editor.</remarks>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageHelper.GetTextTypes(System.Collections.Generic.IEnumerable{System.Type},Enderlook.Unity.Attributes.AttributeUsage.TypeCasting,System.Boolean)">
+            <summary>
+            Produce a <see cref="T:System.String"/> with all elements of <paramref name="types"/> and include specific text from <paramref name="checkingFlags"/>.
+            </summary>
+            <param name="types">Elements to include in the result.</param>
+            <param name="checkingFlags">Additional phrases.</param>
+            <param name="isBlackList">Whenever the result forbid instead of require the <paramref name="types"/>.</param>
+            <returns>A <see cref="T:System.String"/> with all elements.</returns>
+            <remarks>Only use in Unity Editor.</remarks>
+        </member>
+        <member name="M:Enderlook.Unity.Attributes.AttributeUsage.AttributeUsageHelper.CheckContains(System.String,System.Collections.Generic.HashSet{System.Type},Enderlook.Unity.Attributes.AttributeUsage.TypeCasting,System.Boolean,System.String,System.Type,System.String,System.String)">
+            <summary>
+            Check if <paramref name="toCheckType"/> is in <paramref name="types"/> according to <paramref name="typeFlags"/> and <paramref name="isBlackList"/>.
+            If not found, it will log an exception in Unity.
+            </summary>
+            <param name="attributeCheckerName">Name of the attribute checker.</param>
+            <param name="types"><see cref="T:System.Type"/>s target.</param>
+            <param name="typeFlags">Additional rules to between <paramref name="types"/> and <paramref name="toCheckType"/>.</param>
+            <param name="isBlackList">If <see langword="true"/> <paramref name="toCheckType"/> must not be related with <paramref name="types"/>.</param>
+            <param name="allowedTypes">String version of <paramref name="types"/>.</param>
+            <param name="toCheckType"><see cref="T:System.Type"/> to be checked.</param>
+            <param name="attributeName">Name of the current attribute which is being checked.</param>
+            <param name="toCheckName">Name of what is <paramref name="toCheckType"/> or where it was taken from (e.g: <c><see cref="T:System.Reflection.FieldInfo"/>.Name</c>.</param>
+            <remarks>Only use in Unity Editor.</remarks>
+        </member>
+    </members>
+</doc>

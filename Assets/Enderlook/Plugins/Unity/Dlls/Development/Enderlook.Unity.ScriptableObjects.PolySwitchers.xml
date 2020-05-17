@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.ScriptableObjects.PolySwitchers</name>
+    </assembly>
+    <members>
+        <member name="P:Enderlook.Unity.ScriptableObjects.PolySwitchers.PolySwitchMaster.CurrentIndex">
+            <summary>
+            Current index one-based.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.ScriptableObjects.PolySwitchers.PolySwitchMaster.IncrementIndexByOne">
+            <summary>
+            Increment current index by one. If max, reset to zero.
+            </summary>
+            <returns>New index zero-based.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.ScriptableObjects.PolySwitchers.PolySwitchMaster.DecrementIndexByOne">
+            <summary>
+            Decrement current index by one. If 0, reset to highest index.
+            </summary>
+            <returns>New index zero-based.</returns>
+        </member>
+    </members>
+</doc>

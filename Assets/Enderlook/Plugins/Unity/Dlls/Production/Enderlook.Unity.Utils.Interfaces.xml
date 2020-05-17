@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Utils.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="M:Enderlook.Unity.Utils.Interfaces.IGet`1.GetValue">
+            <summary>
+            Get the value stored in this object.
+            </summary>
+            <returns>Value stored in this object.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Interfaces.IInitialize.Initialize">
+            <summary>
+            Initializes behavior of this object. Useful for object that can't have constructors.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Interfaces.IInitialize`1.Initialize(`0)">
+            <summary>
+            Initializes behavior of this object. Useful for object that can't have constructors.
+            </summary>
+            <param name="initializer">Parameter used for initializing.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.Interfaces.IUpdate.UpdateBehaviour(System.Single)">
+            <summary>
+            Updates behavior.
+            </summary>
+            <param name="deltaTime">Time since last update in seconds. <seealso cref="P:UnityEngine.Time.deltaTime"/></param>
+        </member>
+    </members>
+</doc>

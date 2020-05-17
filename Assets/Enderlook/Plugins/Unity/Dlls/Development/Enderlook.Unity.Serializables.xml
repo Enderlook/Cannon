@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Serializables</name>
+    </assembly>
+    <members>
+        <member name="T:Enderlook.Unity.Serializables.Calculator">
+            <summary>
+            Used to calculate formulas.<br/>
+            It can be either serialized in Unity inspector or construct using new.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Calculator.Compile">
+            <summary>
+            Whenever the regex object is compiled or not.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Calculator.#ctor(System.String,System.Boolean)">
+            <summary>
+            Construct a <see cref="T:Enderlook.Unity.Serializables.Calculator"/> class.
+            </summary>
+            <param name="formula">Formula to calculate.<br/>
+            It doesn't support operator precedence, instead use brackets.<br/>
+            Supports string formating.</param>
+            <param name="compile">Increases constructor time but decreases matching time. It's only worth with very heavy loads (~1M matches).</param>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Calculator.MakeRegex(System.Boolean)">
+            <summary>
+            Make regex object.
+            <paramref name="compile"/>Whenever the regex object should be compiled or not. Compile it increases construction time but reduce matching time. Recomended for very heavy usage.<paramref name="compile"/>
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Calculator.Calculate(System.Single[])">
+            <summary>
+            Calculate <seealso cref="F:Enderlook.Unity.Serializables.Calculator.formula"/> and using the given <paramref name="args"/> in the string formating.
+            </summary>
+            <param name="args">Arguments to use in the string formating <c>string.Format(<seealso cref="F:Enderlook.Unity.Serializables.Calculator.formula"/>, <paramref name="args"/>)</c></param>
+            <returns>Final value, result of the formula.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Calculator.Replace(System.Text.RegularExpressions.Match)">
+            <summary>
+            Performs a math operation with the captured groups of the regex, using the <seealso cref="F:Enderlook.Unity.Serializables.Calculator.operators"/>.
+            </summary>
+            <param name="m">Match from the regex.</param>
+            <returns>One step replaced string. You should call this method several times to replace all.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.Calculator.Compute(System.String,System.Single[])">
+            <summary>
+            Compute current operations using a method from <see cref="T:UnityEngine.Mathf"/> through reflection.
+            </summary>
+            <param name="nameOfMethod">Name of method to look for using reflection.</param>
+            <param name="parameters">Parameters to pass in <paramref name="nameOfMethod"/> method.</param>
+            <returns>Result of the <paramref name="nameOfMethod"/> method.</returns>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.DerivedSwitch`1.Mode">
+            <summary>
+            Current mode.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.DerivedSwitch`1.GetValue">
+            <inheritdoc cref="M:Enderlook.Unity.Utils.Interfaces.IGet`1.GetValue"/>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.DerivedSwitch`3.GetValue">
+            <inheritdoc cref="M:Enderlook.Unity.Serializables.DerivedSwitch`1.GetValue"/>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.DerivedSwitch`4.GetValue">
+            <inheritdoc cref="M:Enderlook.Unity.Serializables.DerivedSwitch`1.GetValue"/>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.DerivedSwitch`5.GetValue">
+            <inheritdoc cref="M:Enderlook.Unity.Serializables.DerivedSwitch`1.GetValue"/>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.Switch.Mode">
+            <summary>
+            Current mode.
+            </summary>
+        </member>
+    </members>
+</doc>

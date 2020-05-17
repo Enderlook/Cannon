@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Enderlook.Unity.Utils</name>
+    </assembly>
+    <members>
+        <member name="T:Enderlook.Unity.Utils.AudioClipUtils">
+            <summary>
+            Utility methods for <see cref="T:UnityEngine.AudioClip"/>.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.AudioClipUtils.CreateSlice(UnityEngine.AudioClip,System.String,System.Single,System.Single)">
+            <summary>
+            Creates a new <see cref="T:UnityEngine.AudioClip"/> from <paramref name="source"/> with new <paramref name="start"/> and <paramref name="length"/> values.
+            </summary>
+            <param name="source">Base <see cref="T:UnityEngine.AudioClip"/> where data is gotten.</param>
+            <param name="name">Name of new <see cref="T:UnityEngine.AudioClip"/>.</param>
+            <param name="start">Start position in seconds.</param>
+            <param name="length">Lenght in seconds.</param>
+            <returns>New <see cref="T:UnityEngine.AudioClip"/> with specified duration.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="source"/> or <paramref name="name"/> are <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="name"/> is empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Throw if <paramref name="start"/> is negative, <paramref name="length"/> isn't greater than 0 or the sum of <paramref name="start"/> and <paramref name="length"/> is greater than <c><paramref name="source"/>.length</c>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.AudioClipUtils.CreateSlice(UnityEngine.AudioClip,System.Single,System.Single)">
+            <summary>
+            Creates a new <see cref="T:UnityEngine.AudioClip"/> from <paramref name="source"/> with new <paramref name="start"/>.
+            </summary>
+            <param name="source">Base <see cref="T:UnityEngine.AudioClip"/> where data is gotten.</param>
+            <param name="start">Start position in seconds.</param>
+            <param name="length">Lenght in seconds.</param>
+            <returns>New <see cref="T:UnityEngine.AudioClip"/> with specified duration.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="source"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Throw if <paramref name="start"/> is negative, <paramref name="length"/> isn't greater than 0 or the sum of <paramref name="start"/> and <paramref name="length"/> is greater than <c><paramref name="source"/>.length</c>.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.AudioClipUtils.CreateSlice(UnityEngine.AudioClip,System.String,System.Single)">
+            <summary>
+            Creates a new <see cref="T:UnityEngine.AudioClip"/> from <paramref name="source"/> with new <paramref name="start"/>.
+            </summary>
+            <param name="source">Base <see cref="T:UnityEngine.AudioClip"/> where data is gotten.</param>
+            <param name="name">Name of new <see cref="T:UnityEngine.AudioClip"/>.</param>
+            <param name="start">Start position in seconds.</param>
+            <returns>New <see cref="T:UnityEngine.AudioClip"/> with specified duration.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="source"/> or <paramref name="name"/> are <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="name"/> is empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Throw if <paramref name="start"/> is negative.</exception>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.AudioClipUtils.CreateSlice(UnityEngine.AudioClip,System.Single)">
+            <summary>
+            Creates a new <see cref="T:UnityEngine.AudioClip"/> from <paramref name="source"/> with new <paramref name="start"/>.
+            </summary>
+            <param name="source">Base <see cref="T:UnityEngine.AudioClip"/> where data is gotten.</param>
+            <param name="start">Start position in seconds.</param>
+            <returns>New <see cref="T:UnityEngine.AudioClip"/> with specified duration.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="source"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Throw if <paramref name="start"/> is negative.</exception>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.DebugHelper.traceMode">
+            <summary>
+            Default <see cref="T:Enderlook.Unity.Utils.DebugHelper.TraceMode"/> used when a method provides a null trace.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.Log(System.Object[])">
+            <summary>
+            Print to console all <paramref name="objects"/> as strings separated by ', '.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="objects">Objects to print in console.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.Log(System.Object,UnityEngine.Object,System.String,System.String,System.Int32)">
+            <summary>
+            Print to console <paramref name="object"/> as strings.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="object">Object to print in console.</param>
+            <param name="context">Object to which the message applies.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogWarning(System.Object[])">
+            <summary>
+            Print to console all <paramref name="objects"/> as strings separated by ', '.
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="objects">Objects to print in console.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogWarning(System.Object,UnityEngine.Object,System.String,System.String,System.Int32)">
+            <summary>
+            Print to console <paramref name="object"/> as strings.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="object">Object to print in console.</param>
+            <param name="context">Object to which the message applies.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogError(System.Object[])">
+            <summary>
+            Print to console all <paramref name="objects"/> as strings separated by ', '.
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="objects">Objects to print in console.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogError(System.Object,UnityEngine.Object,System.String,System.String,System.Int32)">
+            <summary>
+            Print to console <paramref name="object"/> as strings.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="object">Object to print in console.</param>
+            <param name="context">Object to which the message applies.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.Log(System.String,UnityEngine.Object,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32,System.Object[])">
+            <summary>
+            Print to console all <paramref name="objects"/> as strings separated by ', ', preceded by message.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="message">A message to print in console. It will be treated as an additional object.</param>
+            <param name="context">Object to which the message applies.</param>
+            <param name="traceMode">Tracing mode showed in console. If <see langword="null"/> it will use class <see cref="F:Enderlook.Unity.Utils.DebugHelper.traceMode"/>.</param>
+            <param name="memberName">Do not complete.</param>
+            <param name="sourceFilePath">Do not complete.</param>
+            <param name="sourceLineNumber">Do not complete.</param>
+            <param name="objects">Objects to print in console.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogError(System.String,UnityEngine.Object,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32,System.Object[])">
+            <summary>
+            Print to console all <paramref name="objects"/> as strings separated by ', ', preceded by message.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="message">A message to print in console. It will be treated as an additional object.</param>
+            <param name="context">Object to which the message applies.</param>
+            <param name="traceMode">Tracing mode showed in console. If <see langword="null"/> it will use class <see cref="F:Enderlook.Unity.Utils.DebugHelper.traceMode"/>.</param>
+            <param name="memberName">Do not complete.</param>
+            <param name="sourceFilePath">Do not complete.</param>
+            <param name="sourceLineNumber">Do not complete.</param>
+            <param name="objects">Objects to print in console.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogWarning(System.String,UnityEngine.Object,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32,System.Object[])">
+            <summary>
+            Print to console all <paramref name="objects"/> as strings separated by ', ', preceded by message.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="message">A message to print in console. It will be treated as an additional object.</param>
+            <param name="context">Object to which the message applies.</param>
+            <param name="traceMode">Tracing mode showed in console. If <see langword="null"/> it will use class <see cref="F:Enderlook.Unity.Utils.DebugHelper.traceMode"/>.</param>
+            <param name="memberName">Do not complete.</param>
+            <param name="sourceFilePath">Do not complete.</param>
+            <param name="sourceLineNumber">Do not complete.</param>
+            <param name="objects">Objects to print in console.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.GetString(System.Object)">
+            <summary>
+            Return an string with the <paramref name="object"/> as string.<br/>
+            <see langword="null"/>s are turned into "null".<br/>
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="object">Object to get string.</param>
+            <returns>String version of <paramref name="object"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.GetStrings(System.Object[])">
+            <summary>
+            Return an string with all objects as strings separated by ', '.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <param name="objects">Objects to join as string.</param>
+            <returns>String version of <paramref name="objects"/>.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogLines``1(System.Collections.Generic.IEnumerable{``0},UnityEngine.Object,System.Boolean,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32)">
+            <summary>
+            Print to console all <paramref name="enumerable"/> as strings separated by , preceded by message.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <typeparam name="T"><see cref="T:System.Type"/> of <paramref name="enumerable"/> elements.</typeparam>
+            <param name="enumerable">Enumerable to print in console.</param>
+            <param name="context">Object to which the message applies.</param>
+            <param name="compact">Whenever it use a single log or several ones, one per line.</param>
+            <param name="traceMode">Tracing mode showed in console. If <see langword="null"/> it will use class <see cref="F:Enderlook.Unity.Utils.DebugHelper.traceMode"/>.</param>
+            <param name="memberName">Do not complete.</param>
+            <param name="sourceFilePath">Do not complete.</param>
+            <param name="sourceLineNumber">Do not complete.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogWarningLines``1(System.Collections.Generic.IEnumerable{``0},UnityEngine.Object,System.Boolean,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32)">
+            <summary>
+            Print to console all <paramref name="enumerable"/> as strings separated by , preceded by message.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <typeparam name="T"><see cref="T:System.Type"/> of <paramref name="enumerable"/> elements.</typeparam>
+            <param name="enumerable">Enumerable to print in console.</param>
+            <param name="context">Object to which the message applies.</param>
+            <param name="compact">Whenever it use a single log or several ones, one per line.</param>
+            <param name="traceMode">Tracing mode showed in console. If <see langword="null"/> it will use class <see cref="F:Enderlook.Unity.Utils.DebugHelper.traceMode"/>.</param>
+            <param name="memberName">Do not complete.</param>
+            <param name="sourceFilePath">Do not complete.</param>
+            <param name="sourceLineNumber">Do not complete.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.DebugHelper.LogErrorLines``1(System.Collections.Generic.IEnumerable{``0},UnityEngine.Object,System.Boolean,System.Nullable{Enderlook.Unity.Utils.DebugHelper.TraceMode},System.String,System.String,System.Int32)">
+            <summary>
+            Print to console all <paramref name="enumerable"/> as strings separated by , preceded by message.<br/>
+            <see langword="null"/>s are turned into "null".
+            Objects of type <see cref="T:UnityEngine.Color"/> will have included the HTMl tag color.
+            </summary>
+            <typeparam name="T"><see cref="T:System.Type"/> of <paramref name="enumerable"/> elements.</typeparam>
+            <param name="enumerable">Enumerable to print in console.</param>
+            <param name="context">Object to which the message applies.</param>
+            <param name="compact">Whenever it use a single log or several ones, one per line.</param>
+            <param name="traceMode">Tracing mode showed in console. If <see langword="null"/> it will use class <see cref="F:Enderlook.Unity.Utils.DebugHelper.traceMode"/>.</param>
+            <param name="memberName">Do not complete.</param>
+            <param name="sourceFilePath">Do not complete.</param>
+            <param name="sourceLineNumber">Do not complete.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.MouseHelper.GetMouseWorldPositionInEditor">
+            <summary>
+            Get the world position coordinates of the mouse position in editor.
+            </summary>
+            <returns>World position coordinates.</returns>
+            <remarks>Don't use outside Unity Editor.</remarks>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.MouseHelper.GetMouseWorldPositionInGame">
+            <summary>
+            Get world position coordinates of the mouse position from <see cref="P:UnityEngine.Camera.main"/>.<br/>
+            As Z-axis distance from camera will be used the Z position of the <see cref="P:UnityEngine.Camera.main"/>.
+            </summary>
+            <returns>World position coordinates.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.MouseHelper.GetMouseWorldPositionInGame(Enderlook.Unity.Utils.MouseHelper.ClipPlane)">
+            <summary>
+            Get world position coordinates of the mouse position from <see cref="P:UnityEngine.Camera.main"/>.
+            </summary>
+            <param name="clipPlane">If <c><paramref name="clipPlane"/> == <see cref="F:Enderlook.Unity.Utils.MouseHelper.ClipPlane.Near"/></c>, <see cref="P:UnityEngine.Camera.nearClipPlane"/> will be used as Z-axis distance to <paramref name="camera"/>.<br/>
+            If <c><paramref name="clipPlane"/> == <see cref="F:Enderlook.Unity.Utils.MouseHelper.ClipPlane.Far"/></c>, <see cref="P:UnityEngine.Camera.farClipPlane"/> will be used.</param>
+            <returns>World position coordinates.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.MouseHelper.GetMouseWorldPositionInGame(System.Single)">
+            <summary>
+            Get world position coordinates of the mouse position from <see cref="P:UnityEngine.Camera.main"/>
+            </summary>
+            <param name="z">Z-axis distance from camera.</param>
+            <returns>World position coordinates.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.MouseHelper.GetMouseWorldPositionInGame(UnityEngine.Camera)">
+            <summary>
+            Get world position coordinates of the mouse position from <paramref name="camera"/>.<br/>
+            As Z-axis distance from camera will be used the Z position of the <paramref name="camera"/>.
+            </summary>
+            <param name="camera">Camera used to get world position coordinates.</param>/// <returns>World position coordinates.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.MouseHelper.GetMouseWorldPositionInGame(UnityEngine.Camera,Enderlook.Unity.Utils.MouseHelper.ClipPlane)">
+            <summary>
+            Get world position coordinates of the mouse position from <paramref name="camera"/>.
+            </summary>
+            <param name="camera">Camera used to get world position coordinates.</param>
+            <param name="clipPlane">If <c><paramref name="clipPlane"/> == <see cref="F:Enderlook.Unity.Utils.MouseHelper.ClipPlane.Near"/></c>, <see cref="P:UnityEngine.Camera.nearClipPlane"/> will be used as Z-axis distance to <paramref name="camera"/>.<br/>
+            If <c><paramref name="clipPlane"/> == <see cref="F:Enderlook.Unity.Utils.MouseHelper.ClipPlane.Far"/></c>, <see cref="P:UnityEngine.Camera.farClipPlane"/> will be used.</param>
+            <returns>World position coordinates.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.MouseHelper.GetMouseWorldPositionInGame(UnityEngine.Camera,System.Single)">
+            <summary>
+            Get world position coordinates of the mouse position from <paramref name="camera"/>.
+            </summary>
+            <param name="camera">Camera used to get world position coordinates.</param>
+            <param name="z">Z-axis distance from camera.</param>
+            <returns>World position coordinates.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.MouseHelper.GetMouseViewportPositionInGame">
+            <summary>
+            Get the viewport position coordinates of the mouse position from <see cref="P:UnityEngine.Camera.main"/>.
+            </summary>
+            <returns>Viewport position coordinates.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.MouseHelper.GetMouseViewportPositionInGame(UnityEngine.Camera)">
+            <summary>
+            Get the viewport position coordinates of the mouse position from <paramref name="camera"/>.
+            </summary>
+            <param name="camera">Camera used to get viewport position coordinates.</param>
+            <returns>Viewport position coordinates.</returns>
+        </member>
+        <member name="T:Enderlook.Unity.Utils.RoundingMode">
+            <summary>
+            Determines how number are rounded.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.None">
+            <summary>
+            Values are show in decimal.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.Round">
+            <summary>
+            Uses <see cref="M:UnityEngine.Mathf.Round(System.Single)"/>
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.Ceil">
+            <summary>
+            Uses <see cref="M:UnityEngine.Mathf.Ceil(System.Single)"/>
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.Floor">
+            <summary>
+            Uses <see cref="M:UnityEngine.Mathf.Floor(System.Single)"/>.
+            </summary>
+        </member>
+        <member name="F:Enderlook.Unity.Utils.RoundingMode.Trunc">
+            <summary>
+            Cast value to <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="T:Enderlook.Unity.Utils.RoundingModeExtensions">
+            <summary>
+            Helper functions for <see cref="T:Enderlook.Unity.Utils.RoundingMode"/>
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.RoundingModeExtensions.Round(Enderlook.Unity.Utils.RoundingMode,System.Single)">
+            <summary>
+            Round <paramref name="value"/> with a method determined by <paramref name="mode"/>.
+            </summary>
+            <param name="mode">Rounding mode.</param>
+            <param name="value">Value to round.</param>
+            <returns>Rounded value</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Utils.RoundingModeExtensions.RoundToInt(Enderlook.Unity.Utils.RoundingMode,System.Single)">
+            <summary>
+            Round <paramref name="value"/> with a method determined by <paramref name="mode"/>.
+            </summary>
+            <param name="mode">Rounding mode.</param>
+            <param name="value">Value to round.</param>
+            <returns>Rounded value</returns>
+        </member>
+    </members>
+</doc>
