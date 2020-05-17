@@ -2,3 +2,8 @@ FANTASY GUI made by MELLE under license CC0
 	https://opengameart.org/content/fantasy-gui-0
 	GUI 1.png
 	GUI 2.png
+
+
+Painterly Spell Icons part 3 made by J. W. Bjerk under license CC-BY 3.0, CC-BY-SA 3.0, GPL 3.0, GPL 2.0
+	https://opengameart.org/content/painterly-spell-icons-part-3
+	frame-9-grey.png
