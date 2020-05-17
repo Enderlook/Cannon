@@ -33,9 +33,15 @@ namespace Game
         [SerializeField, Min(2), Tooltip("Max amount of predicted points.")]
         private int predictedPointsAmount = 25;
 
-        [SerializeField, Min(.1f), Tooltip("Width multiplier of the line renderer.")]
-        private float widthMultiplier = 1;
+        [SerializeField, Tooltip("Sprite used to draw dots.")]
+        private Sprite dotSprite;
 
+        [SerializeField, Min(1), Tooltip("Each how much points an sprite must be draw.")]
+        private int spriteRatio = 1;
+
+        [SerializeField, Tooltip("Size of sprites.")]
+        private float spriteScale = 1;
+                
         [Header("UI")]
         [SerializeField, Tooltip("Rect Transform where UI elements of ammunition are placed.")]
         private RectTransform uiTransform;
@@ -48,7 +54,7 @@ namespace Game
 
         private Vector2[] predictedPositions;
 
-        private float[] predictedSpeeds;
+        private (Transform, SpriteRenderer)[] dots;
 
         private AmmoUI[] uis;
 
@@ -58,7 +64,16 @@ namespace Game
         private void Awake()
         {
             predictedPositions = new Vector2[predictedPointsAmount];
-            predictedSpeeds = new float[predictedPointsAmount];
+            dots = new (Transform, SpriteRenderer)[predictedPointsAmount / spriteRatio];
+            for (int i = 0; i < dots.Length; i++)
+            {
+                GameObject dot = new GameObject($"Dot #{i}");
+                SpriteRenderer spriteRenderer = dot.AddComponent<SpriteRenderer>();
+                spriteRenderer.sprite = dotSprite;
+                Transform dotTransform = dot.transform;
+                dotTransform.localScale = Vector3.one * spriteScale;
+                dots[i] = (dotTransform, spriteRenderer);
+            }
 
             uis = new AmmoUI[ammunitions.Length];
             for (int i = 0; i < uis.Length; i++)
@@ -71,6 +86,12 @@ namespace Game
             }
 
             lineRenderer = GetComponent<LineRenderer>();
+            AnimationCurve curve = new AnimationCurve();
+            curve.AddKey(new Keyframe(0, 0));
+            curve.AddKey(new Keyframe(.1f, 1));
+            curve.AddKey(new Keyframe(.9f, 1));
+            curve.AddKey(new Keyframe(1, 0));
+            lineRenderer.widthCurve = curve;
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -96,31 +117,23 @@ namespace Game
                 lineRenderer.positionCount = max;
                 lineRenderer.SetPosition(0, shootingPosition);
 
-                predictedSpeeds[0] = (predictedPositions[0] - shootingPosition).magnitude;
-
-                for (int i = 1; i < max; i++)
+                int i = 1;
+                for (; i < max; i++)
                 {
-                    Vector2 position = predictedPositions[i - 1];
-                    predictedSpeeds[i] = (position - predictedPositions[i]).magnitude;
+                    int j = i - 1;
+                    Vector2 position = predictedPositions[j];
                     lineRenderer.SetPosition(i, position);
+                    if (j % spriteRatio == 0)
+                    {
+                        (Transform, SpriteRenderer) dot = dots[j / spriteRatio];
+                        dot.Item1.position = position;
+                        dot.Item2.enabled = true;
+                    }
                 }
 
-                float fastest = float.MinValue;
-                for (int i = 0; i < max; i++)
-                {
-                    if (predictedSpeeds[i] > fastest)
-                        fastest = predictedSpeeds[i];
-                }
-
-                AnimationCurve curve = new AnimationCurve();
-                for (int i = 0; i < max; i++)
-                {
-                    float time = (float)i / max;
-                    float percent = predictedSpeeds[i] / fastest;
-                    curve.AddKey(time, percent);
-                }
-                lineRenderer.widthCurve = curve;
-                lineRenderer.widthMultiplier = widthMultiplier;
+                for (--i; i < dots.Length; i++)
+                    if (i % spriteRatio == 0)
+                        dots[i / spriteRatio].Item2.enabled = false;
             }
         }
 

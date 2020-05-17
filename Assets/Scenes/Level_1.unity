@@ -481,7 +481,10 @@ MonoBehaviour:
     amount: 5
   predictionTimeScale: 0.05
   predictedPointsAmount: 100
-  widthMultiplier: 1
+  dotSprite: {fileID: 6846663246935152191, guid: ccd2cb0d9ad4f344aa112f1216a87a98,
+    type: 3}
+  spriteRatio: 2
+  spriteScale: 0.25
   uiTransform: {fileID: 702231390}
   uiPrefab: {fileID: 3699307196167619245, guid: 076c96b11e5a28f4f8d40c0bbbbf400a,
     type: 3}
@@ -528,7 +531,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.25
     widthCurve:
       serializedVersion: 2
       m_Curve:
