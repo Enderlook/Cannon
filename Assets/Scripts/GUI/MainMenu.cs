@@ -7,6 +7,7 @@ namespace Game.GUI
 {
     public class MainMenu : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Index of the scene to play.")]
         private int startLevelScene;
 
@@ -15,6 +16,7 @@ namespace Game.GUI
 
         [SerializeField, Tooltip("Manages loading bar.")]
         private Bar loadingBar;
+#pragma warning restore CS0649
 
         public void Exit() => Application.Quit();
 

@@ -5,6 +5,7 @@ namespace Game.GUI
 {
     public class Bar : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Frame image of bar.")]
         private Image frame;
 
@@ -13,6 +14,7 @@ namespace Game.GUI
 
         [SerializeField, Tooltip("Text value of bar.")]
         private Text text;
+#pragma warning restore CS0649
 
         public void Show()
         {

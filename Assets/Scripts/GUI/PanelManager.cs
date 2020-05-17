@@ -4,6 +4,7 @@ namespace Game.GUI
 {
     public class PanelManager : MonoBehaviour
     {
+#pragma warning disable CS0649
         [SerializeField, Tooltip("Managed panels.")]
         private GameObject[] panels;
 
@@ -12,6 +13,7 @@ namespace Game.GUI
 
         [SerializeField, Tooltip("Key pressed to close panels.")]
         private KeyCode closePanelsKey;
+#pragma warning restore CS0649
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         public void Update()
