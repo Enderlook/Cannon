@@ -22,6 +22,9 @@ namespace Game.Ammunitions
 
         [field: SerializeField, IsProperty, Tooltip("Sprite of projectile.")]
         public Sprite Sprite { get; private set; }
+
+        [SerializeField, IsProperty, Tooltip("Trail renderer material. If null, no trail is rendered.")]
+        private Material trailMaterial;
 #pragma warning restore CS0649
 
         public void Shoot(Vector3 force, Vector3 position) => CreateProjectile(force, position);
@@ -42,6 +45,16 @@ namespace Game.Ammunitions
             SpriteRenderer spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = Sprite;
             spriteRenderer.size = Vector2.one * colliderRadius * 2;
+
+            if (trailMaterial != null)
+            {
+                TrailRenderer trailRenderer = gameObject.AddComponent<TrailRenderer>();
+                trailRenderer.material = trailMaterial;
+                trailRenderer.widthMultiplier = .1f;
+                trailRenderer.startWidth = .25f;
+                trailRenderer.endWidth = 0;
+                trailRenderer.time = 1f;
+            }
 
             return gameObject;
         }

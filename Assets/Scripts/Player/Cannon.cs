@@ -1,10 +1,12 @@
 ﻿using Enderlook.Unity.Attributes;
+
 using Game.Creatures.Player.AbilitySystem;
-using System.Linq;
+
 using UnityEngine;
 
 namespace Game
 {
+    [RequireComponent(typeof(LineRenderer))]
     public class Cannon : MonoBehaviour
     {
 #pragma warning disable CS0649
@@ -31,6 +33,9 @@ namespace Game
         [SerializeField, Min(2), Tooltip("Max amount of predicted points.")]
         private int predictedPointsAmount = 25;
 
+        [SerializeField, Min(.1f), Tooltip("Width multiplier of the line renderer.")]
+        private float widthMultiplier = 1;
+
         [Header("UI")]
         [SerializeField, Tooltip("Rect Transform where UI elements of ammunition are placed.")]
         private RectTransform uiTransform;
@@ -43,12 +48,17 @@ namespace Game
 
         private Vector2[] predictedPositions;
 
+        private float[] predictedSpeeds;
+
         private AmmoUI[] uis;
+
+        private LineRenderer lineRenderer;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
             predictedPositions = new Vector2[predictedPointsAmount];
+            predictedSpeeds = new float[predictedPointsAmount];
 
             uis = new AmmoUI[ammunitions.Length];
             for (int i = 0; i < uis.Length; i++)
@@ -59,20 +69,58 @@ namespace Game
                 instance.SetSprite(ammo.Sprite);
                 instance.SetAmount(ammo.amount);
             }
+
+            lineRenderer = GetComponent<LineRenderer>();
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
+            Vector2 mouseDirection = GetMouseDirection();
+            Vector2 shootingPosition = GetShootingPosition(mouseDirection);
+            Vector2 shootingForce = GetShootingForce(mouseDirection);
+
             if (Input.GetMouseButtonDown(0))
             {
                 Ammo ammunition = ammunitions[currentAmmunitionIndex];
                 if (ammunition.amount > 0)
                 {
                     uis[currentAmmunitionIndex].SetAmount(--ammunition.amount);
-                    Vector2 mouseDirection = GetMouseDirection();
-                    ammunition.Shoot(GetShootingForce(mouseDirection), GetShootingPosition(mouseDirection));
+                    ammunition.Shoot(shootingForce, shootingPosition);
                 }
+            }
+
+            int max = ammunitions[currentAmmunitionIndex].GetPredictedPositions(GetShootingForce(mouseDirection), shootingPosition, predictedPositions, predictionTimeScale);
+            if (max > 0)
+            {
+                lineRenderer.positionCount = max;
+                lineRenderer.SetPosition(0, shootingPosition);
+
+                predictedSpeeds[0] = (predictedPositions[0] - shootingPosition).magnitude;
+
+                for (int i = 1; i < max; i++)
+                {
+                    Vector2 position = predictedPositions[i - 1];
+                    predictedSpeeds[i] = (position - predictedPositions[i]).magnitude;
+                    lineRenderer.SetPosition(i, position);
+                }
+
+                float fastest = float.MinValue;
+                for (int i = 0; i < max; i++)
+                {
+                    if (predictedSpeeds[i] > fastest)
+                        fastest = predictedSpeeds[i];
+                }
+
+                AnimationCurve curve = new AnimationCurve();
+                for (int i = 0; i < max; i++)
+                {
+                    float time = (float)i / max;
+                    float percent = predictedSpeeds[i] / fastest;
+                    curve.AddKey(time, percent);
+                }
+                lineRenderer.widthCurve = curve;
+                lineRenderer.widthMultiplier = widthMultiplier;
             }
         }
 
@@ -100,11 +148,11 @@ namespace Game
                 Gizmos.DrawWireSphere(shootingPosition, .1f);
 
                 int max = ammunitions[currentAmmunitionIndex].GetPredictedPositions(GetShootingForce(mouseDirection), shootingPosition, predictedPositions, predictionTimeScale);
-                if (max >= 2)
+                if (max > 0)
                 {
                     Gizmos.color = Color.red;
                     Gizmos.DrawWireSphere(predictedPositions[0], .1f);
-                    for (int i = 0; i < max - 2;)
+                    for (int i = 0; i < max - 1;)
                     {
                         Gizmos.color = Color.blue;
                         Gizmos.DrawLine(predictedPositions[i], predictedPositions[++i]);

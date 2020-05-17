@@ -18,3 +18,4 @@ MonoBehaviour:
   colliderRadius: 0.6
   <Sprite>k__BackingField: {fileID: -7046424138740760354, guid: ccd2cb0d9ad4f344aa112f1216a87a98,
     type: 3}
+  trailMaterial: {fileID: 2100000, guid: 86167ca1a0d863f4585d99993ea1502c, type: 2}
