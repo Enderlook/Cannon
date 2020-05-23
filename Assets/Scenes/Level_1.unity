@@ -472,19 +472,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6f4fd5a4772e04f84105118f2be1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  center: {x: -7.234, y: -3.5125847}
+  center: {x: -7.239967, y: -3.4238265}
   shootingDistanceFromCenter: 1
   maximumShootingDistance: 1
-  maximumForce: 10
+  maximumForce: 5
   ammunitions:
   - type: {fileID: 11400000, guid: 66920029a050b5440b567930b2cc0401, type: 2}
     amount: 5
-  predictionTimeScale: 0.05
-  predictedPointsAmount: 100
-  dotSprite: {fileID: 6846663246935152191, guid: ccd2cb0d9ad4f344aa112f1216a87a98,
+  predictionTimeScale: 0.1
+  predictedPointsAmount: 25
+  dotSprite: {fileID: -7046424138740760354, guid: ccd2cb0d9ad4f344aa112f1216a87a98,
     type: 3}
-  spriteRatio: 2
-  spriteScale: 0.25
+  spriteRatio: 1
+  spriteScale: 0.2
   uiTransform: {fileID: 702231390}
   uiPrefab: {fileID: 3699307196167619245, guid: 076c96b11e5a28f4f8d40c0bbbbf400a,
     type: 3}
