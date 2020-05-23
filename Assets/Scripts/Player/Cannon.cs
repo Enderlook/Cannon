@@ -41,7 +41,7 @@ namespace Game
 
         [SerializeField, Tooltip("Size of sprites.")]
         private float spriteScale = 1;
-                
+
         [Header("UI")]
         [SerializeField, Tooltip("Rect Transform where UI elements of ammunition are placed.")]
         private RectTransform uiTransform;
@@ -138,9 +138,9 @@ namespace Game
         }
 
         private Vector2 GetShootingPosition(Vector2 mouseDirection)
-            => mouseDirection + center;
+            => (mouseDirection.normalized * maximumShootingDistance) + center;
 
-        private Vector2 GetMouseDirection() => Vector2.ClampMagnitude((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - center, maximumShootingDistance);
+        private Vector2 GetMouseDirection() => Vector2.ClampMagnitude(center - (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition), maximumShootingDistance);
 
         private Vector2 GetShootingForce(Vector2 mouseDirection)
             => mouseDirection * (maximumShootingDistance / mouseDirection.magnitude) * maximumForce;
@@ -156,8 +156,8 @@ namespace Game
                 Vector2 mouseDirection = GetMouseDirection();
                 Vector2 shootingPosition = GetShootingPosition(mouseDirection);
 
-                Gizmos.DrawLine(shootingPosition, center);
-                Gizmos.DrawLine(center, center + ((center - shootingPosition).normalized * shootingDistanceFromCenter));
+                Gizmos.DrawLine(center, center - mouseDirection);
+                Gizmos.DrawLine(center, center + ((shootingPosition - center).normalized * shootingDistanceFromCenter));
                 Gizmos.DrawWireSphere(shootingPosition, .1f);
 
                 int max = ammunitions[currentAmmunitionIndex].GetPredictedPositions(GetShootingForce(mouseDirection), shootingPosition, predictedPositions, predictionTimeScale);
