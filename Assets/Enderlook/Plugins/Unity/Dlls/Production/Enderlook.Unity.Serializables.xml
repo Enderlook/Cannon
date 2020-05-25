@@ -52,14 +52,6 @@
             <param name="parameters">Parameters to pass in <paramref name="nameOfMethod"/> method.</param>
             <returns>Result of the <paramref name="nameOfMethod"/> method.</returns>
         </member>
-        <member name="P:Enderlook.Unity.Serializables.DerivedSwitch`1.Mode">
-            <summary>
-            Current mode.
-            </summary>
-        </member>
-        <member name="M:Enderlook.Unity.Serializables.DerivedSwitch`1.GetValue">
-            <inheritdoc cref="M:Enderlook.Unity.Utils.Interfaces.IGet`1.GetValue"/>
-        </member>
         <member name="M:Enderlook.Unity.Serializables.DerivedSwitch`3.GetValue">
             <inheritdoc cref="M:Enderlook.Unity.Serializables.DerivedSwitch`1.GetValue"/>
         </member>
@@ -68,6 +60,14 @@
         </member>
         <member name="M:Enderlook.Unity.Serializables.DerivedSwitch`5.GetValue">
             <inheritdoc cref="M:Enderlook.Unity.Serializables.DerivedSwitch`1.GetValue"/>
+        </member>
+        <member name="P:Enderlook.Unity.Serializables.DerivedSwitch`1.Mode">
+            <summary>
+            Current mode.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Serializables.DerivedSwitch`1.GetValue">
+            <inheritdoc cref="M:Enderlook.Unity.Utils.Interfaces.IGet`1.GetValue"/>
         </member>
         <member name="P:Enderlook.Unity.Serializables.Switch.Mode">
             <summary>

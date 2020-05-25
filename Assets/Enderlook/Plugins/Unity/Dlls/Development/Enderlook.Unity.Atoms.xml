@@ -4,206 +4,6 @@
         <name>Enderlook.Unity.Atoms</name>
     </assembly>
     <members>
-        <member name="M:Enderlook.Unity.Atoms.AtomAction`1.Execute(`0)">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IAction`1.Execute(`0)"/>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.AtomAction2`1.Execute(`0,`0)">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IAction2`1.Execute(`0,`0)"/>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IAction`1.Execute(`0)">
-            <summary>
-            Execute action.
-            </summary>
-            <param name="parameter">Parameter passed to the action.</param>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IAction2`1.Execute(`0,`0)">
-            <summary>
-            Execute action.
-            </summary>
-            <param name="parameter1">First parameter passed to the action.</param>
-            <param name="parameter2">Second parameter passed to the action.</param>
-        </member>
-        <member name="E:Enderlook.Unity.Atoms.Event`1.OnEvent">
-            <summary>
-            Event managed by this instance.
-            </summary>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.Event`1.Register(System.Action{`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.Register(System.Action{`0})" />
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.Event`1.Unregister(System.Action{`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.Unregister(System.Action{`0})" />
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.Event`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener{`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener{`0})" />
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.Event`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener{`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener{`0})" />
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.Event`1.RaiseEvent(`0)">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEvent`1.RaiseEvent(`0)" />
-        </member>
-        <member name="E:Enderlook.Unity.Atoms.Event2`1.OnEvent">
-            <summary>
-            Event managed by this instance.
-            </summary>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.Event2`1.Register(System.Action{`0,`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.Register(System.Action{`0,`0})" />
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.Event2`1.Unregister(System.Action{`0,`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.Unregister(System.Action{`0,`0})" />
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.Event2`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})" />
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.Event2`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})" />
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.Event2`1.RaiseEvent(`0,`0)">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEvent2`1.RaiseEvent(`0,`0)" />
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IEvent`1.RaiseEvent(`0)">
-            <summary>
-            Execute event.
-            </summary>
-            <param name="parameter">Parameter passed to the event.</param>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IEvent2`1.RaiseEvent(`0,`0)">
-            <summary>
-            Execute event.
-            </summary>
-            <param name="parameter1">First parameter passed to the event.</param>
-            <param name="parameter2">Second parameter passed to the event.</param>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IEventRegister`1.Register(System.Action{`0})">
-            <summary>
-            Register an action to be called when <see cref="!:OnEvent"/> triggers.
-            </summary>
-            <param name="action">Action to register.</param>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IEventRegister`1.Unregister(System.Action{`0})">
-            <summary>
-            Unregister an action to be called when <see cref="!:OnEvent"/> triggers.
-            </summary>
-            <param name="action">Action to unregister.</param>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IEventRegister`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener{`0})">
-            <summary>
-            Register an listener to be called when <see cref="!:OnEvent"/> triggers.
-            </summary>
-            <param name="listener">Listener to register.</param>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IEventRegister`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener{`0})">
-            <summary>
-            Unregister an listener to be called when <see cref="!:OnEvent"/> triggers.
-            </summary>
-            <param name="listener">Listener to unregister.</param>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IEventRegister2`1.Register(System.Action{`0,`0})">
-            <summary>
-            Register an action to be called when <see cref="!:OnEvent"/> triggers.
-            </summary>
-            <param name="action">Action to register.</param>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IEventRegister2`1.Unregister(System.Action{`0,`0})">
-            <summary>
-            Unregister an action to be called when <see cref="!:OnEvent"/> triggers.
-            </summary>
-            <param name="action">Action to unregister.</param>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IEventRegister2`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})">
-            <summary>
-            Register an listener to be called when <see cref="!:OnEvent"/> triggers.
-            </summary>
-            <param name="listener">Listener to register.</param>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IEventRegister2`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})">
-            <summary>
-            Unregister an listener to be called when <see cref="!:OnEvent"/> triggers.
-            </summary>
-            <param name="listener">Listener to unregister.</param>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.EventListener`4.OnEventRaised(`0)">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventListener`1.OnEventRaised(`0)"/>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.EventListener2`4.OnEventRaised(`0,`0)">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventListener2`1.OnEventRaised(`0,`0)"/>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IEventListener`1.OnEventRaised(`0)">
-            <summary>
-            Executes the stored actions.
-            </summary>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IEventListener2`1.OnEventRaised(`0,`0)">
-            <summary>
-            Executes the stored actions.
-            </summary>
-        </member>
-        <member name="P:Enderlook.Unity.Atoms.EventReference`4.Event">
-            <summary>
-            Event stored by this reference.
-            </summary>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.EventReference`4.Register(System.Action{`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.Register(System.Action{`0})"/>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.EventReference`4.RegisterListener(Enderlook.Unity.Atoms.IEventListener{`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener{`0})"/>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.EventReference`4.Unregister(System.Action{`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.Unregister(System.Action{`0})"/>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.EventReference`4.UnregisterListener(Enderlook.Unity.Atoms.IEventListener{`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener{`0})"/>
-        </member>
-        <member name="P:Enderlook.Unity.Atoms.EventReference2`4.Event">
-            <summary>
-            Event stored by this reference.
-            </summary>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.EventReference2`4.Register(System.Action{`0,`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.Register(System.Action{`0,`0})"/>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.EventReference2`4.RegisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})"/>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.EventReference2`4.Unregister(System.Action{`0,`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.Unregister(System.Action{`0,`0})"/>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.EventReference2`4.UnregisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})">
-            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})"/>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.Transformer`1.Transform(`0)">
-            <summary>
-            Executes the behavior of this instance.
-            </summary>
-            <param name="value">Parameter used to execute.</param>
-            <returns>Result of execution.</returns>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.GetComponent`1.GetValue">
-            <inheritdoc cref="T:Enderlook.Unity.Utils.Interfaces.IGet`1" />
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.GetSO`1.GetValue">
-            <inheritdoc cref="T:Enderlook.Unity.Utils.Interfaces.IGet`1" />
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IGetSet`1.SetValue(`0)">
-            <summary>
-            Stores an value in this object.
-            </summary>
-            <param name="newValue">Value to store.</param>
-        </member>
-        <member name="M:Enderlook.Unity.Atoms.IManaged`1.Reset(System.Boolean)">
-            <summary>
-            Resets the value stored in this objects to <see cref="P:Enderlook.Unity.Atoms.IManaged`1.InitialValue"/>.
-            </summary>
-            <param name="shouldTriggerEvents">Whenever it should trigger set events or not.</param>
-        </member>
-        <member name="P:Enderlook.Unity.Atoms.IManaged`1.InitialValue">
-            <summary>
-            Initial value of this variable.
-            </summary>
-        </member>
         <member name="M:Enderlook.Unity.Atoms.BoolTransformer.CreateTransformerPrototype">
             <summary>
             Create a prototype of this instance.
@@ -8174,6 +7974,206 @@
             Extract the stored value from <see cref="M:Enderlook.Unity.Atoms.Vector4GetSetReference.GetValue"/>.
             </summary>
             <param name="instance">Instance where value will be get.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.AtomAction`1.Execute(`0)">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IAction`1.Execute(`0)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.AtomAction2`1.Execute(`0,`0)">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IAction2`1.Execute(`0,`0)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IAction`1.Execute(`0)">
+            <summary>
+            Execute action.
+            </summary>
+            <param name="parameter">Parameter passed to the action.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IAction2`1.Execute(`0,`0)">
+            <summary>
+            Execute action.
+            </summary>
+            <param name="parameter1">First parameter passed to the action.</param>
+            <param name="parameter2">Second parameter passed to the action.</param>
+        </member>
+        <member name="E:Enderlook.Unity.Atoms.Event`1.OnEvent">
+            <summary>
+            Event managed by this instance.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.Event`1.Register(System.Action{`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.Register(System.Action{`0})" />
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.Event`1.Unregister(System.Action{`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.Unregister(System.Action{`0})" />
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.Event`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener{`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener{`0})" />
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.Event`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener{`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener{`0})" />
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.Event`1.RaiseEvent(`0)">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEvent`1.RaiseEvent(`0)" />
+        </member>
+        <member name="E:Enderlook.Unity.Atoms.Event2`1.OnEvent">
+            <summary>
+            Event managed by this instance.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.Event2`1.Register(System.Action{`0,`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.Register(System.Action{`0,`0})" />
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.Event2`1.Unregister(System.Action{`0,`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.Unregister(System.Action{`0,`0})" />
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.Event2`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})" />
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.Event2`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})" />
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.Event2`1.RaiseEvent(`0,`0)">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEvent2`1.RaiseEvent(`0,`0)" />
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IEvent`1.RaiseEvent(`0)">
+            <summary>
+            Execute event.
+            </summary>
+            <param name="parameter">Parameter passed to the event.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IEvent2`1.RaiseEvent(`0,`0)">
+            <summary>
+            Execute event.
+            </summary>
+            <param name="parameter1">First parameter passed to the event.</param>
+            <param name="parameter2">Second parameter passed to the event.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IEventRegister`1.Register(System.Action{`0})">
+            <summary>
+            Register an action to be called when <see cref="!:OnEvent"/> triggers.
+            </summary>
+            <param name="action">Action to register.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IEventRegister`1.Unregister(System.Action{`0})">
+            <summary>
+            Unregister an action to be called when <see cref="!:OnEvent"/> triggers.
+            </summary>
+            <param name="action">Action to unregister.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IEventRegister`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener{`0})">
+            <summary>
+            Register an listener to be called when <see cref="!:OnEvent"/> triggers.
+            </summary>
+            <param name="listener">Listener to register.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IEventRegister`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener{`0})">
+            <summary>
+            Unregister an listener to be called when <see cref="!:OnEvent"/> triggers.
+            </summary>
+            <param name="listener">Listener to unregister.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IEventRegister2`1.Register(System.Action{`0,`0})">
+            <summary>
+            Register an action to be called when <see cref="!:OnEvent"/> triggers.
+            </summary>
+            <param name="action">Action to register.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IEventRegister2`1.Unregister(System.Action{`0,`0})">
+            <summary>
+            Unregister an action to be called when <see cref="!:OnEvent"/> triggers.
+            </summary>
+            <param name="action">Action to unregister.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IEventRegister2`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})">
+            <summary>
+            Register an listener to be called when <see cref="!:OnEvent"/> triggers.
+            </summary>
+            <param name="listener">Listener to register.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IEventRegister2`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})">
+            <summary>
+            Unregister an listener to be called when <see cref="!:OnEvent"/> triggers.
+            </summary>
+            <param name="listener">Listener to unregister.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.EventListener`4.OnEventRaised(`0)">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventListener`1.OnEventRaised(`0)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.EventListener2`4.OnEventRaised(`0,`0)">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventListener2`1.OnEventRaised(`0,`0)"/>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IEventListener`1.OnEventRaised(`0)">
+            <summary>
+            Executes the stored actions.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IEventListener2`1.OnEventRaised(`0,`0)">
+            <summary>
+            Executes the stored actions.
+            </summary>
+        </member>
+        <member name="P:Enderlook.Unity.Atoms.EventReference`4.Event">
+            <summary>
+            Event stored by this reference.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.EventReference`4.Register(System.Action{`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.Register(System.Action{`0})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.EventReference`4.RegisterListener(Enderlook.Unity.Atoms.IEventListener{`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener{`0})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.EventReference`4.Unregister(System.Action{`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.Unregister(System.Action{`0})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.EventReference`4.UnregisterListener(Enderlook.Unity.Atoms.IEventListener{`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener{`0})"/>
+        </member>
+        <member name="P:Enderlook.Unity.Atoms.EventReference2`4.Event">
+            <summary>
+            Event stored by this reference.
+            </summary>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.EventReference2`4.Register(System.Action{`0,`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.Register(System.Action{`0,`0})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.EventReference2`4.RegisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.RegisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.EventReference2`4.Unregister(System.Action{`0,`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.Unregister(System.Action{`0,`0})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.EventReference2`4.UnregisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})">
+            <inheritdoc cref="M:Enderlook.Unity.Atoms.IEventRegister2`1.UnregisterListener(Enderlook.Unity.Atoms.IEventListener2{`0})"/>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.Transformer`1.Transform(`0)">
+            <summary>
+            Executes the behavior of this instance.
+            </summary>
+            <param name="value">Parameter used to execute.</param>
+            <returns>Result of execution.</returns>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.GetComponent`1.GetValue">
+            <inheritdoc cref="T:Enderlook.Unity.Utils.Interfaces.IGet`1" />
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.GetSO`1.GetValue">
+            <inheritdoc cref="T:Enderlook.Unity.Utils.Interfaces.IGet`1" />
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IGetSet`1.SetValue(`0)">
+            <summary>
+            Stores an value in this object.
+            </summary>
+            <param name="newValue">Value to store.</param>
+        </member>
+        <member name="M:Enderlook.Unity.Atoms.IManaged`1.Reset(System.Boolean)">
+            <summary>
+            Resets the value stored in this objects to <see cref="P:Enderlook.Unity.Atoms.IManaged`1.InitialValue"/>.
+            </summary>
+            <param name="shouldTriggerEvents">Whenever it should trigger set events or not.</param>
+        </member>
+        <member name="P:Enderlook.Unity.Atoms.IManaged`1.InitialValue">
+            <summary>
+            Initial value of this variable.
+            </summary>
         </member>
     </members>
 </doc>
