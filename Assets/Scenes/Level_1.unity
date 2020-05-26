@@ -177,7 +177,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 50, y: 50}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 10, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1035690683
@@ -475,10 +475,12 @@ MonoBehaviour:
   center: {x: -7.239967, y: -3.4238265}
   shootingDistanceFromCenter: 1
   maximumShootingDistance: 1
-  maximumForce: 5
+  maximumForce: 10
   ammunitions:
   - type: {fileID: 11400000, guid: 66920029a050b5440b567930b2cc0401, type: 2}
     amount: 5
+  - type: {fileID: 11400000, guid: 88818793025783b499efaa7713e16e56, type: 2}
+    amount: 3
   predictionTimeScale: 0.1
   predictedPointsAmount: 25
   dotSprite: {fileID: -7046424138740760354, guid: ccd2cb0d9ad4f344aa112f1216a87a98,

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Ammunitions
 {
-    [CreateAssetMenu(fileName = "Base Ammunition", menuName = "Game/Ammunition/Base Ammunition")]
+    [CreateAssetMenu(fileName = "Base Ammunition", menuName = "Game/Cannon/Ammunition/Base Ammunition")]
     public class Ammunition : ScriptableObject, IAmmunition
     {
 #pragma warning disable CS0649
@@ -14,22 +14,27 @@ namespace Game.Ammunitions
         [SerializeField, Min(.1f), Tooltip("Mass of projectile.")]
         private float mass = 1;
 
-        [SerializeField, Min(.1f), Tooltip("Damage multiplier done at impact.")]
-        private float damage = 1;
-
         [SerializeField, Min(.1f), Tooltip("Radius of circule collider.")]
         private float colliderRadius = 1;
 
         [field: SerializeField, IsProperty, Tooltip("Sprite of projectile.")]
         public Sprite Sprite { get; private set; }
 
-        [SerializeField, IsProperty, Tooltip("Trail renderer material. If null, no trail is rendered.")]
-        private Material trailMaterial;
+        [SerializeField, Tooltip("Additional settings added to the generated projectile.")]
+        private Attach[] attachs;
 #pragma warning restore CS0649
 
-        public void Shoot(Vector3 force, Vector3 position) => CreateProjectile(force, position);
+        public void Shoot(Vector3 force, Vector3 position)
+        {
+            GameObject projectile = CreateProjectile(force, position);
+            foreach (Attach attach in attachs)
+                attach.Accept(projectile);
+        }
 
         protected virtual GameObject CreateProjectile(Vector3 force, Vector3 position)
+            => SpawnProjectile(force * forceMultiplier, position, mass, colliderRadius, Sprite);
+
+        public static GameObject SpawnProjectile(Vector3 force, Vector3 position, float mass, float colliderRadius, Sprite sprite)
         {
             GameObject gameObject = new GameObject("Projectile");
             Transform transform = gameObject.transform;
@@ -37,24 +42,14 @@ namespace Game.Ammunitions
 
             Rigidbody2D rigidbody = gameObject.AddComponent<Rigidbody2D>();
             rigidbody.mass = mass;
-            rigidbody.AddForce(force * forceMultiplier, ForceMode2D.Impulse);
+            rigidbody.AddForce(force, ForceMode2D.Impulse);
 
             CircleCollider2D collider = gameObject.AddComponent<CircleCollider2D>();
             collider.radius = colliderRadius;
 
             SpriteRenderer spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
-            spriteRenderer.sprite = Sprite;
+            spriteRenderer.sprite = sprite;
             spriteRenderer.size = Vector2.one * colliderRadius * 2;
-
-            if (trailMaterial != null)
-            {
-                TrailRenderer trailRenderer = gameObject.AddComponent<TrailRenderer>();
-                trailRenderer.material = trailMaterial;
-                trailRenderer.widthMultiplier = .1f;
-                trailRenderer.startWidth = .25f;
-                trailRenderer.endWidth = 0;
-                trailRenderer.time = 1f;
-            }
 
             return gameObject;
         }
