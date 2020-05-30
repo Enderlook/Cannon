@@ -16,6 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c53b76eeb1420f0449249f1dc63e5661, type: 2}
   - {fileID: 11400000, guid: c53b76eeb1420f0449249f1dc63e5661, type: 2}
   - {fileID: 11400000, guid: c53b76eeb1420f0449249f1dc63e5661, type: 2}
+  randomization: 0.4
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30,7 +31,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceMultiplier: 1
   mass: 1.2
-  colliderRadius: 0.7
+  scale: 0.3
   <Sprite>k__BackingField: {fileID: 6846663246935152191, guid: ccd2cb0d9ad4f344aa112f1216a87a98,
     type: 3}
   attachs:

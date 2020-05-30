@@ -25,9 +25,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2d11e0ab880a64186b328f8e979931, type: 3}
   m_Name: Pellet
   m_EditorClassIdentifier: 
-  forceMultiplier: 1
+  forceMultiplier: 5
   mass: 0.25
-  colliderRadius: 0.3
+  scale: 0.2
   <Sprite>k__BackingField: {fileID: 5311137628540409926, guid: ccd2cb0d9ad4f344aa112f1216a87a98,
     type: 3}
   attachs:
