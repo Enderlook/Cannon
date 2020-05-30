@@ -8,8 +8,11 @@ namespace Game.Ammunitions
 #pragma warning disable CS0649
         [SerializeField, Tooltip("Ammunitions spawn on hit.")]
         private Ammunition[] ammunitions;
+
+        [SerializeField, Tooltip("Amount randomization of force.")]
+        private float randomization = 0;
 #pragma warning restore CS0649
 
-        public override void Accept(GameObject gameObject) => SpawnOnHit.AddComponentTo(gameObject, ammunitions);
+        public override void Accept(GameObject gameObject) => SpawnOnHit.AddComponentTo(gameObject, ammunitions, randomization);
     }
 }
