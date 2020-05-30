@@ -14,8 +14,8 @@ namespace Game.Ammunitions
         [SerializeField, Min(.1f), Tooltip("Mass of projectile.")]
         private float mass = 1;
 
-        [SerializeField, Min(.1f), Tooltip("Radius of circule collider.")]
-        private float colliderRadius = 1;
+        [SerializeField, Min(.1f), Tooltip("Scale of projectile.")]
+        private float scale = 1;
 
         [field: SerializeField, IsProperty, Tooltip("Sprite of projectile.")]
         public Sprite Sprite { get; private set; }
@@ -32,24 +32,23 @@ namespace Game.Ammunitions
         }
 
         protected virtual GameObject CreateProjectile(Vector3 force, Vector3 position)
-            => SpawnProjectile(force * forceMultiplier, position, mass, colliderRadius, Sprite);
+            => SpawnProjectile(force * forceMultiplier, position, mass, scale, Sprite);
 
-        public static GameObject SpawnProjectile(Vector3 force, Vector3 position, float mass, float colliderRadius, Sprite sprite)
+        public static GameObject SpawnProjectile(Vector3 force, Vector3 position, float mass, float scale, Sprite sprite)
         {
             GameObject gameObject = new GameObject("Projectile");
             Transform transform = gameObject.transform;
             transform.position = position;
+            transform.localScale = Vector3.one * scale;
 
             Rigidbody2D rigidbody = gameObject.AddComponent<Rigidbody2D>();
             rigidbody.mass = mass;
             rigidbody.AddForce(force, ForceMode2D.Impulse);
 
             CircleCollider2D collider = gameObject.AddComponent<CircleCollider2D>();
-            collider.radius = colliderRadius;
 
             SpriteRenderer spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = sprite;
-            spriteRenderer.size = Vector2.one * colliderRadius * 2;
 
             return gameObject;
         }
@@ -67,7 +66,7 @@ namespace Game.Ammunitions
                 float y = startPosition.y + (force.y * t) + (.5f * Physics2D.gravity.y * t * t);
 
                 positions[i] = new Vector2(x, y);
-            } while (Physics2D.OverlapCircle(positions[i], colliderRadius) == null && i++ < positions.Length - 1);
+            } while (Physics2D.OverlapCircle(positions[i], scale) == null && i++ < positions.Length - 1);
 
             return i;
         }
