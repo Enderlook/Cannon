@@ -5,12 +5,9 @@ using UnityEngine.SceneManagement;
 
 namespace Game.GUI
 {
-    public class MainMenu : MonoBehaviour
+    public class SceneChanger : MonoBehaviour
     {
 #pragma warning disable CS0649
-        [SerializeField, Tooltip("Index of the scene to play.")]
-        private int startLevelScene;
-
         [SerializeField, Tooltip("Manages panels shown in the menu.")]
         private PanelManager panelManager;
 
@@ -20,12 +17,12 @@ namespace Game.GUI
 
         public void Exit() => Application.Quit();
 
-        public void Play()
+        public void ChangeScene(int index)
         {
             panelManager.HideAll();
             loadingBar.Show();
 
-            StartCoroutine(ShowProgess(SceneManager.LoadSceneAsync(startLevelScene)));
+            StartCoroutine(ShowProgess(SceneManager.LoadSceneAsync(index)));
 
             IEnumerator ShowProgess(AsyncOperation operation)
             {
