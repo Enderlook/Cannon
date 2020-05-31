@@ -33,5 +33,7 @@ namespace Game.GUI
                 }
             }
         }
+
+        public void Reload() => ChangeScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

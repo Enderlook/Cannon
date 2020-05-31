@@ -1,24 +1,15 @@
-﻿using System.Linq;
-
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Ammunitions
 {
-    public class HurtOnHit : MonoBehaviour
+    public class HurtOnHit : MonoBehaviour, IDamager
     {
-        private float damageMultiplier = 1;
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.otherCollider.TryGetComponent(out IDamagable damagable))
-                damagable.TakeDamage(collision.contacts.Sum(e => e.normalImpulse) * damageMultiplier);
-        }
+        public float DamageMultiplier { get; private set; } = 1;
 
         public static void AddComponentTo(GameObject gameObject, float damageMultiplier)
         {
             HurtOnHit component = gameObject.AddComponent<HurtOnHit>();
-            component.damageMultiplier = damageMultiplier;
+            component.DamageMultiplier = damageMultiplier;
         }
     }
 }

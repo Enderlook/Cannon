@@ -29,7 +29,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2d11e0ab880a64186b328f8e979931, type: 3}
   m_Name: Split Ammunition
   m_EditorClassIdentifier: 
-  forceMultiplier: 1
+  layer: 9
+  forceMultiplier: 1.4
   mass: 1.2
   scale: 0.3
   <Sprite>k__BackingField: {fileID: 6846663246935152191, guid: ccd2cb0d9ad4f344aa112f1216a87a98,
@@ -38,6 +39,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 34569e4469f24e044b81f0c2d26b22e0, type: 2}
   - {fileID: 1471456457049306369}
   - {fileID: -1647214069964069637}
+  - {fileID: 11400000, guid: ddb9ee5aebaf8eb448baace082c21a70, type: 2}
 --- !u!114 &1471456457049306369
 MonoBehaviour:
   m_ObjectHideFlags: 0

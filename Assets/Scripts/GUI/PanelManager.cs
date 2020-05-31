@@ -20,12 +20,20 @@ namespace Game.GUI
 
         [SerializeField, Tooltip("Whenever this menu can be hidden or not.")]
         private bool toggleable;
+
+        [SerializeField]
+        private GameObject winPanel;
+
+        [SerializeField]
+        private GameObject losePanel;
 #pragma warning restore CS0649
+
+        private bool canChange = true;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         public void Update()
         {
-            if (Input.GetKeyDown(closePanelsKey))
+            if (Input.GetKeyDown(closePanelsKey) && canChange)
             {
                 HidePanels();
                 if (mainPanel.activeSelf)
@@ -56,6 +64,25 @@ namespace Game.GUI
         {
             HidePanels();
             mainPanel.SetActive(false);
+        }
+
+        private void OpenAndStuck()
+        {
+            image.enabled = true;
+            canChange = false;
+            Time.timeScale = 0;
+        }
+
+        public void Win()
+        {
+            OpenAndStuck();
+            winPanel.SetActive(true);
+        }
+
+        public void Lose()
+        {
+            OpenAndStuck();
+            losePanel.SetActive(true);
         }
     }
 }

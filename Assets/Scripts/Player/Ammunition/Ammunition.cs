@@ -8,6 +8,9 @@ namespace Game.Ammunitions
     public class Ammunition : ScriptableObject, IAmmunition
     {
 #pragma warning disable CS0649
+        [SerializeField, Tooltip("Layer of projectile."), Layer]
+        private int layer;
+
         [SerializeField, Min(.1f), Tooltip("Multiplies shooting force from the cannon.")]
         private float forceMultiplier = 1;
 
@@ -34,9 +37,12 @@ namespace Game.Ammunitions
         protected virtual GameObject CreateProjectile(Vector3 force, Vector3 position)
             => SpawnProjectile(force * forceMultiplier, position, mass, scale, Sprite);
 
-        public static GameObject SpawnProjectile(Vector3 force, Vector3 position, float mass, float scale, Sprite sprite)
+        public GameObject SpawnProjectile(Vector3 force, Vector3 position, float mass, float scale, Sprite sprite)
         {
-            GameObject gameObject = new GameObject("Projectile");
+            GameObject gameObject = new GameObject("Projectile")
+            {
+                layer = layer
+            };
             Transform transform = gameObject.transform;
             transform.position = position;
             transform.localScale = Vector3.one * scale;
@@ -45,7 +51,7 @@ namespace Game.Ammunitions
             rigidbody.mass = mass;
             rigidbody.AddForce(force, ForceMode2D.Impulse);
 
-            CircleCollider2D collider = gameObject.AddComponent<CircleCollider2D>();
+            gameObject.AddComponent<CircleCollider2D>();
 
             SpriteRenderer spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = sprite;

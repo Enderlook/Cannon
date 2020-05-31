@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1985934632168629645
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 16736880014912909, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 858680498162842297, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: spawningPoints.Array.data[0].y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641233080336886829, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.646
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750311680162577257, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624738401522895863, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624738401522895863, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624738401522895863, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410925878312228114, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: healthBarSpawnPosition.y
+      value: 0.19999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491065105819607522, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3863635566180601805, guid: ff40b310777db7f4388134ff53b43517,
+        type: 3}
+    - target: {fileID: 8491065105819607522, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510346460322316553, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_Name
+      value: Angry Pig
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a, type: 3}

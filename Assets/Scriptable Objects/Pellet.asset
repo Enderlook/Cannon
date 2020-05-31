@@ -25,6 +25,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2d11e0ab880a64186b328f8e979931, type: 3}
   m_Name: Pellet
   m_EditorClassIdentifier: 
+  layer: 9
   forceMultiplier: 5
   mass: 0.25
   scale: 0.2
@@ -33,3 +34,4 @@ MonoBehaviour:
   attachs:
   - {fileID: 11400000, guid: 34569e4469f24e044b81f0c2d26b22e0, type: 2}
   - {fileID: -1303545451127741192}
+  - {fileID: 11400000, guid: ddb9ee5aebaf8eb448baace082c21a70, type: 2}

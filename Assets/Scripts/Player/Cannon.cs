@@ -1,6 +1,9 @@
 ﻿using Enderlook.Unity.Attributes;
 
 using Game.Creatures.Player.AbilitySystem;
+using Game.GUI;
+
+using System.Linq;
 
 using UnityEngine;
 
@@ -25,6 +28,9 @@ namespace Game
 
         [SerializeField, Tooltip("Ammunitions of player and ammmount.")]
         private Ammo[] ammunitions;
+
+        [SerializeField, Tooltip("Layer used by projectiles."), Layer]
+        private int layer;
 
         [Header("Prediction")]
         [SerializeField, Min(.01f), Tooltip("Time scale used to draw projectile predictions.")]
@@ -59,6 +65,10 @@ namespace Game
         private AmmoUI[] uis;
 
         private LineRenderer lineRenderer;
+
+        private bool HasAmmo => ammunitions.Any(e => e.amount > 0);
+
+        private float loseCountDown;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
@@ -117,6 +127,9 @@ namespace Game
                         uis[currentAmmunitionIndex].SetAmount(--ammunition.amount);
                         ammunition.Shoot(shootingForce, shootingPosition);
                     }
+
+                    if (!HasAmmo)
+                        loseCountDown = 3;
                 }
 
                 #region Gizmos
@@ -161,10 +174,22 @@ namespace Game
                         dots[i / spriteRatio].Item2.enabled = false;
             }
             #endregion Gizmos
+
+            if (loseCountDown > 0)
+            {
+                if (HasAmmo)
+                    loseCountDown = 0;
+                else
+                {
+                    loseCountDown -= Time.deltaTime;
+                    if (loseCountDown <= 0)
+                        FindObjectOfType<PanelManager>().Lose();
+                }
+            }
         }
 
         private bool IsInShootingRange(Vector2 mousePosition) => Vector3.Distance(mousePosition, center) <= maximumShootingDistance * 2;
-        
+
         private Vector2 GetShootingPosition(Vector2 mouseDirection)
             => (mouseDirection.normalized * maximumShootingDistance) + center;
 
@@ -178,7 +203,7 @@ namespace Game
         private void SelectAmmunition(int index)
         {
             uis[currentAmmunitionIndex].UnSelect();
-            currentAmmunitionIndex = index;            
+            currentAmmunitionIndex = index;
         }
 
         #region Gizmos
