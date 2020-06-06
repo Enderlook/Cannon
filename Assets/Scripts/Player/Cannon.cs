@@ -54,6 +54,13 @@ namespace Game
 
         [SerializeField, Tooltip("Prefab used to for ui elements of ammunition.")]
         private AmmoUI uiPrefab;
+
+        [Header("Setup")]
+        [SerializeField, Tooltip("Sound play on shoot.")]
+        private AudioClip shootSound;
+
+        [SerializeField, Tooltip("Audio source used to play sounds.")]
+        private AudioSource audioSource;
 #pragma warning restore CS0649
 
         private int currentAmmunitionIndex;
@@ -128,6 +135,9 @@ namespace Game
                     {
                         uis[currentAmmunitionIndex].SetAmount(--ammunition.amount);
                         ammunition.Shoot(shootingForce, shootingPosition);
+
+                        audioSource.pitch = Random.Range(.8f, 1.2f);
+                        audioSource.PlayOneShot(shootSound, Random.Range(.8f, 1));
                     }
 
                     if (!HasAmmo)
