@@ -9,3 +9,23 @@ Synthesized explosion made by Iwan Gabovitch under license CC0
 Magic SFX Sample made by ViRiX under license CC-BY 3.0
 	https://opengameart.org/content/magic-sfx-sample
 	Fire impact 1.wav
+
+Fanfare 03 made by Fantasy Musica under license CC-BY 4.0
+	https://opengameart.org/content/fanfare-03
+	Fanfare 03.ogg
+
+Short Medieval Loop made by remaxim under license CPL 2.0, GPL 3.0, CC-BY-SA 3.0
+	https://opengameart.org/content/short-medieval-loop
+	medieval_loop.wav
+
+Medieval: Minstrel Dance made by RandomMind under license CC0
+	https://opengameart.org/content/medieval-minstrel-dance
+	Loop_Minstrel_Dance.wav 
+
+Medieval Town made by syncopika under license CC-BY 3.0
+	https://opengameart.org/content/medieval-town
+	022815townbgm.ogg
+	
+Medieval Rondo made by marcelofg55 under license CC-BY 3.0
+	https://opengameart.org/content/medieval-rondo
+	Medieval Rondo.ogg

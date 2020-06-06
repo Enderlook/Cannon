@@ -1304,6 +1304,26 @@ PrefabInstance:
       propertyPath: losePanel
       value: 
       objectReference: {fileID: 1539138971}
+    - target: {fileID: 4940858382757103483, guid: acc318c1e8da5e447a3ea2cffd4108ae,
+        type: 3}
+      propertyPath: playClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e231b4f97b7b3214a9fb1f48a5a447c7, type: 3}
+    - target: {fileID: 4940858382757103483, guid: acc318c1e8da5e447a3ea2cffd4108ae,
+        type: 3}
+      propertyPath: loseClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dca4e9f1a223ac43a165a13098726df, type: 3}
+    - target: {fileID: 4940858382757103483, guid: acc318c1e8da5e447a3ea2cffd4108ae,
+        type: 3}
+      propertyPath: winClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c1f3beee0ce28844987a32c2296a370, type: 3}
+    - target: {fileID: 4940858382757103483, guid: acc318c1e8da5e447a3ea2cffd4108ae,
+        type: 3}
+      propertyPath: menuClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 89ded48f1ecc41b4fadb1b2fba8c3749, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acc318c1e8da5e447a3ea2cffd4108ae, type: 3}
 --- !u!224 &1225870333 stripped

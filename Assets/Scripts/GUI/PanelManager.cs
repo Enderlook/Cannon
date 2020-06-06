@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 namespace Game.GUI
 {
+    [RequireComponent(typeof(AudioSource))]
     public class PanelManager : MonoBehaviour
     {
 #pragma warning disable CS0649
@@ -25,10 +26,31 @@ namespace Game.GUI
         private GameObject winPanel;
 
         [SerializeField]
+        private AudioClip winClip;
+
+        [SerializeField]
         private GameObject losePanel;
+
+        [SerializeField]
+        private AudioClip loseClip;
+
+        [SerializeField]
+        private AudioClip playClip;
+
+        [SerializeField]
+        private AudioClip menuClip;
 #pragma warning restore CS0649
 
         private bool canChange = true;
+
+        private AudioSource audioSource;
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+        private void Awake()
+        {
+            audioSource = GetComponent<AudioSource>();
+            audioSource.clip = toggleable ? playClip : menuClip;
+        }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         public void Update()
@@ -36,21 +58,30 @@ namespace Game.GUI
             if (Input.GetKeyDown(closePanelsKey) && canChange)
             {
                 HidePanels();
-                if (mainPanel.activeSelf)
+                if (Time.timeScale == 0)
                 {
                     if (toggleable)
                     {
                         mainPanel.SetActive(false);
                         image.enabled = false;
-                        Time.timeScale = 0;
+                        Time.timeScale = 1;
+                        Play(playClip);
                     }
                 }
                 else
                 {
                     mainPanel.SetActive(true);
                     image.enabled = true;
-                    Time.timeScale = 1;
+                    Time.timeScale = 0;
+                    Play(menuClip);
                 }
+            }
+
+            if (!audioSource.isPlaying)
+            {
+                if (audioSource.clip == loseClip || audioSource.clip == winClip)
+                    audioSource.clip = menuClip;
+                audioSource.Play();
             }
         }
 
@@ -77,12 +108,21 @@ namespace Game.GUI
         {
             OpenAndStuck();
             winPanel.SetActive(true);
+            Play(winClip);
         }
 
         public void Lose()
         {
             OpenAndStuck();
             losePanel.SetActive(true);
+            Play(loseClip);
+        }
+
+        private void Play(AudioClip clip)
+        {
+            audioSource.Stop();
+            audioSource.clip = clip;
+            audioSource.Play();
         }
     }
 }
