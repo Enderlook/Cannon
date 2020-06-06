@@ -8,12 +8,15 @@ namespace Game
 {
     public class GameManager : MonoBehaviour
     {
+        private PanelManager panelManager;
+
         private int amount;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
 #pragma warning restore CS0649
         private void Awake()
         {
+            panelManager = FindObjectOfType<PanelManager>();
             Hurtable[] hurtables = FindObjectsOfType<Hurtable>();
             amount = hurtables.Length;
 
@@ -24,7 +27,7 @@ namespace Game
         private void DestroyOne()
         {
             if (--amount <= 0)
-                FindObjectOfType<PanelManager>().Win();
+                panelManager.Win();
         }
     }
 }
