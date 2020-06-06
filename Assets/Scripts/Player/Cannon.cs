@@ -89,12 +89,14 @@ namespace Game
             #region Gizmos
             predictedPositions = new Vector2[predictedPointsAmount];
             dots = new (Transform, SpriteRenderer)[predictedPointsAmount / spriteRatio];
+            Transform parent = new GameObject("Dots").transform;
             for (int i = 0; i < dots.Length; i++)
             {
                 GameObject dot = new GameObject($"Dot #{i}");
                 SpriteRenderer spriteRenderer = dot.AddComponent<SpriteRenderer>();
                 spriteRenderer.sprite = dotSprite;
                 Transform dotTransform = dot.transform;
+                dotTransform.parent = parent;
                 dotTransform.localScale = Vector3.one * spriteScale;
                 dots[i] = (dotTransform, spriteRenderer);
             }
