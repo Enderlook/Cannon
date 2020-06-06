@@ -22,6 +22,8 @@ namespace Game.GUI
             panelManager.HideAll();
             loadingBar.Show();
 
+            Time.timeScale = 1;
+
             StartCoroutine(ShowProgess(SceneManager.LoadSceneAsync(index)));
 
             IEnumerator ShowProgess(AsyncOperation operation)
