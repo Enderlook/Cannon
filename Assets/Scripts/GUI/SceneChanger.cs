@@ -15,14 +15,17 @@ namespace Game.GUI
         private Bar loadingBar;
 #pragma warning restore CS0649
 
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+#pragma warning restore CS0649
+        private void Awake() => Time.timeScale = 1;
+
         public void Exit() => Application.Quit();
 
         public void ChangeScene(int index)
         {
             panelManager.HideAll();
             loadingBar.Show();
-
-            Time.timeScale = 1;
 
             StartCoroutine(ShowProgess(SceneManager.LoadSceneAsync(index)));
 
