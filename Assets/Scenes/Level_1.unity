@@ -292,6 +292,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 712404516683596151, guid: 6e38f70fa282e4547b89ca4c6091ab3a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1225870336}
+    - target: {fileID: 712404516683596151, guid: 6e38f70fa282e4547b89ca4c6091ab3a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 712404516683596151, guid: 6e38f70fa282e4547b89ca4c6091ab3a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3369840752527567366, guid: 6e38f70fa282e4547b89ca4c6091ab3a,
         type: 3}
       propertyPath: m_Text
@@ -1590,6 +1605,21 @@ PrefabInstance:
     - target: {fileID: 409419729623663872, guid: 6e38f70fa282e4547b89ca4c6091ab3a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 712404516683596151, guid: 6e38f70fa282e4547b89ca4c6091ab3a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1225870336}
+    - target: {fileID: 712404516683596151, guid: 6e38f70fa282e4547b89ca4c6091ab3a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reload
+      objectReference: {fileID: 0}
+    - target: {fileID: 712404516683596151, guid: 6e38f70fa282e4547b89ca4c6091ab3a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3369840752527567366, guid: 6e38f70fa282e4547b89ca4c6091ab3a,
