@@ -22,8 +22,13 @@ namespace Game.Ammunitions
                 if (collider.TryGetComponent(out Rigidbody2D rigidbody2D))
                     rigidbody2D.AddForceAtPosition(direction * explosionForce, transform.position);
                 float damage = damageOverDistance / direction.magnitude;
-                if (damage > damageThreshold && collider.TryGetComponent(out Hurtable hurtable))
-                    hurtable.TakeDamage(damageOverDistance / direction.magnitude);
+                if (damage > damageThreshold)
+                {
+                    if (collider.TryGetComponent(out Hurtable hurtable))
+                        hurtable.TakeDamage(damageOverDistance / direction.magnitude);
+                    if (collider.TryGetComponent(out SoundOnHit soundOnHit))
+                        soundOnHit.PlaySound();
+                }
             }
 
             Destroy(gameObject);

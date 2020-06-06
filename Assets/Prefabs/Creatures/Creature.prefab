@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1641233080336886829}
   - component: {fileID: 858680498162842297}
   - component: {fileID: 7410925878312228114}
+  - component: {fileID: 6419887154033436185}
   m_Layer: 0
   m_Name: Creature
   m_TagString: Untagged
@@ -214,3 +215,19 @@ MonoBehaviour:
   healthBar: {fileID: 2563233004789174745, guid: 8be145ea1484d0f47b7f7ea0dbc2e492,
     type: 3}
   healthBarSpawnPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &6419887154033436185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8510346460322316553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 349c2a5157e69034b8ce84439de4987e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: dd27e5f558bff224898b8dee1f37b725, type: 3}
+  audioMixerGroup: {fileID: -690824145729753491, guid: f3e00d1b05965864a9dbe60ea8c8faf5,
+    type: 2}
+  forceThreshold: 0.2
