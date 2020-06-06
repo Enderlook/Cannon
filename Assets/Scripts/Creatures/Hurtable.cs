@@ -46,7 +46,12 @@ namespace Game
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void OnCollisionEnter2D(Collision2D collision)
-            => TakeDamage(Mathf.Abs(collision.contacts.Sum(e => e.normalImpulse) * (collision.otherCollider.GetComponent<IDamager>()?.DamageMultiplier ?? 1)));
+        {
+            float multiplier = 1;
+            if (collision.otherCollider.TryGetComponent(out IDamager damager))
+                multiplier = damager.DamageMultiplier;
+            TakeDamage(Mathf.Abs(collision.contacts.Sum(e => e.normalImpulse)) * multiplier);
+        }
 
         public void TakeDamage(float amount)
         {
