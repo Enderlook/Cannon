@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layer: 9
   forceMultiplier: 1
-  mass: 1
+  mass: 2
   scale: 0.25
   <Sprite>k__BackingField: {fileID: -7046424138740760354, guid: ccd2cb0d9ad4f344aa112f1216a87a98,
     type: 3}

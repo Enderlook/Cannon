@@ -2542,12 +2542,14 @@ MonoBehaviour:
   center: {x: -2.924056, y: -0.9747607}
   shootingDistanceFromCenter: 1
   maximumShootingDistance: 0.5
-  maximumForce: 12
+  maximumForce: 24
   ammunitions:
   - type: {fileID: 11400000, guid: 66920029a050b5440b567930b2cc0401, type: 2}
     amount: 5
   - type: {fileID: 11400000, guid: 88818793025783b499efaa7713e16e56, type: 2}
     amount: 3
+  - type: {fileID: 11400000, guid: 7795c73477f7d7f4cb049d0e9bec5541, type: 2}
+    amount: 2
   layer: 0
   predictionTimeScale: 0.1
   predictedPointsAmount: 25
