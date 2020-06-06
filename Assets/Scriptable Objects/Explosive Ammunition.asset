@@ -34,7 +34,8 @@ MonoBehaviour:
   attachs:
   - {fileID: 11400000, guid: 34569e4469f24e044b81f0c2d26b22e0, type: 2}
   - {fileID: -8805247308901266098}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 5a0c988cb0bcd584e94693fab988e713, type: 2}
+  - {fileID: 6766344529215620}
   - {fileID: 11400000, guid: ddb9ee5aebaf8eb448baace082c21a70, type: 2}
 --- !u!114 &6766344529215620
 MonoBehaviour:
@@ -48,5 +49,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9447f546d7c904a9ace5865a197f4c, type: 3}
   m_Name: Explode On Hit
   m_EditorClassIdentifier: 
-  damageOverDistance: 3
-  explosionForce: 5
+  damageOverDistance: 0.5
+  explosionForce: 2
+  damageThreshold: 0.1

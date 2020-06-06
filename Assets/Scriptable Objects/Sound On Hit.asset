@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3399baa1411faa640bb415b02ea80f2d, type: 3}
+  m_Name: Sound On Hit
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: d6636020f8fb03445ad2034fde86ed64, type: 3}
+  audioMixerGroup: {fileID: 1626506029720995018, guid: f3e00d1b05965864a9dbe60ea8c8faf5,
+    type: 2}
