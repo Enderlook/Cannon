@@ -15,8 +15,8 @@ MonoBehaviour:
   layer: 9
   forceMultiplier: 1
   mass: 2
-  scale: 0.25
-  <Sprite>k__BackingField: {fileID: -7046424138740760354, guid: ccd2cb0d9ad4f344aa112f1216a87a98,
+  scale: 0.15
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 5bcc9e65842dffc46890dd04a70c8770,
     type: 3}
   attachs:
   - {fileID: 11400000, guid: 34569e4469f24e044b81f0c2d26b22e0, type: 2}

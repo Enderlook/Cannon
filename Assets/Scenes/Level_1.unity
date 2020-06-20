@@ -1443,10 +1443,8 @@ MonoBehaviour:
   layer: 0
   predictionTimeScale: 0.1
   predictedPointsAmount: 25
-  dotSprite: {fileID: -7046424138740760354, guid: ccd2cb0d9ad4f344aa112f1216a87a98,
-    type: 3}
   spriteRatio: 1
-  spriteScale: 0.2
+  spriteScale: 0.1
   uiTransform: {fileID: 702231390}
   uiPrefab: {fileID: 3699307196167619245, guid: 076c96b11e5a28f4f8d40c0bbbbf400a,
     type: 3}

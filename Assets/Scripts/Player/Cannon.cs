@@ -36,9 +36,6 @@ namespace Game
         [SerializeField, Min(2), Tooltip("Max amount of predicted points.")]
         private int predictedPointsAmount = 25;
 
-        [SerializeField, Tooltip("Sprite used to draw dots.")]
-        private Sprite dotSprite;
-
         [SerializeField, Min(1), Tooltip("Each how much points an sprite must be draw.")]
         private int spriteRatio = 1;
 
@@ -57,7 +54,7 @@ namespace Game
 
         [Header("Setup")]
         [SerializeField, Tooltip("Sound play on shoot.")]
-        private AudioClip shootSound;        
+        private AudioClip shootSound;
 #pragma warning restore CS0649
 
         private AudioSource audioSource;
@@ -104,7 +101,7 @@ namespace Game
             {
                 GameObject dot = new GameObject($"Dot #{i}");
                 SpriteRenderer spriteRenderer = dot.AddComponent<SpriteRenderer>();
-                spriteRenderer.sprite = dotSprite;
+                spriteRenderer.sprite = ammunitions[0].Sprite;
                 Transform dotTransform = dot.transform;
                 dotTransform.parent = parent;
                 dotTransform.localScale = Vector3.one * spriteScale;
@@ -137,7 +134,7 @@ namespace Game
                 Vector3 rotation = transform.rotation.eulerAngles;
                 Vector2 direction = shootingPosition - (Vector2)transform.position;
                 transform.rotation = Quaternion.Euler(new Vector3(rotation.x, rotation.y, Mathf.Tan(direction.y / direction.magnitude) * Mathf.Rad2Deg));
-                
+
                 if (Input.GetMouseButtonDown(0))
                 {
                     Ammo ammunition = ammunitions[currentAmmunitionIndex];
@@ -236,6 +233,12 @@ namespace Game
         {
             uis[currentAmmunitionIndex].UnSelect();
             currentAmmunitionIndex = index;
+
+            if (dots is null)
+                return;
+            Sprite sprite = ammunitions[index].Sprite;
+            foreach ((Transform, SpriteRenderer) dot in dots)
+                dot.Item2.sprite = sprite;
         }
 
         #region Gizmos
