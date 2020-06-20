@@ -228,8 +228,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 324822602}
     - target: {fileID: 1075651052, guid: 3fa94641fdd07c14b8a513d58e53a8a4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 5136447737395075738, guid: 3fa94641fdd07c14b8a513d58e53a8a4,
         type: 3}
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 755449026}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -624,7 +624,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 324822602}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -842,7 +842,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 324822602}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -1293,8 +1293,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Play
+      - m_Target: {fileID: 179351832}
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1759,6 +1759,16 @@ PrefabInstance:
       propertyPath: menuClip
       value: 
       objectReference: {fileID: 8300000, guid: 3f585b48e163e654c8cd92f5579dc4f4, type: 3}
+    - target: {fileID: 4940858382926394804, guid: acc318c1e8da5e447a3ea2cffd4108ae,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940858382926394804, guid: acc318c1e8da5e447a3ea2cffd4108ae,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 5153127793576095847, guid: acc318c1e8da5e447a3ea2cffd4108ae,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target

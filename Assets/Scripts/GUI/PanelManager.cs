@@ -128,5 +128,7 @@ namespace Game.GUI
             audioSource.clip = clip;
             audioSource.Play();
         }
+
+        public void Exit() => Application.Quit();
     }
 }
