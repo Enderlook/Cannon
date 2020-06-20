@@ -54,10 +54,10 @@ namespace Game.Ammunitions
             rigidbody.mass = mass;
             rigidbody.AddForce(force, ForceMode2D.Impulse);
 
-            gameObject.AddComponent<CircleCollider2D>();
-
             SpriteRenderer spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = sprite;
+
+            gameObject.AddComponent<CircleCollider2D>();
 
             return gameObject;
         }
