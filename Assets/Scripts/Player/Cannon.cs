@@ -210,7 +210,7 @@ namespace Game
         private static Vector2 GetMousePosition() => Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         private Vector2 GetShootingForce(Vector2 mouseDirection)
-            => mouseDirection * (maximumShootingDistance / mouseDirection.magnitude) * maximumForce;
+            => mouseDirection * (mouseDirection.magnitude / maximumShootingDistance) * maximumForce;
 
         private void SelectAmmunition(int index)
         {
