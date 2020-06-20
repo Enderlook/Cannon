@@ -39,6 +39,9 @@ namespace Game.GUI
 
         [SerializeField]
         private AudioClip menuClip;
+
+        [SerializeField]
+        private Score winScore;
 #pragma warning restore CS0649
 
         private bool canChange = true;
@@ -109,6 +112,7 @@ namespace Game.GUI
             OpenAndStuck();
             winPanel.SetActive(true);
             Play(winClip);
+            winScore.Value = FindObjectOfType<GameManager>().Score;
         }
 
         public void Lose()

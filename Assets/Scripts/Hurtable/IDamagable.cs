@@ -4,6 +4,6 @@
     {
         void TakeDamage(float amount);
 
-        void Kill();
+        void Die();
     }
 }

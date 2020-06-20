@@ -25,6 +25,9 @@ namespace Game.Ammunitions
 
         [SerializeField, Tooltip("Additional settings added to the generated projectile.")]
         private Attach[] attachs;
+
+        [field: SerializeField, IsProperty]
+        public int Score { get; private set; }
 #pragma warning restore CS0649
 
         public void Shoot(Vector3 force, Vector3 position)

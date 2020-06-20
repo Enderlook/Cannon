@@ -1,4 +1,6 @@
-﻿using Game.Creatures;
+﻿using Enderlook.Unity.Attributes;
+
+using Game.Creatures;
 
 using System;
 using System.Linq;
@@ -10,38 +12,35 @@ namespace Game
     [RequireComponent(typeof(SpriteRenderer))]
     public class Hurtable : MonoBehaviour, IDamagable
     {
+#pragma warning disable CS0649
+        [field: SerializeField, IsProperty, Tooltip("Score adquire when destroying this Game Object.")]
+        public int Score { get; private set; }
+
         [SerializeField]
         private float health;
         public float Health {
             get => health;
             set {
                 health = value;
-                OnHealthChange(value);
+                OnHealthChange?.Invoke(value);
             }
         }
 
         [SerializeField, Tooltip("Minimal amount of damage required to be hurt.")]
         private float damageThreshold = .1f;
-
-        [SerializeField]
-        private string hurtAnimation;
-
-        [SerializeField]
-        private string deathAnimation;
+#pragma warning restore CS0649
 
         private float maxHealth;
 
         private SpriteRenderer spriteRenderer;
-        private Animator animator;
 
         public event Action<float> OnHealthChange;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
-        private void Awake()
+        protected virtual void Awake()
         {
             maxHealth = Health;
             spriteRenderer = GetComponent<SpriteRenderer>();
-            animator = GetComponent<Animator>();
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
@@ -53,7 +52,7 @@ namespace Game
             TakeDamage(Mathf.Abs(collision.contacts.Sum(e => e.normalImpulse)) * multiplier);
         }
 
-        public void TakeDamage(float amount)
+        public virtual void TakeDamage(float amount)
         {
             amount -= damageThreshold;
             if (amount <= 0)
@@ -61,24 +60,11 @@ namespace Game
             Health = Mathf.Max(Health - amount, 0);
             spriteRenderer.color = Color.Lerp(Color.red, Color.white, Health / maxHealth);
 
-            if (Health > 0)
-            {
-                if (animator != null && !string.IsNullOrEmpty(hurtAnimation))
-                    animator.Play(hurtAnimation);
-            }
-            else
-                Kill();
-        }
-
-        public void Kill()
-        {
-            if (animator != null && !string.IsNullOrEmpty(deathAnimation))
-                animator.Play(deathAnimation);
-            else
+            if (Health <= 0)
                 Die();
         }
 
-        private void Die()
+        public virtual void Die()
         {
             Array.ForEach(GetComponents<IDie>(), e => e.Die());
             Destroy(gameObject);

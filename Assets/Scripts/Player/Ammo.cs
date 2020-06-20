@@ -16,6 +16,10 @@ namespace Game
 
         public int amount;
 
+        public int TotalScore => amount * type.Score;
+
+        public int ScorePerUnit => type.Score;
+
         public Sprite Sprite => type.Sprite;
 
         public void Shoot(Vector3 force, Vector3 position) => type.Shoot(force, position);

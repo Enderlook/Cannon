@@ -52,9 +52,12 @@ namespace Game
         [SerializeField, Tooltip("Prefab used to for ui elements of ammunition.")]
         private AmmoUI uiPrefab;
 
+        [SerializeField]
+        private Score score;
+
         [Header("Setup")]
         [SerializeField, Tooltip("Sound play on shoot.")]
-        private AudioClip shootSound;
+        private AudioClip shootSound;        
 #pragma warning restore CS0649
 
         private AudioSource audioSource;
@@ -81,6 +84,8 @@ namespace Game
             uis = new AmmoUI[ammunitions.Length];
             for (int i = 0; i < uis.Length; i++)
             {
+                score.ValueWithoutEffect += ammunitions[i].TotalScore;
+
                 AmmoUI instance = Instantiate(uiPrefab, uiTransform);
                 uis[i] = instance;
                 Ammo ammo = ammunitions[i];
@@ -119,6 +124,9 @@ namespace Game
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
+            if (Time.timeScale == 0)
+                return;
+
             Vector2 mousePosition = GetMousePosition();
             Vector2 mouseDirection = GetMouseDirection(mousePosition);
             Vector2 shootingPosition = GetShootingPosition(mouseDirection);
@@ -135,6 +143,8 @@ namespace Game
                     Ammo ammunition = ammunitions[currentAmmunitionIndex];
                     if (ammunition.amount > 0)
                     {
+                        score.Value -= ammunition.ScorePerUnit;
+
                         uis[currentAmmunitionIndex].SetAmount(--ammunition.amount);
                         ammunition.Shoot(shootingForce, shootingPosition);
 

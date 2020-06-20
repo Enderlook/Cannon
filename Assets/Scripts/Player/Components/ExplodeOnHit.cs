@@ -24,8 +24,8 @@ namespace Game.Ammunitions
                 float damage = damageOverDistance / direction.magnitude;
                 if (damage > damageThreshold)
                 {
-                    if (collider.TryGetComponent(out Hurtable hurtable))
-                        hurtable.TakeDamage(damageOverDistance / direction.magnitude);
+                    if (collider.TryGetComponent(out IDamagable damagable))
+                        damagable.TakeDamage(damageOverDistance / direction.magnitude);
                     if (collider.TryGetComponent(out SoundOnHit soundOnHit))
                         soundOnHit.PlaySound();
                 }
