@@ -14,9 +14,6 @@ namespace Game
     {
 #pragma warning disable CS0649
         [Header("Shooting")]
-        [SerializeField, Tooltip("Center used to calculate force and direction."), DrawVectorRelativeToTransform]
-        private Vector2 center;
-
         [SerializeField, Tooltip("Shooting distance point from center.")]
         private float shootingDistanceFromCenter = 1;
 
@@ -128,6 +125,10 @@ namespace Game
 
             if (IsInShootingRange(mousePosition))
             {
+                Vector3 rotation = transform.rotation.eulerAngles;
+                Vector2 direction = shootingPosition - (Vector2)transform.position;
+                transform.rotation = Quaternion.Euler(new Vector3(rotation.x, rotation.y, Mathf.Tan(direction.y / direction.magnitude) * Mathf.Rad2Deg));
+                
                 if (Input.GetMouseButtonDown(0))
                 {
                     Ammo ammunition = ammunitions[currentAmmunitionIndex];
@@ -200,14 +201,20 @@ namespace Game
             }
         }
 
-        private bool IsInShootingRange(Vector2 mousePosition) => Vector3.Distance(mousePosition, center) <= maximumShootingDistance * 2;
+        private bool IsInShootingRange(Vector2 mousePosition) => Vector3.Distance(mousePosition, transform.position) <= maximumShootingDistance * 2;
 
         private Vector2 GetShootingPosition(Vector2 mouseDirection)
-            => (mouseDirection.normalized * maximumShootingDistance) + center;
+            => (mouseDirection.normalized * shootingDistanceFromCenter) + (Vector2)transform.position;
 
-        private Vector2 GetMouseDirection(Vector2 mousePosition) => Vector2.ClampMagnitude(center - mousePosition, maximumShootingDistance);
+        private Vector2 GetMouseDirection(Vector2 mousePosition) => Vector2.ClampMagnitude((Vector2)transform.position - mousePosition, maximumShootingDistance);
 
-        private static Vector2 GetMousePosition() => Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        private Vector2 GetMousePosition()
+        {
+            Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (transform.position.x - position.x < 0)
+                position.x = transform.position.x;
+            return position;
+        }
 
         private Vector2 GetShootingForce(Vector2 mouseDirection)
             => mouseDirection * (mouseDirection.magnitude / maximumShootingDistance) * maximumForce;
@@ -222,9 +229,12 @@ namespace Game
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void OnDrawGizmos()
         {
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawWireSphere(center, maximumShootingDistance);
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, maximumShootingDistance);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, shootingDistanceFromCenter);
 
+            Gizmos.color = Color.yellow;
             if (Application.isPlaying)
             {
                 Vector2 mousePosition = GetMousePosition();
@@ -233,8 +243,7 @@ namespace Game
                     Vector2 mouseDirection = GetMouseDirection(mousePosition);
                     Vector2 shootingPosition = GetShootingPosition(mouseDirection);
 
-                    Gizmos.DrawLine(center, center - mouseDirection);
-                    Gizmos.DrawLine(center, center + ((shootingPosition - center).normalized * shootingDistanceFromCenter));
+                    Gizmos.DrawLine((Vector2)transform.position - mouseDirection, shootingPosition);
                     Gizmos.DrawWireSphere(shootingPosition, .1f);
 
                     int max = ammunitions[currentAmmunitionIndex].GetPredictedPositions(GetShootingForce(mouseDirection), shootingPosition, predictedPositions, predictionTimeScale);
