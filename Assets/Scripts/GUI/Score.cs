@@ -57,7 +57,7 @@ namespace Game
             text.text = ((int)value).ToString();
             text.color = color;
 
-            float MoveTowards(float a, float b) => Mathf.MoveTowards(a, b, Time.deltaTime);
+            float MoveTowards(float a, float b) => Mathf.MoveTowards(a, b, Time.unscaledDeltaTime);
         }
     }
 }
