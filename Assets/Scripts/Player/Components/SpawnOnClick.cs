@@ -13,9 +13,14 @@ namespace Game.Ammunitions
 
         private float inheritForceRatio;
 
+        private bool canSplit = true;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Update()
         {
+            if (!canSplit)
+                return;
+
             if (!Input.GetMouseButtonDown(1))
                 return;
 
@@ -32,6 +37,23 @@ namespace Game.Ammunitions
                 ammunitions[i].Shoot(rigidbody.velocity * rigidbody.mass * inheritForceRatio * random, transform.position);
             }
             Destroy(gameObject);
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (!canSplit)
+                return;
+
+            canSplit = false;
+            if (TryGetComponent(out SpriteRenderer spriteRenderer))
+            {
+                Color color = spriteRenderer.color;
+                float alpha = color.a;
+                color *= .5f;
+                color.a = alpha;
+                spriteRenderer.color = color;
+            }
         }
 
         public static void AddComponentTo(GameObject gameObject, Ammunition[] ammunitions, float randomization, float inheritForceRatio)
