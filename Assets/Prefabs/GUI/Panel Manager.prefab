@@ -280,7 +280,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Click on ammunition to choose it.
 
-    Drag mouse over cannon to shoot and kill enemies.'
+    Drag mouse over cannon to shoot and kill enemies.
+
+    Don''t waste ammo! You will lose your score!'
 --- !u!1 &4940858382617614599
 GameObject:
   m_ObjectHideFlags: 0
