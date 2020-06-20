@@ -462,6 +462,7 @@ MonoBehaviour:
   loseClip: {fileID: 0}
   playClip: {fileID: 0}
   menuClip: {fileID: 0}
+  winScore: {fileID: 0}
 --- !u!114 &8535208635633730119
 MonoBehaviour:
   m_ObjectHideFlags: 0
