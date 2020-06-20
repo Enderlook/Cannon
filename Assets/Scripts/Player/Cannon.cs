@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(LineRenderer))]
+    [RequireComponent(typeof(LineRenderer)), RequireComponent(typeof(AudioSource))]
     public class Cannon : MonoBehaviour
     {
 #pragma warning disable CS0649
@@ -55,10 +55,9 @@ namespace Game
         [Header("Setup")]
         [SerializeField, Tooltip("Sound play on shoot.")]
         private AudioClip shootSound;
-
-        [SerializeField, Tooltip("Audio source used to play sounds.")]
-        private AudioSource audioSource;
 #pragma warning restore CS0649
+
+        private AudioSource audioSource;
 
         private int currentAmmunitionIndex;
 
@@ -77,6 +76,8 @@ namespace Game
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Code Quality", "IDE0051:Remove unused private members", Justification = "Used by Unity.")]
         private void Awake()
         {
+            audioSource = GetComponent<AudioSource>();
+
             uis = new AmmoUI[ammunitions.Length];
             for (int i = 0; i < uis.Length; i++)
             {
@@ -145,7 +146,7 @@ namespace Game
                         loseCountDown = 3;
                 }
 
-                #region Gizmos
+#region Gizmos
                 int max = ammunitions[currentAmmunitionIndex].GetPredictedPositions(GetShootingForce(mouseDirection), shootingPosition, predictedPositions, predictionTimeScale);
                 if (max > 0)
                 {
@@ -173,10 +174,10 @@ namespace Game
                 }
                 else
                     Disable();
-                #endregion
+#endregion
             }
             else
-                #region Gizmos
+#region Gizmos
                 Disable();
 
             void Disable()
@@ -186,7 +187,7 @@ namespace Game
                     if (i % spriteRatio == 0)
                         dots[i / spriteRatio].Item2.enabled = false;
             }
-            #endregion Gizmos
+#endregion Gizmos
 
             if (loseCountDown > 0)
             {
@@ -201,12 +202,14 @@ namespace Game
             }
         }
 
-        private bool IsInShootingRange(Vector2 mousePosition) => Vector3.Distance(mousePosition, transform.position) <= maximumShootingDistance * 2;
+        private bool IsInShootingRange(Vector2 mousePosition)
+            => Vector3.Distance(mousePosition, transform.position) <= maximumShootingDistance * 2;
 
         private Vector2 GetShootingPosition(Vector2 mouseDirection)
             => (mouseDirection.normalized * shootingDistanceFromCenter) + (Vector2)transform.position;
 
-        private Vector2 GetMouseDirection(Vector2 mousePosition) => Vector2.ClampMagnitude((Vector2)transform.position - mousePosition, maximumShootingDistance);
+        private Vector2 GetMouseDirection(Vector2 mousePosition)
+            => Vector2.ClampMagnitude((Vector2)transform.position - mousePosition, maximumShootingDistance);
 
         private Vector2 GetMousePosition()
         {
