@@ -11,7 +11,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: def1c0c39676ea44bbfc9351265b3974, type: 2}
     - target: {fileID: 858680498162842297, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
       propertyPath: spawningPoints.Array.data[0].y
