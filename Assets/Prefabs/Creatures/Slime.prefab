@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1985934632168629645
+--- !u!1001 &4808858993855950511
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,21 +11,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: def1c0c39676ea44bbfc9351265b3974, type: 2}
-    - target: {fileID: 858680498162842297, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+      objectReference: {fileID: 9100000, guid: 5488ddd66af624c4a94b4c4db41cfb7b, type: 2}
+    - target: {fileID: 1641233080336886829, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
-      propertyPath: spawningPoints.Array.data[0].y
-      value: 0.3
+      propertyPath: hurtAnimation
+      value: Slime Hit
       objectReference: {fileID: 0}
     - target: {fileID: 1641233080336886829, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
       propertyPath: health
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1641233080336886829, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
       propertyPath: <Score>k__BackingField
-      value: 10
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
@@ -47,47 +82,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 2496589451174964379, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.646
-      objectReference: {fileID: 0}
     - target: {fileID: 4750311680162577257, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
       propertyPath: m_Mass
-      value: 0.06
+      value: 0.08399999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624738401522895863, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624738401522895863, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 5624738401522895863, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.24
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 5624738401522895863, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.25
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 5624738401522895863, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 7410925878312228114, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
-        type: 3}
-      propertyPath: healthBarSpawnPosition.y
-      value: 0.19999999
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 8491065105819607522, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 3863635566180601805, guid: ff40b310777db7f4388134ff53b43517,
+      objectReference: {fileID: 4320010084133899996, guid: 544af0b2bf4397e4d87325387454bd59,
         type: 3}
+    - target: {fileID: 8491065105819607522, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.44
+      objectReference: {fileID: 0}
     - target: {fileID: 8491065105819607522, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
       propertyPath: m_WasSpriteAssigned
@@ -96,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 8510346460322316553, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
       propertyPath: m_Name
-      value: Angry Pig
+      value: Slime
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a, type: 3}
