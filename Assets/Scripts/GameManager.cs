@@ -2,6 +2,8 @@
 
 using Game.GUI;
 
+using System.Collections;
+
 using UnityEngine;
 
 namespace Game
@@ -34,7 +36,14 @@ namespace Game
         private void DestroyOne()
         {
             if (--amount <= 0)
+                StartCoroutine(Work());
+
+            IEnumerator Work()
+            {
+                yield return null;
+                // Open the win panel on the next frame to wait until all IncreaseScore calls are done
                 panelManager.Win();
+            }
         }
 
         private void IncreaseScore(GameObject gameObject)
