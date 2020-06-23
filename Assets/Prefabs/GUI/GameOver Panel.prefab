@@ -327,6 +327,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1236099386, guid: 3fa94641fdd07c14b8a513d58e53a8a4, type: 3}
+      propertyPath: m_Text
+      value: MAIN MENU
+      objectReference: {fileID: 0}
     - target: {fileID: 5136447737395075738, guid: 3fa94641fdd07c14b8a513d58e53a8a4,
         type: 3}
       propertyPath: m_Name
