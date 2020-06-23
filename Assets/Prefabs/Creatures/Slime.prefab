@@ -112,6 +112,11 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.03
       objectReference: {fileID: 0}
+    - target: {fileID: 7410925878312228114, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
+        type: 3}
+      propertyPath: healthBarSpawnPosition.y
+      value: 0.19999999
+      objectReference: {fileID: 0}
     - target: {fileID: 8491065105819607522, guid: 26a2a02d33a8ee440a3c3a6a1deecd0a,
         type: 3}
       propertyPath: m_Sprite
